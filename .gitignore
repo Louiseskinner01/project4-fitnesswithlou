@@ -1,0 +1,26 @@
+
+
+# Virtual enviroment 
+venv/
+.venv
+env/
+
+
+# Environment variables 
+.env
+
+*.sqlite
+
+# Static files collected by Django
+staticfiles/
+
+# MacOS
+.DS_Store
+
+# Migrations cache (keep migration files themselves)
+*.pyc
+
+# Django stuff
+*.log
+db.sqlite3
+media/

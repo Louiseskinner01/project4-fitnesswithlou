@@ -1,0 +1,16 @@
+<h1>Bookings</h1>
+
+{% if bookings %}
+<ul>
+    {% for booking in bookings %}
+        <li>
+            <strong>{{ booking.user.username }}</strong> -
+            {{ booking.class_type }} |
+            {{ booking.class_date }} |
+            {{ booking.class_time }}
+        </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No bookings available yet.</p>
+{% endif %}

@@ -17,24 +17,9 @@ class UserProfile(models.Model):
     ]
 
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    fitness_goal = models.CharField(
-        max_length=50,
-        choices=FITNESS_GOALS,
-        blank=True
-    )
-
-    experience_level = models.CharField(
-        max_length=20,
-        choices=EXPERIENCE_LEVEL,
-        blank=True
-    )
-
-    preferred_training_time = models.CharField(
-        max_length=50,
-        blank=True
-    )
-
+    fitness_goal = models.CharField(max_length=50, choices=FITNESS_GOALS, blank=True)
+    experience_level = models.CharField(max_length=20, choices=EXPERIENCE_LEVEL, blank=True)
+    preferred_training_time = models.CharField(max_length=50, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

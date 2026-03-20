@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'cart',
     'subscriptions',
     'checkout',
+    'main',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -128,5 +130,5 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-LOGIN_REDIRECT_URL = 'subscriptions:subscription_plans'   # where to go after login
+LOGIN_REDIRECT_URL = 'landing'   # where to go after login
 LOGOUT_REDIRECT_URL = 'login'               # where to go after logout

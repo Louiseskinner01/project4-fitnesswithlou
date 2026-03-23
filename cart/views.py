@@ -35,11 +35,13 @@ def add_to_cart(request, product_id):
 
     cart_item, created = CartItem.objects.get_or_create(
         cart=cart,
-        product=product
+        product=product,
+        # Ensures the price is only set once the time is add
+        defaults={'price': product.price}
     )
 
     if not created:
-        # If the item a;ready exists in the cart then increase the quantity
+        # If the item already exists in the cart then increase the quantity
         cart_item.quantity += 1
         cart_item.save()
 

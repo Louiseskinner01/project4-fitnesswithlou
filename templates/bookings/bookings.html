@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+
+{% block content %}
+
 <h1>Bookings</h1>
 
 {% if bookings %}
@@ -14,3 +18,5 @@
 {% else %}
 <p>No bookings available yet.</p>
 {% endif %}
+
+{% endblock %}

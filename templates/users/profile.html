@@ -1,14 +1,14 @@
-
 {% extends "base.html" %}
 
 {% block content %}
 
 <h1>Your Profile</h1>
 
+
 <p>Name: {{ profile.user.username }}</p>
-<p>Fitness Goal: {{ profile.user.fitness_goal }}</p>
-<p>Experience level: {{ profile.user.experience_level }}</p>
-<p>Preferred training time: {{ profile.user.preferred_training_time }}</p>
+<p>Fitness Goal: {{ profile.fitness_goal }}</p>
+<p>Experience level: {{ profile.experience_level }}</p>
+<p>Preferred training time: {{ profile.preferred_training_time }}</p>
 
 
 {% endblock %}

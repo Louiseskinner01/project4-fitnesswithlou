@@ -32,7 +32,7 @@
                 <a class="nav-link" href="{% url 'products:products' %}">Shop</a>
               </li>
               {% if not user.is_authenticated %}
-                <a href="{% url 'login' %}">Login</a>
+                <a href="{% url 'account_login' %}">Login</a>
               {% endif %}
 
               {% if user.is_authenticated %}
@@ -45,7 +45,7 @@
                   <li><a class="dropdown-item" href="{% url 'subscriptions:subscription_plans' %}">Subscriptions</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li>
-                    <form method="post" action="{% url 'logout' %}">
+                    <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}
                     <button type="submit" class="dropdown-item">Logout</button>
                     </form>

@@ -1,24 +1,20 @@
-
-html{
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+html, body {
     margin: 0;
+    padding: 0;
 }
 
-
 body {
-    background: url('/media/home-template.jpg') no-repeat center center fixed;
+    display: flex;
+    flex-direction: column;
+
+    background: url('/media/home-template.jpg') no-repeat center center;
     background-size: cover;
-    height: calc(100vh - 164px);
+    min-height: 100dvh;
+
     color: whitesmoke;
     font-family: 'Lato';
 }
 
-footer{
+footer {
     margin-top: auto;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
-    color: black;
 }

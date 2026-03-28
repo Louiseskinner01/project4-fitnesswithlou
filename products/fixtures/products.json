@@ -1,0 +1,202 @@
+[
+    {
+      "model": "products.Product",
+      "pk": 1,
+      "fields": {"name": "Resistance Band Light", "price": "9.99", "category": 1, "image": "products/accessory_1.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 2,
+      "fields": {"name": "Resistance Band Medium", "price": "11.99", "category": 1, "image": "products/accessory_2.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 3,
+      "fields": {"name": "Resistance Band Heavy", "price": "13.99", "category": 1, "image": "products/accessory_3.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 4,
+      "fields": {"name": "Loop Resistance Band", "price": "8.99", "category": 1, "image": "products/accessory_4.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 5,
+      "fields": {"name": "Fabric Resistance Band", "price": "14.99", "category": 1, "image": "products/accessory_5.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 6,
+      "fields": {"name": "Full Set Resistance Bands", "price": "24.99", "category": 1, "image": "products/accessory_6.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 7,
+      "fields": {"name": "Men's Training T-Shirt Black", "price": "19.99", "category": 2, "image": "products/tshirt_1.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 8,
+      "fields": {"name": "Men's Training T-Shirt White", "price": "19.99", "category": 2, "image": "products/tshirt_2.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 9,
+      "fields": {"name": "Women's Crop Gym T-Shirt", "price": "17.99", "category": 2, "image": "products/tshirt_3.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 10,
+      "fields": {"name": "Oversized Gym T-Shirt", "price": "21.99", "category": 2, "image": "products/tshirt_4.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 11,
+      "fields": {"name": "Breathable Running Tee", "price": "18.99", "category": 2, "image": "products/tshirt_5.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 12,
+      "fields": {"name": "Performance Gym T-Shirt", "price": "22.99", "category": 2, "image": "products/tshirt_6.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 13,
+      "fields": {"name": "Slim Fit Gym Tee", "price": "20.99", "category": 2, "image": "products/tshirt_7.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 14,
+      "fields": {"name": "Pullover Gym Hoodie Black", "price": "39.99", "category": 3, "image": "products/hoodie_1.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 15,
+      "fields": {"name": "Zip Up Training Hoodie", "price": "44.99", "category": 3, "image": "products/hoodie_2.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 16,
+      "fields": {"name": "Lightweight Fitness Hoodie", "price": "34.99", "category": 3, "image": "products/hoodie_3.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 17,
+      "fields": {"name": "Oversized Gym Hoodie", "price": "42.99", "category": 3, "image": "products/hoodie_4.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 18,
+      "fields": {"name": "Women's Cropped Hoodie", "price": "36.99", "category": 3, "image": "products/hoodie_5.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 19,
+      "fields": {"name": "Thermal Training Hoodie", "price": "47.99", "category": 3, "image": "products/hoodie_6.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 20,
+      "fields": {"name": "Athletic Performance Hoodie", "price": "49.99", "category": 3, "image": "products/hoodie_7.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 21,
+      "fields": {"name": "Minimalist Gym Hoodie", "price": "38.99", "category": 3, "image": "products/hoodie_8.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 22,
+      "fields": {"name": "Classic Fit Hoodie", "price": "35.99", "category": 3, "image": "products/hoodie_9.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 23,
+      "fields": {"name": "Compact Gym Bag", "price": "29.99", "category": 4, "image": "products/bag_1.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 24,
+      "fields": {"name": "Large Duffle Gym Bag", "price": "39.99", "category": 4, "image": "products/bag_2.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 25,
+      "fields": {"name": "Waterproof Gym Bag", "price": "34.99", "category": 4, "image": "products/bag_3.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 26,
+      "fields": {"name": "Multi Compartment Gym Bag", "price": "44.99", "category": 4, "image": "products/bag_4.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 27,
+      "fields": {"name": "Lightweight Sports Bag", "price": "27.99", "category": 4, "image": "products/bag_5.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 28,
+      "fields": {"name": "High Waisted Leggings Black", "price": "29.99", "category": 5, "image": "products/leggings_1.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 29,
+      "fields": {"name": "Seamless Gym Leggings", "price": "32.99", "category": 5, "image": "products/leggings_2.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 30,
+      "fields": {"name": "Scrunch Bum Leggings", "price": "34.99", "category": 5, "image": "products/leggings_3.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 31,
+      "fields": {"name": "Compression Training Leggings", "price": "36.99", "category": 5, "image": "products/leggings_4.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 32,
+      "fields": {"name": "Yoga Flex Leggings", "price": "28.99", "category": 5, "image": "products/leggings_5.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 33,
+      "fields": {"name": "Contour Fit Leggings", "price": "31.99", "category": 5, "image": "products/leggings_6.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 34,
+      "fields": {"name": "Pocket Gym Leggings", "price": "33.99", "category": 5, "image": "products/leggings_7.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 35,
+      "fields": {"name": "Performance Running Leggings", "price": "35.99", "category": 5, "image": "products/leggings_8.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 36,
+      "fields": {"name": "Soft Stretch Leggings", "price": "27.99", "category": 5, "image": "products/leggings_9.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 37,
+      "fields": {"name": "Ribbed Seamless Leggings", "price": "30.99", "category": 5, "image": "products/leggings_10.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 38,
+      "fields": {"name": "High Impact Training Leggings", "price": "37.99", "category": 5, "image": "products/leggings_11.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 39,
+      "fields": {"name": "Everyday Active Leggings", "price": "26.99", "category": 5, "image": "products/leggings_12.jpg"}
+    },
+    {
+      "model": "products.Product",
+      "pk": 40,
+      "fields": {"name": "Ultra Fit Gym Leggings", "price": "38.99", "category": 5, "image": "products/leggings_13.jpg"}
+    }
+  ]

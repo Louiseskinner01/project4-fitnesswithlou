@@ -11,6 +11,11 @@ class Category(models.Model):
          return self.name
 
 class Product(models.Model):
+
+    class Meta:
+        verbose_name = "Category"
+        verbose_name_plural = "Categories"  # correct plural
+
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=6, decimal_places=2)

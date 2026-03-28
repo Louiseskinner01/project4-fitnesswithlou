@@ -9,6 +9,9 @@
         {% for product in products %}
             <li>
                 <strong>{{ product.name }}</strong> - £{{ product.price }}
+                <strong>{{ product.category }}</strong> <br>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" width="200">
+
             </li>
         {% endfor %}
     </ul>

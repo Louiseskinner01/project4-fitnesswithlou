@@ -18,3 +18,8 @@ body {
 footer {
     margin-top: auto;
 }
+
+.bg-yellow{
+    background-color: yellow;
+    color: black;
+}

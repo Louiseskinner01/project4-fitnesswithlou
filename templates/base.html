@@ -85,8 +85,8 @@
               {% endif %}
               
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <form class="d-flex" role="search" method="GET" action="{% url 'products:products' %}">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q"/>
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul>
@@ -108,6 +108,17 @@
       </nav>
 </header>
 
+{% if messages %}
+  <div class="container mt-3">
+    {% for message in messages %}
+      {% if message.message %}
+        <div class="alert alert-{{ message.tags }} bg-yellow">
+          {{ message }}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
 
 
 

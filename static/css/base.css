@@ -6,12 +6,12 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
-
-    background: url('/media/home-template.jpg') no-repeat center center;
+    background-color: rgb(221, 220, 255);
+   /* background: url('/media/home-template.jpg') no-repeat center center; */
     background-size: cover;
     min-height: 100dvh;
 
-    color: whitesmoke;
+    color: rgb(25, 2, 2);
     font-family: 'Lato';
 }
 

@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'cart.contexts.cart_contents',
             ],
         },
     },
@@ -164,3 +165,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'   # where to go after login
 LOGOUT_REDIRECT_URL = '/'               # where to go after logout
+
+FREE_DELIVERY_ABOVE = 35
+DELIVERY_PERCENTAGE = 10

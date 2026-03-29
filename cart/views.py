@@ -26,6 +26,7 @@ def view_cart(request):
 # This is a sample code from chatGPT to enable the use to add and remove items from their cart
 @login_required
 def add_to_cart(request, product_id):
+    """ Add a product and increase the quantity which will be reflected in the shopping bag """
 
     # Get object (product) from database, if object doesn't exist then display 404 error page
     product = get_object_or_404(Product, id=product_id)
@@ -44,12 +45,15 @@ def add_to_cart(request, product_id):
         # If the item already exists in the cart then increase the quantity
         cart_item.quantity += 1
         cart_item.save()
+       
 
     # Confirmation that item has been added to the cart
     messages.success(request, f"{product.name} has been added to your cart!")
 
     # Redirect the user to the cart page
     return redirect('cart:view_cart') 
+
+
 
 @login_required
 def remove_from_cart(request, item_id):

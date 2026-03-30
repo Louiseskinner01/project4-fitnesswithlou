@@ -23,3 +23,9 @@ footer {
     background-color: yellow;
     color: black;
 }
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}

@@ -31,19 +31,23 @@ def add_to_cart(request, product_id):
     # Get object (product) from database, if object doesn't exist then display 404 error page
     product = get_object_or_404(Product, id=product_id)
 
+    quantity = int(request.POST.get('quantity', 1))
+    size = request.POST.get('product_size')  # Gets size if exists
+    
     # Get cart, or create a cart if it doesn't exist
     cart, created = Cart.objects.get_or_create(user=request.user)
-
+ 
     cart_item, created = CartItem.objects.get_or_create(
         cart=cart,
         product=product,
+        size=size,
         # Ensures the price is only set once the time is add
-        defaults={'price': product.price}
+        defaults={'price': product.price, 'quantity': quantity}
     )
 
     if not created:
-        # If the item already exists in the cart then increase the quantity
-        cart_item.quantity += 1
+        # If the item already exists in the cart then increase the quantity to what the user has specified
+        cart_item.quantity += quantity
         cart_item.save()
        
 

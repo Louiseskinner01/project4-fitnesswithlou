@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404 
+from django.http import HttpResponse
 from .models import Cart, CartItem
 from django.contrib.auth.decorators import login_required
 from products.models import Product
@@ -58,15 +59,45 @@ def add_to_cart(request, product_id):
     return redirect('cart:view_cart') 
 
 
+# Sample code from Code Institute MS4: Boutique Ado
+from django.shortcuts import get_object_or_404
+
+@login_required
+def adjust_cart(request, item_id):
+    """ Adjust the quantity of a cart item (database-based, replaces session code) """
+
+    # Get the cart item from the database
+    cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user)
+
+    # Get the new quantity from the POST request
+    quantity = int(request.POST.get('quantity', 0))
+
+    if quantity > 0:
+        # Update the quantity
+        cart_item.quantity = quantity
+        cart_item.save()
+    else:
+        # Delete the cart item if quantity is 0
+        cart_item.delete()
+
+    return redirect('cart:view_cart')
+
+
+
 
 @login_required
 def remove_from_cart(request, item_id):
+    """
+    Remove a cart item completely, regardless of quantity or size.
+    """
+    # Find the item in the current user's cart
+    cart_item = get_object_or_404(CartItem, id=item_id, cart__user=request.user)
 
-    item = get_object_or_404(CartItem, id=item_id)
-    item.delete()
+    # Delete it
+    cart_item.delete()
 
-    # Confirmation that item has been removed from the cart
-    messages.warning(request, "Item removed from your cart!")
+    # Optional: give user feedback
+    messages.success(request, "Item removed from your cart!")
 
-    # Redirect the user to the cart page
-    return redirect('cart:view_cart')   
+    # Redirect back to the cart page
+    return redirect('cart:view_cart')

@@ -3,142 +3,174 @@
 {% block content %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
-
-    <div class="overlay"></div>
-    <div class="container mb-2">
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">Shopping Bag</h2>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col">
-                {% if cart_items %}
-                    <div class="table-responsive rounded"></div>
-              
-                    <table class="table table-sm table-borderless">
-                        <thead class="text-black">
-                            <tr>
-                                <th scope="col">Product Info</th>
-                                <th scope="col"></th>
-                                <th scope="col">Price</th>
-                                <th scope="col">Qty</th>
-                                <th scope="col">Size</th>
-                            </tr>
-                        </thead>
-                        {% for item in cart_items %}
-                            <tr>
-                                <td class="p-3 w-25">
-                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-                                    <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0">£{{ item.product.price }}</p>
-                                </td>
-                                <td class="py-3 w-25">
-                                    <form class="form update-form" method="POST" action="">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-sm btn-primary rounded-0" 
-                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                        <span>
-                                                            <i class="fas fa-minus fa-sm"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
-                                                <input class="form-control form-control-sm qty_input" type="number"
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                    data-item_id="{{ item.item_id }}"
-                                                    id="id_qty_{{ item.item_id }}">
-                                                <div class="input-group-append">
-                                                    <button class="increment-qty btn btn-sm btn-primary rounded-0"
-                                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                        <span>
-                                                            <i class="fas fa-plus fa-sm"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
-                                                {% if item.product.has_sizes %}
-                                                    <input type="hidden" name="product_size" value="{{ item.size }}">
-                                                {% endif %}
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <a class="update-link text-info"><small>Update</small></a>
-                                    <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>
-
-
-
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0">{% if item.product.has_sizes %}{{ item.size }}{% endif %}</p>
-                                </td>
-                            </tr>
-                        {% endfor %}
-                        <tr>
-                            <td colspan="5" class="pt-5 text-right">
-                                <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                                <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                                <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                                {% if free_delivery_delta > 0 %}
-                                    <p class="mb-1 text-danger">
-                                        You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
-                                    </p>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" class="text-right">
-                                <a href="{% url 'products:products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
-                                </a>
-                                <a href="" class="btn btn-black rounded-0 btn-lg">
-                                    <span class="text-uppercase">Secure Checkout</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
-                                </a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>            
-                    {% else %}
-                    <p class="lead mb-5">Your bag is empty.</p>
-                    <a href="{% url 'products:products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase btn btn-primary">Keep Shopping</span>
-                    </a>
-                {% endif %}
-            </div>
+<div class="overlay"></div>
+<div class="container mb-2">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">Shopping Bag</h2>
+            <hr>
         </div>
     </div>
-{% endblock %}
 
+    <div class="row">
+        <div class="col">
+            {% if cart_items %}
+            <div class="table-responsive rounded"></div>
+          
+            <table class="table table-sm table-borderless">
+                <thead class="text-black">
+                    <tr>
+                        <th scope="col">Product Info</th>
+                        <th scope="col"></th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Size</th>
+                    </tr>
+                </thead>
+
+                {% for item in cart_items %}
+                <tr>
+                    <td class="p-3 w-25">
+                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+                        <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                    </td>
+                    <td class="py-3">
+                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
+                    </td>
+                    <td class="py-3">
+                        <p class="my-0">£{{ item.product.price }}</p>
+                    </td>
+                    <td class="py-3 w-25">
+                        <form class="form update-form" method="POST" action="{% url 'cart:adjust_cart' item.id %}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <button type="button"  class="decrement-qty btn btn-sm btn-primary rounded-0" 
+                                            data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
+                                            <span><i class="fas fa-minus fa-sm"></i></span>
+                                        </button>
+                                    </div>
+
+                                    <input class="form-control form-control-sm qty_input" type="number"
+                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                        data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+
+                                    <div class="input-group-append">
+                                        <button type="button" class="increment-qty btn btn-sm btn-primary rounded-0"
+                                            data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
+                                            <span><i class="fas fa-plus fa-sm"></i></span>
+                                        </button>
+                                    </div>
+
+                                    {% if item.product.has_sizes %}
+                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </form>
+
+                        <a class="update-link text-info"><small>Update</small></a>
+                        <a class="remove-item text-danger float-right" id="remove_{{ item.id }}" data-size="{{ item.size }}"><small>Remove</small></a>
+                    </td>
+
+                    <td class="py-3">
+                        <p class="my-0">{% if item.product.has_sizes %}{{ item.size }}{% endif %}</p>
+                    </td>
+                </tr>
+                {% endfor %}
+
+                <tr>
+                    <td colspan="5" class="pt-5 text-right">
+                        <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                        <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                        <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
+                        {% if free_delivery_delta > 0 %}
+                        <p class="mb-1 text-danger">
+                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
+                        </p>
+                        {% endif %}
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="5" class="text-right">
+                        <a href="{% url 'products:products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                            <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                            <span class="text-uppercase">Keep Shopping</span>
+                        </a>
+                        <a href="" class="btn btn-black rounded-0 btn-lg">
+                            <span class="text-uppercase">Secure Checkout</span>
+                            <span class="icon"><i class="fas fa-lock"></i></span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+            {% else %}
+            <p class="lead mb-5">Your bag is empty.</p>
+            <a href="{% url 'products:products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                <span class="icon"><i class="fas fa-chevron-left"></i></span>
+                <span class="text-uppercase btn btn-primary">Keep Shopping</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/quantity_input_script.html' %}
 <script type="text/javascript">
+    // Disable +/- buttons outside 1-99 range
+    function handleEnableDisable(itemId) {
+        const currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        const minusDisabled = currentValue < 2;
+        const plusDisabled = currentValue > 98;
+        $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+        $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+    }
+
+    // Ensure proper enabling/disabling of all inputs on page load
+    var allQtyInputs = $('.qty_input');
+    for(let i = 0; i < allQtyInputs.length; i++){
+        const itemId = $(allQtyInputs[i]).data('item_id');
+        handleEnableDisable(itemId);
+    }
+
+    // Check enable/disable every time the input is changed
+    $('.qty_input').change(function() {
+        const itemId = $(this).data('item_id');
+        handleEnableDisable(itemId);
+    });
+
+    // Increment quantity
+    $('.increment-qty').click(function(e) {
+       e.preventDefault();
+       const closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       const currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue + 1);
+       const itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
     
+    // Decrement quantity
+    $('.decrement-qty').click(function(e) {
+       e.preventDefault();
+       const closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+       const currentValue = parseInt($(closestInput).val());
+       $(closestInput).val(currentValue - 1);
+       const itemId = $(this).data('item_id');
+       handleEnableDisable(itemId);
+    });
+
     // Update quantity on click
     $('.update-link').click(function(e) {
         const form = $(this).prev('.update-form');
@@ -146,16 +178,27 @@
     })
 
     // Remove item and reload on click
-    $('.remove-item').click(function(e) {
-        const csrfToken = "{{ csrf_token }}";
-        const itemId = $(this).attr('id').split('remove_')[1];
-        const size = $(this).data('size');
-        const url = `/bag/remove/${itemId}`;
-        const data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
-        $.post(url, data)
-         .done(function() {
-             location.reload();
-         });
-    })
-</script>
+    $(document).on('click', '.remove-item', function(e) {
+    e.preventDefault();
+
+    const csrfToken = "{{ csrf_token }}";   // must render in template
+    const itemId = $(this).attr('id').split('remove_')[1]; // get numeric id
+    const url = `/cart/remove/${itemId}/`;  // matches Django url pattern
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: { 'csrfmiddlewaretoken': csrfToken },
+        success: function() {
+            location.reload();  // or you can remove the row manually for smooth UX
+        },
+        error: function() {
+            alert('Could not remove item from cart.');
+        }
+    });
+});
+
+</script>  
+
+
 {% endblock %}

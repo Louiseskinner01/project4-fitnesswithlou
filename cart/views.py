@@ -76,10 +76,12 @@ def adjust_cart(request, item_id):
         # Update the quantity
         cart_item.quantity = quantity
         cart_item.save()
+        
     else:
         # Delete the cart item if quantity is 0
         cart_item.delete()
 
+    # FIX!!! messages.success(request, f" Updated {product.name} to your cart!")
     return redirect('cart:view_cart')
 
 

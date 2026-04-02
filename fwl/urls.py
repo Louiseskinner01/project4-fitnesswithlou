@@ -26,6 +26,7 @@ urlpatterns = [
     path('bookings/', include('bookings.urls')),
     path('users/', include('users.urls')),
     path('cart/', include('cart.urls')),
+    path('checkout/', include('checkout.urls')),   
     path('accounts/', include('accounts.urls')),
     path('accounts/', include('allauth.urls')),
     path('subscriptions/', include('subscriptions.urls')),   

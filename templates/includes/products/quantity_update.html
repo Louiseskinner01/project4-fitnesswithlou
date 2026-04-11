@@ -12,8 +12,8 @@
     }
 
     // Ensure proper enabling/disabling of all inputs on page load
-    const allQtyInputs = $('.qty_input');
-    for(const i = 0; i < allQtyInputs.length; i++){
+    var allQtyInputs = $('.qty_input');
+    for(let i = 0; i < allQtyInputs.length; i++){
         const itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }
@@ -43,4 +43,33 @@
        const itemId = $(this).data('item_id');
        handleEnableDisable(itemId);
     });
-</script>
+
+    // Update quantity on click
+    $('.update-link').click(function(e) {
+        const form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // Remove item and reload on click
+    $(document).on('click', '.remove-item', function(e) {
+    e.preventDefault();
+
+    const csrfToken = "{{ csrf_token }}";   // must render in template
+    const itemId = $(this).attr('id').split('remove_')[1]; // get numeric id
+    const url = `/cart/remove/${itemId}/`;  // matches Django url pattern
+
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: { 'csrfmiddlewaretoken': csrfToken },
+        success: function() {
+            location.reload();  // or you can remove the row manually for smooth UX
+        },
+        error: function() {
+            alert('Could not remove item from cart.');
+        }
+    });
+});
+
+</script>  
+

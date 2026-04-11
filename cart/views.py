@@ -55,12 +55,10 @@ def add_to_cart(request, product_id):
     # Confirmation that item has been added to the cart
     messages.success(request, f"{product.name} has been added to your cart!")
 
-    # Redirect the user to the cart page
-    return redirect('cart:view_cart') 
+    redirect_url = request.POST.get('redirect_url')
 
+    return redirect(redirect_url or 'products:products')
 
-# Sample code from Code Institute MS4: Boutique Ado
-from django.shortcuts import get_object_or_404
 
 @login_required
 def adjust_cart(request, item_id):
@@ -81,10 +79,9 @@ def adjust_cart(request, item_id):
         # Delete the cart item if quantity is 0
         cart_item.delete()
 
-    # FIX!!! messages.success(request, f" Updated {product.name} to your cart!")
+    # messages.success(request, f" Updated {'product':product.name} to your cart!")
     return redirect('cart:view_cart')
-
-
+    
 
 
 @login_required

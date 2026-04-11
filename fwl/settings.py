@@ -1,5 +1,10 @@
 import os
 from pathlib import Path
+if os.path.isfile('env.py'):
+    import env
+    
+from dotenv import load_dotenv
+load_dotenv()
 
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
@@ -180,5 +185,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/'   # where to go after login
 LOGOUT_REDIRECT_URL = '/'               # where to go after logout
 
+# Stripe payment features
 FREE_DELIVERY_ABOVE = 35
 DELIVERY_PERCENTAGE = 10
+STRIPE_CURRENCY = 'gbp'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+
+"""
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+"""

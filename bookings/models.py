@@ -1,35 +1,34 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
+class ClassSession(models.Model):
+    class_type = models.CharField(max_length=100)
+    trainer = models.CharField(max_length=100)
+    class_date = models.DateField()
+    class_time = models.TimeField()
+    duration = models.PositiveIntegerField()
+    capacity = models.PositiveIntegerField(default=20)
+    booked_count = models.IntegerField(default=0)
 
-# Create your models here.
+    def __str__(self):
+        return f"{self.class_type} - {self.class_date} {self.class_time}"
+
+
 class Booking(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    session = models.ForeignKey(ClassSession, on_delete=models.CASCADE)
 
-    CLASS_CHOICES = [
-        ('yoga', 'Yoga'),
-        ('hiit', 'HIIT'),
-        ('strength', 'Strength Training'),
-        ('pilates', 'Mat Pilates'),
-        ('core', 'Core Blast'),
-        ('lbt', 'Legs Bums & Tums'),
-    ]
-
-    BOOKING_CHOICES = [
+    booking_status = models.CharField(
+        max_length=20,
+        choices=[
             ('booked', 'Booked'),
             ('cancelled', 'Cancelled'),
             ('attended', 'Attended')
-        ]
+        ],
+        default='booked'
+    )
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    class_type = models.CharField(max_length=50, choices=CLASS_CHOICES)
-    class_date = models.DateField()
-    class_time = models.TimeField()
-    duration = models.IntegerField(help_text="Class duration in minutes")
-    trainer_name = models.CharField(max_length=100)
-    max_capacity = models.IntegerField(default=15)
-    booking_status = models.CharField(max_length=20, choices=BOOKING_CHOICES, 
-        default='booked')
+    created_at = models.DateTimeField(auto_now_add=True)
 
-    Created_at = models.DateTimeField(auto_now_add=True)
-
-def __str__(self):
-    return f"{self.class_type} - {self.class_date}"
+    def __str__(self):
+        return f"{self.user} - {self.session}"

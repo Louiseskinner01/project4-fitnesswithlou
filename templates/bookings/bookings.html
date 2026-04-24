@@ -17,19 +17,19 @@
     {% for booking in bookings %}
         <li>
             <strong>{{ booking.user.username }}</strong> -
-            {{ booking.class_type }} |
-            {{ booking.class_date }} |
-            {{ booking.class_time }}
+            {{ booking.session.class_type }} |
+            {{ booking.session.class_date }} |
+            {{ booking.session.class_time }}
         </li>
     {% endfor %}
 </ul>
-<a href="{% url 'bookings:create_booking' %}" class="btn btn-styling" >
+<a href="{% url 'bookings:classes' %}" class="btn btn-styling" >
     Book Another Class
 </a>
 
 {% else %}
 <p>No bookings available yet.</p>
-<a href="{% url 'bookings:create_booking' %}" class="btn btn-styling" >
+<a href="{% url 'bookings:classes' %}" class="btn btn-styling" >
     Book Now
 </a>
 {% endif %}

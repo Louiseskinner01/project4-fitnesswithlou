@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0">
+        <div class="col-12 p-0 mx-0">
+
+            <section class="page-bg join-team-bg">
+                <div class="overlay-main"></div>
+                <div class="content-wrapper">
+
+                    <div class="row">
+
+                        {% for session in sessions %}
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+
+                            <div class="class-card h-100 border-0 bg-pop">
+                                <h3>{{ session.class_type }}</h3>
+                                <p>{{ session.trainer }}</p>
+                                <p>{{ session.class_date }} {{ session.class_time }}</p>
+
+                                <p>
+                                    {{ session.booked_count }} / {{ session.capacity }} booked
+                                </p>
+
+                                <a href="{% url 'bookings:book_session' session.id %}" class="btn btn-primary">
+                                    Book
+                                </a>
+                            </div>
+                            <hr>
+                        </div>
+
+                      
+
+                        {% endfor %}
+
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

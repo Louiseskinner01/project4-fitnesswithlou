@@ -1,15 +1,54 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0">
+        <div class="col-12 p-0 mx-0">
+            <section class="page-bg join-team-bg">
+                <div class="overlay-main"></div>        
+                <div class="content-wrapper">
+
 
 <h1>Book a Class</h1>
 
 <form method="POST">
     {% csrf_token %}
 
-    {{ form.as_p }}
+    <div class="mb-3">
+        {{ form.class_type.label_tag }}
+        {{ form.class_type }}
+    </div>
 
-    <button type="submit">Book Class</button>
+    <div class="row g-1">
+
+        <div class="col-12 col-md-6 mb-3 ">
+            {{ form.class_date.label_tag }}
+            {{ form.class_date }}
+        </div>
+
+        <div class="col-12 col-md-6 mb-3 ">
+            {{ form.class_time.label_tag }}
+            {{ form.class_time }}
+        </div>
+
+    </div>
+
+    <div class="mb-3">
+        {{ form.duration.label_tag }}
+        {{ form.duration }}
+    </div>
+
+    <div class="mb-3">
+        {{ form.trainer_name.label_tag }}
+        {{ form.trainer_name }}
+    </div>
+
+    <a href="" class="btn btn-styling" >
+        Book Now
+    </a>
 </form>
 
+</div>
+</section>
 {% endblock %}

@@ -1,3 +1,4 @@
+/* -------------------------------- Base */
 html, body {
     margin: 0;
     padding: 0;
@@ -5,24 +6,117 @@ html, body {
 
 body {
     display: flex;
-    flex-direction: column;
-    background-color: rgb(221, 220, 255);
-   /* background: url('/media/home-template.jpg') no-repeat center center; */
-    background-size: cover;
-    min-height: 100dvh;
-
-    color: rgb(25, 2, 2);
+    flex-direction: column;  
+    min-height: 100vh;
+    min-height: 100dvh; /* Will overide the 100vh on modern browsers */
+    color: black;
     font-family: 'Lato';
+    padding: 0;
+    margin: 0;
 }
 
+
+
+
+
+
+
+
+/* ----------------------------------------------Navbar */
+.navbar-brand img{
+    height: 120px;
+    margin: 0 10px 0 10px;
+}
+
+.navbar{
+    background-color: white;
+    height: 90px;
+    margin-bottom: 5px;
+}
+
+.nav-item{
+    background-color: white;
+    border-radius: 12px;
+    margin-left: 10px;
+    padding: 0 10px 0 10px;
+    
+}
+
+.nav-link:hover{
+    color: var(--feature-color);
+}
+
+.nav-link{
+    color: var(--primary-color);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+.dropdown-menu[data-bs-popper]{
+    left: auto;
+   
+}
+
+.dropdown-menu{
+    border: none;
+    text-align: center;
+    background-color: rgba(200, 161, 161, 0.957);
+    
+}
+
+
+
+
+
+/* -------------------------------------------------Footer */
 footer {
     margin-top: auto;
+    position: relative;
+    color: black;
+    background-color: var(secondary-color);
+    padding-top: 20px;
+    
 }
 
-.bg-yellow{
-    background-color: yellow;
-    color: black;
+.footer-social-col{
+    display: flex;
+    flex-direction: column;
 }
+
+.footer-svg-styling{
+    height: 28px;
+    fill: var(--primary-color) !important;
+}
+
+svg#svg-x.footer-svg-styling.pb-3{
+    height: 38px;
+   
+}
+
+.footer-contact-col {
+    color: var(--primary-color);
+}
+
+#footer-contact-text{
+    font-size: 34px;
+    color: var(--primary-color);
+    padding-bottom: 20px;
+    
+    position: absolute;
+    bottom: 0;
+    left: 10%; 
+}
+
+#footer-contact-text a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a.footer-about-a{
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
 
 .btt-link,
 .update-link,
@@ -31,45 +125,27 @@ footer {
 }
 
 
+.btn-styling:hover, .search-btn-styling:hover{
+   background-color: white;
+   color: black;
+   border: solid 1px var(--primary-color);
+}
 
-.btn-black {
-    background: black;
+.btn-styling{
+    background-color: var(--primary-color);
     color: white;
+    border-radius: 5px;
 }
 
-.btn-outline-black {
-    background: white;
-    color: black !important; /* use important to override link colors for <a> elements */
-    border: 1px solid black;
-}
-.btn-outline-black:hover,
-.btn-outline-black:active,
-.btn-outline-black:focus {
-    background: black;
-    color: white !important;
+
+a{
+    text-decoration: none;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: #222;
-    color: white;
+li {
+    list-style: none;
 }
 
-.text-black {
-    color: #000 !important;
-}
-
-.border-black {
-    border: 1px solid black !important;
-}
-
-.bg-black {
-    background: #000 !important;
-}
 
 .overlay {
 	height: 100%;
@@ -81,24 +157,61 @@ footer {
 	z-index: -1;
 }
 
+.row{
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+}
+
+.search-form{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: white;
+    width: 200px;
+    height: 25px;
+    
+    
+}
+.search-form input {
+    background: white;
+    color: black;
+    padding: 0.75rem;
+    width: 600px;
+}
+
+.search-btn-styling{
+    border: solid 1px var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
+    margin-left: auto;
+    font-size: 12px;
+    padding-bottom: 10px ;
+    display: flex;
+    align-items: center;      /* vertical centering */
+    justify-content: center;
+    padding-bottom: 4px;
+}
+
+
+
+
+
+
+
+
+/* -- not sure if i need this
 a.category-badge > span.badge:hover {
     background: #212529 !important;
     color: #fff !important;
 }
+*/
 
-.btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-}
 
-.btt-link,
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
+
+
+
 
 
 /* -------------------------------- Media Queries */
@@ -135,3 +248,14 @@ a.category-badge > span.badge:hover {
         height: calc(100vh - 116px);
     }
 }
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        position: relative;
+        z-index: 9999;
+        background: white;
+        padding: 1rem;
+    }
+
+}
+

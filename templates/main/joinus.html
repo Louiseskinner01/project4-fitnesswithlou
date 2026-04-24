@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid p-0">
+  <div class="row p-0 mx-0">
+      <div class="col-12 p-0 mx-0">
+          <section class="page-bg join-team-bg">
+              <div class="overlay-main"></div>        
+              <div class="content-wrapper">
+                {% include 'includes/contact_form.html' %}  
+   
+     
+<div class="row mt-5">
+    <div class="col-6">     
+      <div class="form-group">
+      <label for="exampleFormControlSelect1">Position of interest</label>
+      <select class="form-control px-0" id="exampleFormControlSelect1">
+        <option>Marketing</option>
+        <option>Fitness Coach</option>
+        <option>Sales</option>
+      </select>
+    </div>
+</div>
+
+<div class="col-6">
+        <label for="formFile" class="form-label m-0">Upload your CV</label>
+        <input class="form-control" type="file" id="formFile">
+      </div>
+</div>
+</div>
+
+  </form>
+
+  </div>
+  </section>
+
+{% endblock %}

@@ -1,15 +1,41 @@
-from django.shortcuts import render, redirect, reverse
+from django.http import HttpResponse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
-from .forms import OrderForm
-import stripe
-from django.conf import settings
 from cart.contexts import cart_contents
-from .models import Order
-from django.shortcuts import get_object_or_404
+from .forms import OrderForm
+from .models import Order, OrderLineItem
+import stripe
 
 
+
+
+@csrf_exempt
+def stripe_webhook(request):
+    payload = request.body
+    sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
+    event = None
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload,
+            sig_header,
+            settings.STRIPE_WH_SECRET
+        )
+    except ValueError:
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError:
+        return HttpResponse(status=400)
+
+    # Handle successful payment
+    if event['type'] == 'payment_intent.succeeded':
+        intent = event['data']['object']
+        print("Webhook received payment success:", intent.id)
+
+    return HttpResponse(status=200)
 
 @login_required
 def checkout(request):
@@ -33,6 +59,13 @@ def checkout(request):
 
         if order_form.is_valid():
             order = order_form.save()
+
+            for item in cart_items:
+                OrderLineItem.objects.create(
+                    order=order,
+                    product=item.product,
+                    quantity=item.quantity
+        )
 
             return redirect('checkout:checkout_success', order.order_number)
 
@@ -71,6 +104,7 @@ def checkout_success(request, order_number):
 
     context = {
         'order': order,
+        
     }
 
     return render(request, 'checkout/success.html', context)

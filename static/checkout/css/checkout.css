@@ -63,3 +63,21 @@
   z-index: 1;
   margin-top: 1.5rem;
 }
+
+#cart-icon{
+ width: 50px;
+ height: 40px;
+ margin-left: 20px;
+ margin-right: 5px;
+ border-radius: 10px;
+ list-style: none;
+ fill: var(--feature-color);
+
+}
+
+.cart-icon-total{
+  font-size: 16px;
+  color: var(--primary-color);
+}
+
+

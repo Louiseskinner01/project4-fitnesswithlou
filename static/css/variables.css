@@ -1,0 +1,11 @@
+/* 
+/* Global scope variables  
+/* --primary-color: rgb(3, 3, 105), rgb(18, 22, 232))  rgb(224, 239, 240); 
+
+*/
+:root{
+    --primary-color: rgb(168, 81, 107); 
+    --secondary-color: rgb(234, 231, 233);
+    --feature-color: rgb(184, 189, 189);
+      
+}

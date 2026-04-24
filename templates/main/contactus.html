@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="container-fluid p-0">
+  <div class="row p-0 mx-0">
+      <div class="col-12 p-0 mx-0">
+          <section class="page-bg join-team-bg">
+              <div class="overlay-main"></div>        
+              <div class="content-wrapper">
+                {% include 'includes/contact_form.html' %}
+                
+                <div>
+                  <div class="row">
+                    <div class="col-12">
+
+                      <div class="form-group">
+                        <label for="exampleFormControlSelect1">Reason for contact</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                          <option>General enquiry</option>
+                          <option>Return an item</option>
+                          <option>Make a complaint</option>
+                          <option>Join our team</option>
+                         
+                        </select>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+               
+</div>
+</section>
+  {% endblock %}

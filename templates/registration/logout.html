@@ -1,9 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0">
+        <div class="col-12 p-0 mx-0">
+            <section class="page-bg join-team-bg">
+                <div class="overlay-main"></div>        
+                <div class="content-wrapper">
 
 <h2>You have successfully logged out!</h2>
 
 <a href="{% url 'login' %}">Login again?</a>
 
+</div>
+</section>
 {% endblock %}

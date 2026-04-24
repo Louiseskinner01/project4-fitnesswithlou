@@ -3,15 +3,29 @@
 
 
 {% block page_header %}
-<div class="container header-container">
+<div class="container header-container p-0">
     <div class="row">
         <div class="col"></div>
     </div>
 </div>
 {% endblock %}
 
+
+
+{% block hero %}
+<div class="hero m-0">
+    <img src="{% static 'images/bg1.jpg' %}">
+    <div class="hero-content">
+        <h1>Train With Lou</h1>
+        <p>Discover The New You</p>
+        <a href="{% url 'bookings:bookings' %}" class="btn btn-styling" >
+            Book Now
+        </a>
+    </div>
+</div>
+{% endblock %}
+
 {% block content %}
-    <h1>Fitness With Lou</h1>
-    <h2>An experience, tailored personally to you!</h2>
+    
 {% endblock %}
 

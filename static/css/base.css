@@ -18,7 +18,10 @@ body {
 
 .bg-pop{
     
-    background-color: rgba(200, 161, 161, 0.957);
+    background-color: var(--feature-color);
+    border: solid 1px white;
+    border-radius: 10px;
+    color: black;
 }
 
 

@@ -41,6 +41,31 @@ def timetable(request):
 
 
 @login_required
+def cancel_booking(request, booking_id):
+    booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+
+    session = booking.session
+
+    # reduce booked count safely
+    if session.booked_count > 0:
+        session.booked_count -= 1
+        session.save()
+
+    booking.delete()
+
+    messages.success(request, "Booking cancelled successfully.")
+    return redirect("bookings:bookings")
+
+
+
+
+
+
+
+
+
+
+@login_required
 def book_session(request, session_id):
     session = get_object_or_404(ClassSession, id=session_id)
 

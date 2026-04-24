@@ -15,11 +15,14 @@
 {% if bookings %}
 <ul>
     {% for booking in bookings %}
-        <li>
+        <li class="mb-3 bg-pop py-3">
             <strong>{{ booking.user.username }}</strong> -
             {{ booking.session.class_type }} |
             {{ booking.session.class_date }} |
-            {{ booking.session.class_time }}
+            {{ booking.session.class_time }} |
+            <a href="{% url 'bookings:cancel_booking' booking.id %}" class="btn btn-styling btn-sm mx-2">
+                Cancel
+            </a>
         </li>
     {% endfor %}
 </ul>

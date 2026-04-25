@@ -16,18 +16,6 @@ body {
 }
 
 
-.bg-pop{
-    
-    background-color: var(--feature-color);
-    border: solid 1px white;
-    border-radius: 10px;
-    color: black;
-}
-
-
-
-
-
 /* ----------------------------------------------Navbar */
 .navbar-brand img{
     height: 120px;
@@ -66,11 +54,19 @@ body {
 .dropdown-menu{
     border: none;
     text-align: center;
-    background-color: rgba(200, 161, 161, 0.957);
+    background-color: var(--primary-color);
+    
     
 }
 
 
+.dropdown-item{
+    color: white !important;
+}
+
+.dropdown-item:hover{
+    color: rgb(0, 0, 0) !important;
+}
 
 
 
@@ -124,34 +120,80 @@ a.footer-about-a{
 }
 
 
+
+
+
+/* -------------------------------------------------Variable/Classes */
+.bg1-color{
+    background-color: var(--bg1-color);
+    border: solid 1px white;
+    border-radius: 10px;
+    color: black;
+}
+
+.bg2-color{
+    background-color: var(--bg2-color);
+    border-radius: 10px;
+    color: black;
+    border: solid 1px var(--primary-color)
+}
+
+.feature-color{
+    background-color: var(--feature-color);
+}
+
+.secondary-color{
+    background-color: var(--secondary-color);
+
+}
+
+.card-img-top {
+    height: 260px;        /* choose your preferred height */
+    width: 100%;
+    object-fit: cover; 
+    
+}
+
+
+/* -------------------------------------------------Other */
 .btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
 }
 
-
-.btn-styling:hover, .search-btn-styling:hover{
-   background-color: white;
-   color: black;
-   border: solid 1px var(--primary-color);
+.font-1{
+    color: var(--primary-color);
 }
 
-.btn-styling{
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 5px;
+.font-2{
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: bold;
 }
 
+h1{
+    text-transform: capitalize;
+}
+
+img.h-100.img-fluid{
+    border-radius: 12px;
+    border: soliday 1px var(--primary-color);
+}
 
 a{
     text-decoration: none;
 }
 
+div.content-wrapper{
+    max-width: none !important;
+    width: 100% !important;
+    ;
+}
+
 li {
     list-style: none;
 }
-
 
 .overlay {
 	height: 100%;
@@ -167,6 +209,61 @@ li {
     margin-left: 0% !important;
     margin-right: 0% !important;
 }
+
+
+
+
+/* -------------------------------------------------Button styling */
+
+.btn-styling:hover, .search-btn-styling:hover{
+   background-color: var(--secondary-color);
+   color: var(--primary-color);
+   border: solid 1px var(--feature-color);
+}
+
+.btn-styling{
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 5px;
+}
+
+.btn-styling2{
+    background-color: var(--secondary-color) !important;
+    color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.btn-styling2:hover{
+    border: solid 1px var(--feature-color);
+    
+}
+
+.btn-inc{
+    background-color: var(--primary-color);
+    border-radius: 5px !important;
+    border: 1px solid var(--primary-color);
+    color: white;
+}
+
+.btn-inc:hover{
+    background-color: var(--secondary-color);
+}
+
+.btn-dec{
+    background-color: white;
+    border-radius: 5px!important;
+    border: 1px solid var(--primary-color);
+}
+.btn-dec:hover{
+    background-color: var(--bg1-color);
+    border: solid 1px var(--feature-color);
+}
+
+
+
+
+
+
 
 .search-form{
     position: absolute;

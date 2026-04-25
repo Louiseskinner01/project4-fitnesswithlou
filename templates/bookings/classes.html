@@ -9,26 +9,27 @@
             <section class="page-bg join-team-bg">
                 <div class="overlay-main"></div>
                 <div class="content-wrapper">
-
+                    <h1 class="mb-3">Class Timetable</h1>
                     <div class="row">
 
                         {% for session in sessions %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 mb-3 ">
 
-                            <div class="class-card h-100 border-0 bg-pop pt-3 px-3">
+                            <div class="class-card h-100 border-0 bg2-color p-3 font-1">
                                 <h3>{{ session.class_type }}</h3>
-                                <p>{{ session.trainer }}</p>
+                                <p class="text-black"><strong>{{ session.trainer }}</strong></p>
                                 <p>{{ session.class_date }} {{ session.class_time }}</p>
 
                                 <p>
+                            
                                     {{ session.booked_count }} / {{ session.capacity }} booked
                                 </p>
-
+<hr>
                                 <a href="{% url 'bookings:book_session' session.id %}" class="btn btn-styling">
                                     Book
                                 </a>
                             </div>
-                            <hr>
+                       
                         </div>
 
                       

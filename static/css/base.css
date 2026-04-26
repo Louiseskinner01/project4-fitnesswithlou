@@ -147,12 +147,7 @@ a.footer-about-a{
 
 }
 
-.card-img-top {
-    height: 260px;        /* choose your preferred height */
-    width: 100%;
-    object-fit: cover; 
-    
-}
+
 
 
 /* -------------------------------------------------Other */
@@ -163,7 +158,7 @@ a.footer-about-a{
 }
 
 .font-1{
-    color: var(--primary-color);
+    color: var(--feature-color);
 }
 
 .font-2{
@@ -210,6 +205,12 @@ li {
     margin-right: 0% !important;
 }
 
+.card-img-top {
+    height: 260px;        /* choose your preferred height */
+    width: 100%;
+    object-fit: cover; 
+    
+}
 
 
 

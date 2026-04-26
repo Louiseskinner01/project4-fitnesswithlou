@@ -42,8 +42,8 @@ body {
 
 .nav-link{
     color: var(--primary-color);
-    font-size: 16px;
-    letter-spacing: 2px;
+    font-size: 14px;
+    
 }
 
 .dropdown-menu[data-bs-popper]{
@@ -163,12 +163,22 @@ a.footer-about-a{
 
 .font-2{
     color: var(--primary-color);
-    font-size: 18px;
+   
+}
+
+.font-numbers{
+    color: black;
+    font-size: 16px;
     font-weight: bold;
 }
 
+
 h1{
     text-transform: capitalize;
+}
+
+hr#hr-order-summary{
+    color: black;
 }
 
 img.h-100.img-fluid{
@@ -188,7 +198,40 @@ div.content-wrapper{
 
 li {
     list-style: none;
+    padding: 0%;
+    margin: 0%;
 }
+
+.form-check-input:checked {
+    background-color: rgb(197, 82, 82);
+    border-color: #000;
+}
+
+.form-check-input {
+    width: 1.1em;
+    height: 1.1em;
+    border: 2px solid #000;
+    accent-color: #000;
+}
+
+.form-check-input {
+    accent-color: black;
+}
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .overlay {
 	height: 100%;
@@ -263,54 +306,25 @@ li {
 
 
 
-
-
-
-.search-form{
-    position: absolute;
-    top: 50%;
-    left: 80%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    color: white;
-    width: 200px;
-    height: 25px;
-    
-    
-}
-.search-form input {
-    background: white;
-    color: black;
-    padding: 0.75rem;
-    width: 600px;
-}
-
 .search-btn-styling{
     border: solid 1px var(--primary-color);
     background-color: var(--primary-color);
     color: white;
-    margin-left: auto;
-    font-size: 12px;
-    padding-bottom: 10px ;
-    display: flex;
-    align-items: center;      /* vertical centering */
-    justify-content: center;
-    padding-bottom: 4px;
+    
+}
+
+.search-form {
+    max-width: 200px;
+    width: 100%;
+}
+
+.search-input {
+    min-width: 100px;
 }
 
 
 
 
-
-
-
-
-/* -- not sure if i need this
-a.category-badge > span.badge:hover {
-    background: #212529 !important;
-    color: #fff !important;
-}
-*/
 
 
 
@@ -336,9 +350,8 @@ a.category-badge > span.badge:hover {
         left: 0;
         z-index: 1030;
     }
-
-    .header-container {
-        padding-top: 164px;
+    .nav-link{
+        font-size: 14px;
     }
 }
 
@@ -359,6 +372,24 @@ a.category-badge > span.badge:hover {
         z-index: 9999;
         background: white;
         padding: 1rem;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 991px)  {
+    .nav-link{
+        font-size: 12px;
+        letter-spacing: normal;
+        margin: 0%;
+    }
+
+    .search-form {
+        max-width: 160px;
+        width: 100%;
+    }
+    
+    .search-input {
+        min-width: 80px;
     }
 
 }

@@ -37,21 +37,20 @@
 }
 
 #card-options-container {
-  background-color: pink;
+  background-color: var(bg1-pop);
   min-width: 300px;
   max-width: 100%;
   margin-bottom: 250px;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
 }
+
 .payment-window{
   margin-bottom: 250px;
   display: flex;
   flex-wrap: wrap;
 }
 
-.submit-button{
-  margin-top: 100px;
-  background-color: rgb(115, 81, 203);
-}
 
 .payment-wrapper {
   margin-bottom: 2rem;
@@ -59,11 +58,53 @@
 }
 
 .submit-button {
+  margin-top: 100px;
   position: relative;
   z-index: 1;
   margin-top: 1.5rem;
 }
 
+
+/* -------------------------------------------------Checkout Form-styling */
+.checkout-form-styling input,
+.checkout-form-styling select,
+.checkout-form-styling textarea {
+    border-radius: 10px;
+    min-height: 48px;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    background: #fff;
+    font-size: 1rem;
+}
+
+.checkout-form-styling input:focus,
+.checkout-form-styling select:focus,
+.checkout-form-styling textarea:focus {
+    border-color: #000;
+    box-shadow: none;
+}
+
+.checkout-form-styling .form-group {
+    margin-bottom: 1rem;
+}
+
+.checkout-form-styling label {
+    font-weight: 600;
+    margin-bottom: .4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------Shopping Cart */
 #cart-icon{
  width: 50px;
  height: 40px;
@@ -88,7 +129,15 @@
 
 }
 
+img.cart-img{
+ width: 150px;
+ height: 130px;
+}
+
 .cart-size-text{
   text-transform: capitalize;
 }
+
+
+
 

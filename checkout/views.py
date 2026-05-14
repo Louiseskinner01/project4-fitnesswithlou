@@ -58,6 +58,7 @@ def checkout(request):
         order_form = OrderForm(request.POST)
 
         if order_form.is_valid():
+
             order = order_form.save()
 
             for item in cart_items:
@@ -65,12 +66,13 @@ def checkout(request):
                     order=order,
                     product=item.product,
                     quantity=item.quantity
-        )
+             )
 
-            return redirect('checkout:checkout_success', order.order_number)
+        order.update_total()
 
-        else:
-            messages.error(request, "There was an issue with your order.")
+        return redirect('checkout:checkout_success', order.order_number)
+    else:
+        messages.error(request, "There was an issue with your order.")
 
     # ------------------------
     # GET = load checkout page
@@ -83,6 +85,7 @@ def checkout(request):
         automatic_payment_methods={
             'enabled': True,
         },
+        
     )
 
     order_form = OrderForm()
@@ -100,11 +103,17 @@ def checkout(request):
 
 @login_required
 def checkout_success(request, order_number):
+
     order = get_object_or_404(Order, order_number=order_number)
+
+    # Clear the user's cart
+    cart = Cart.objects.filter(user=request.user).first()
+
+    if cart:
+        cart.items.all().delete()
 
     context = {
         'order': order,
-        
     }
 
     return render(request, 'checkout/success.html', context)

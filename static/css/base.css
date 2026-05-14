@@ -107,10 +107,8 @@ svg#svg-x.footer-svg-styling.pb-3{
     font-size: 34px;
     color: var(--primary-color);
     padding-bottom: 20px;
+   
     
-    position: absolute;
-    bottom: 0;
-    left: 10%; 
 }
 
 #footer-contact-text a{
@@ -124,12 +122,29 @@ a.footer-about-a{
 }
 
 
+
+
+/* -------------------------------------------------Products template */
+.card-img-top {
+    height: 260px;        /* choose your preferred height */
+    width: 100%;
+    object-fit: cover; 
+}
+
+
+
+
+
+/* -------------------------------------------------Other */
 .btt-link,
 .update-link,
 .remove-item {
     cursor: pointer;
 }
 
+.font-2{
+    color: var(--primary-color);
+}
 
 .btn-styling:hover, .search-btn-styling:hover{
    background-color: white;
@@ -143,6 +158,16 @@ a.footer-about-a{
     border-radius: 5px;
 }
 
+div .toast-header{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.toast{
+    background-color: var(--primary-color) ;
+    color: white;
+    font-size: 18px;
+}
 
 a{
     text-decoration: none;
@@ -168,6 +193,7 @@ li {
     margin-right: 0% !important;
 }
 
+/* Search form */
 .search-form{
     position: absolute;
     top: 50%;
@@ -200,7 +226,7 @@ li {
     padding-bottom: 4px;
 }
 
-
+/*  */
 
 
 

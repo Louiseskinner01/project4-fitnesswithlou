@@ -1,5 +1,6 @@
 from django import forms
 from .models import Order
+from django_countries.widgets import CountrySelectWidget
 
 
 class OrderForm(forms.ModelForm):
@@ -36,4 +37,4 @@ class OrderForm(forms.ModelForm):
                 placeholder = placeholders[field]
             self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
+            self.fields[field].label = ''

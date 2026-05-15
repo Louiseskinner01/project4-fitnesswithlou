@@ -1,3 +1,4 @@
+import stripe
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.conf import settings
@@ -8,7 +9,8 @@ from cart.models import Cart
 from cart.contexts import cart_contents
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-import stripe
+from products.models import Product
+
 
 
 
@@ -117,3 +119,35 @@ def checkout_success(request, order_number):
     }
 
     return render(request, 'checkout/success.html', context)
+
+
+@csrf_exempt
+def stripe_webhook(request):
+    """Listen for Stripe events"""
+
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+    webhook_secret = settings.STRIPE_WH_SECRET
+
+    payload = request.body
+    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
+    event = None
+
+    try:
+        event = stripe.Webhook.construct_event(
+            payload,
+            sig_header,
+            webhook_secret
+        )
+    except ValueError:
+        # invalid payload
+        return HttpResponse(status=400)
+    except stripe.error.SignatureVerificationError:
+        # invalid signature
+        return HttpResponse(status=400)
+
+    # 👉 handle the event
+    if event['type'] == 'payment_intent.succeeded':
+        intent = event['data']['object']
+        print("Payment succeeded:", intent.id)
+
+    return HttpResponse(status=200)

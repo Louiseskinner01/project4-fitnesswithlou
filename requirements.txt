@@ -8,6 +8,7 @@ dj-database-url==3.1.2
 Django==6.0.3
 django-allauth==65.15.0
 django-cloudinary-storage==0.3.0
+django-countries==8.2.0
 django-crispy-forms==2.6
 django-summernote==0.8.20.0
 gunicorn==25.1.0
@@ -17,6 +18,7 @@ pillow==12.1.1
 psycopg2-binary==2.9.11
 python-dotenv==1.2.2
 requests==2.32.5
+setuptools==75.8.0
 six==1.17.0
 sqlparse==0.5.5
 stripe==15.0.1

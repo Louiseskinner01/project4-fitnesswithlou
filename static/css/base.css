@@ -28,6 +28,14 @@ body {
    background-color: var(--bg1-color);
 }
 
+.auth-card{
+    background-color: white !important;
+    justify-content: center !important;
+}
+
+.btn.btn-styling.w-100.mt-3{
+    width: 50%;
+}
 
 .checkout-form-styling input, .checkout-form-styling select,  .checkout-form-styling textarea{
     color: gray !important;
@@ -42,7 +50,6 @@ body {
 h4{
     color: var(--primary-color);
 }
-
 
 
 /* ----------------------------------------------Navbar */

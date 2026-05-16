@@ -34,9 +34,17 @@ body {
     border: var(--primary-color) 1px solid!important;
 }
 
+#success-h1{
+    color: var(--primary-color);
+}
+
+
 h4{
     color: var(--primary-color);
 }
+
+
+
 /* ----------------------------------------------Navbar */
 .navbar-brand img{
     height: 120px;

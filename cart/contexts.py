@@ -18,14 +18,14 @@ def cart_contents(request):
         product = item.product
         quantity = item.quantity
 
-        total += item.price * quantity
+        total += product.price * quantity
         product_count += quantity
 
         cart_items.append({
                 'id': item.id,
                 'product': item.product,
                 'quantity': item.quantity,
-                'price': item.price,
+                'price': product.price,
                 'size': item.size,
             })
 

@@ -4,7 +4,8 @@
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
-{% endblock %}
+
+    {% endblock %}
 
 {% block page_header %}
 {% endblock %}
@@ -25,19 +26,21 @@
         
 
         <div class="row g-lg-5">
-            <div class="col-12 col-lg-6 order-lg-last py-3 mb-sm-3 mb-lg-0 secondary-color rounded">
+            <div class="col-12 col-lg-6 order-lg-last py-3 mb-3 mb-lg-0 bg-light rounded">
                 <p class="font-2 fs-2">Order Summary <br><span class="fs-6 font-1">{{ product_count }} items in your backset</span></p>
                 <div class="row justify-contents-center text-center mb-3">
                     <div class="col-4">
                         <p class="mb-1 mt-0 text-black">Item</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <p class="mb-1 mt-0 text-black">Product Info</p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-2">
                         <p class="mb-1 mt-0 text-black">Subtotal</p>
                     </div>
+                    <hr class="text-body-tertiary">
                 </div>
+              
                 {% for item in cart_items %}
                     <div class="row justify-contents-center text-center">
                         <hr id="hr-order-summary">
@@ -51,7 +54,7 @@
                             </a>
                            
                         </div>
-                        <div class="col-4">
+                        <div class="col-6">
                             <p class="my-0 text-black"><strong>{{ item.product.name }}</strong></p>
                             <p class="my-0 small font-2">Size: {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
                             <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
@@ -61,17 +64,20 @@
                         </div>
                     </div>
                 {% endfor %}
-                <hr class="my-0">
-                <div class="row text-center">
-                    <div class="col-7 -2 mt-3">
+                
+                <div class="row">
+                    <div class="col-7 mt-3 text-center">
+                        <hr class="text-body-tertiary">
                         <p class="my-0 text-black">Order Total:</p>
+                        <hr class="text-body-tertiary">
                         <p class="my-0 text-black">Delivery:</p>
+                        <hr class="text-body-tertiary">
                         <p class="my-0 text-black">Grand Total:</p>
                     </div>
-                    <div class="col-3 mt-3">
-                        <p class="my-0 font-numbers fs-6"><small>£{{ total | floatformat:2 }}</small></p>
-                        <p class="my-0 font-numbers fs-6">£{{ delivery | floatformat:2 }}</p>
-                        <p class="my-0 font-2 fs-3"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
+                    <div class="col-5 mt-3">
+                        <p class="my-0 font-numbers fs-5 text-black pt-4"><small>£{{ total | floatformat:2 }}</small></p>
+                        <p class="my-0 font-numbers fs-5 text-black pt-4">£{{ delivery | floatformat:2 }}</p>
+                        <p class="my-0 font-2 fs-2 pt-4"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
             </div>

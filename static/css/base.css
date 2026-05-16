@@ -24,6 +24,9 @@ body {
     color: black;
 }
 
+.bg2-color{
+   background-color: var(--bg1-color);
+}
 
 
 .checkout-form-styling input, .checkout-form-styling select,  .checkout-form-styling textarea{
@@ -31,6 +34,9 @@ body {
     border: var(--primary-color) 1px solid!important;
 }
 
+h4{
+    color: var(--primary-color);
+}
 /* ----------------------------------------------Navbar */
 .navbar-brand img{
     height: 120px;
@@ -160,9 +166,10 @@ a.footer-about-a{
     color: white;
     border-radius: 5px;
     height: 50px;
+    padding-top: 12px;
 }
 
-a#adjust-bag{
+a.adjust-bag{
     height: 50px; 
     background-color: black;   
     color: white;
@@ -170,13 +177,23 @@ a#adjust-bag{
 
 }
 
-a#adjust-bag:hover{
+a.adjust-bag:hover{
     background-color: whitesmoke; 
     color: var(--primary-color); 
     border: 1px solid var(--primary-color);
 
 }
 
+.product-detail-form-control{
+    border: var(--primary-color) solid 1px;
+    border-radius: 5px;
+}
+
+button.increment-qty, .decrement-qty {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    font-size: 16px !important;
+}
 
 /*------------------------------------Toast Messages*/
 div .toast-header{

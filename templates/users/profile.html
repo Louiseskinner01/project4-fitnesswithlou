@@ -2,13 +2,27 @@
 
 {% block content %}
 
-<h1>Your Profile</h1>
+<section class="page-bg join-team-bg">
+    <div class="overlay-main"></div>
+        
+         <div class="content-wrapper">
+            <div class="card shadow-md border-0 p-4 auth-card" id="profile-update-form">
 
 
-<p>Name: {{ profile.user.username }}</p>
-<p>Fitness Goal: {{ profile.fitness_goal }}</p>
-<p>Experience level: {{ profile.experience_level }}</p>
-<p>Preferred training time: {{ profile.preferred_training_time }}</p>
+<h2 class="h2-font">Your Profile</h2>
 
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form|crispy }}
+
+    <button type="submit" class="btn btn-styling mt-3">
+        Update Profile
+    </button>
+</form>
+
+</div>
+</div>
+</section>
 
 {% endblock %}

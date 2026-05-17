@@ -4,8 +4,12 @@ from .models import UserProfile
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
-        fields = [
-            'fitness_goal',
-            'experience_level',
-            'preferred_training_time',
-        ]
+
+        fields = (
+            'default_phone_number',
+            'default_street_address1',
+            'default_street_address2',
+            'default_town_or_city',
+            'default_postcode',
+            'default_country',
+        )

@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'checkout',
     'main',
     'accounts',
-     'django.contrib.sites',
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

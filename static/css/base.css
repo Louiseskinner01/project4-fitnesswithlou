@@ -28,10 +28,7 @@ body {
    background-color: var(--bg1-color);
 }
 
-.auth-card{
-    background-color: white !important;
-    justify-content: center !important;
-}
+
 
 .btn.btn-styling.w-100.mt-3{
     width: 50%;
@@ -155,8 +152,37 @@ a.footer-about-a{
 }
 
 
+/* -------------------------------------------------Allauth */
+.auth-card input {
+    
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 12px;
+}
 
+.auth-card input:focus {
+    border-color: var(--feature-color);
+    
+}
 
+label.form-check-label{
+
+    display: flex !important;
+    margin-left: 20px;
+    
+}
+
+#id_password1_helptext{
+    color: var(--primary-color);
+    background-color: whitesmoke;
+    border: solid 1px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.auth-card label {
+    display: none;
+}
 
 /* -------------------------------------------------Other */
 .btt-link,

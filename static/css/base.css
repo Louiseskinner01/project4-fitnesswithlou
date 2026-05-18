@@ -248,7 +248,14 @@ button.increment-qty, .decrement-qty {
 
 .auth-card select{
     border: solid 1px var(--primary-color);
+
 }
+
+.auth-card input{
+    background-color: white !important;
+}
+
+
 /*------------------------------------Toast Messages*/
 div .toast-header{
     background-color: whitesmoke;

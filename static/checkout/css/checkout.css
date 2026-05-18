@@ -141,3 +141,18 @@ img.cart-img{
 
 
 
+#save-info-label.form-check-label{
+  display: flex !important;
+  color: var(--primary-color);
+  left: 0;
+  width: 300px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+input#save-info-checkbox.form-check-input{
+  display: flex;
+  margin-left: 50px;
+  
+  min-height: 10px !important;
+}

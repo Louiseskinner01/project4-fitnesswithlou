@@ -7,9 +7,12 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from cart.contexts import cart_contents
+
+from users.models import UserProfile
+from products.models import Product
+
 from .forms import OrderForm
 from .models import Order, OrderLineItem
-from products.models import Product
 
 
 
@@ -56,6 +59,8 @@ def checkout(request):
     # POST = after Stripe payment
     # ------------------------
     if request.method == "POST":
+        save_info = 'save_info' in request.POST
+        request.session['save_info'] = save_info
 
         order_form = OrderForm(request.POST)
 
@@ -76,21 +81,34 @@ def checkout(request):
     else:
         messages.error(request, "There was an issue with your order.")
 
-    # ------------------------
-    # GET = load checkout page
-    # ------------------------
-    stripe_total = int(total * 100)
+        # ------------------------
+        # GET = load checkout page
+        # ------------------------
+        stripe_total = int(total * 100)
 
-    intent = stripe.PaymentIntent.create(
-        amount=stripe_total,
-        currency=settings.STRIPE_CURRENCY,
-        automatic_payment_methods={
-            'enabled': True,
-        },
-        
-    )
+        intent = stripe.PaymentIntent.create(
+            amount=stripe_total,
+            currency=settings.STRIPE_CURRENCY,
+            automatic_payment_methods={
+                'enabled': True,
+            },
+        )
 
-    order_form = OrderForm()
+    try:
+        profile = UserProfile.objects.get(user=request.user)
+
+        order_form = OrderForm(initial={
+            'email': request.user.email,
+            'phone_number': profile.default_phone_number,
+            'street_address1': profile.default_street_address1,
+            'street_address2': profile.default_street_address2,
+            'town_or_city': profile.default_town_or_city,
+            'postcode': profile.default_postcode,
+            'country': profile.default_country,
+    })
+
+    except UserProfile.DoesNotExist:
+        order_form = OrderForm()
 
     context = {
         'order_form': order_form,
@@ -101,12 +119,33 @@ def checkout(request):
     }
 
     return render(request, 'checkout/checkout.html', context)
-
+   
 
 @login_required
 def checkout_success(request, order_number):
 
     order = get_object_or_404(Order, order_number=order_number)
+    save_info = request.session.get('save_info')
+   
+    print(request.session.get('save_info'))
+    
+    if save_info:
+
+        profile = UserProfile.objects.get(user=request.user)
+
+        profile.default_phone_number = order.phone_number
+        profile.default_street_address1 = order.street_address1
+        profile.default_street_address2 = order.street_address2
+        profile.default_town_or_city = order.town_or_city
+        profile.default_postcode = order.postcode
+        profile.default_country = order.country
+
+
+        print(order.phone_number)
+        print(order.street_address1)
+        print(order.country)
+        
+        profile.save()
 
     # Clear the user's cart
     cart = Cart.objects.filter(user=request.user).first()

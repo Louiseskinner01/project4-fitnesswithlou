@@ -69,16 +69,16 @@
           <div class="collapse navbar-collapse rounded" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'main:landing' %}">Home</a>
+                <a class="nav-link nav-link-border" href="{% url 'main:landing' %}">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'bookings:bookings' %}">My Bookings</a>
+                <a class="nav-link nav-link-border" href="{% url 'bookings:bookings' %}">My Bookings</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="">My Nutrition</a>
+                <a class="nav-link nav-link-border" href="">My Nutrition</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link nav-link-border dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Shop
                 </a>
                 <ul class="dropdown-menu" id="dropdown-menu-shop">
@@ -101,7 +101,7 @@
 
               {% if user.is_authenticated %}
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link nav-link-border dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   My Account
                 </a>
                 <ul class="dropdown-menu">
@@ -111,7 +111,7 @@
                   <li>
                     <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}
-                    <button type="submit" class="dropdown-item">Logout</button>
+                    <button type="submit" id="nav-logout" class="dropdown-item">Logout</button>
                     </form>
                   </li>
                 </ul>

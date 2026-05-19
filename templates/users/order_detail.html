@@ -1,0 +1,61 @@
+
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="page-bg join-team-bg">
+    <div class="overlay-main"></div>
+        
+         <div class="content-wrapper">
+            <div class="row g-0">
+                
+            <div class="col-12 col-md-6 card shadow-md border-0 p-4 auth-card rounded" id="profile-update-form">
+
+    <h1 class="font-2">Order Details</h1>
+
+    <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+
+    <p><strong>Date:</strong> {{ order.date }}</p>
+
+    <p><strong>Total:</strong> £{{ order.grand_total }}</p>
+</div>
+
+
+<div class="col-12 col-md-6 feature rounded">
+    <h3 class="font-2 mt-3">Items Ordered</h3>
+
+    {% for item in order.lineitems.all %}
+
+        <div class="mb-3 text-black">
+
+            <p>{{ item.product.name }}</p>
+
+            <p>Quantity: {{ item.quantity }}</p>
+
+            {% if item.product_size %}
+                <p>Size: {{ item.product_size|upper }}</p>
+            {% endif %}
+
+            <p>Subtotal: £{{ item.lineitem_total }}</p>
+
+            {% if item.product.image %}
+             <img class="img-fluid rounded order-thumb" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+            {% endif %}
+    
+ 
+
+    {% endfor %}
+
+        </div>
+
+
+</div>
+</div>
+</div>
+
+</section>
+
+
+{% endblock %}
+

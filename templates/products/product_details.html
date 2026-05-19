@@ -6,16 +6,14 @@
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid p-0">
-    <div class="row mx-0">
-        <div class="col-12 p-0">
+
 
             <section class="page-bg join-team-bg">
                 <div class="overlay-main"></div>
 
                 <div class="content-wrapper ">
 
-                    <div class="container-fluid">
+             
                         <h1 class="logo-font text-center mb-5">{{ product.name }}</h1>
 
         <div class="row align-items-stretch">
@@ -33,7 +31,7 @@
                 </div>
             </div>
             <div class="col-6 col-lg-4">
-                <div class="product-details-container bg-pop p-4 h-100">
+                <div class="product-details-container feature rounded text-black p-4 h-100">
                     <p class="mb-0 fs-4">{{ product.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">{{ product.description }}</p>
@@ -73,7 +71,7 @@
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-styling text-uppercase mt-5" value="Add to Cart">
+                                <input type="submit" id="add-cart-btn" class="btn btn-styling text-uppercase mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
@@ -83,7 +81,11 @@
                 </div>
             </div>
         </div>
+    
+                </div>
     </div>
+
+    </section>
 {% endblock %}
 
 {% block postloadjs %}

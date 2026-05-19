@@ -8,6 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from cart.models import Cart
 from cart.contexts import cart_contents
 
+
 from users.models import UserProfile
 from products.models import Product
 
@@ -144,11 +145,6 @@ def checkout_success(request, order_number):
         profile.default_town_or_city = order.town_or_city
         profile.default_postcode = order.postcode
         profile.default_country = order.country
-
-
-        print(order.phone_number)
-        print(order.street_address1)
-        print(order.country)
 
         profile.save()
 

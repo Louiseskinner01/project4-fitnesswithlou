@@ -16,33 +16,13 @@ body {
 }
 
 
-.bg-pop{
-    
-    background-color: var(--feature-color);
-    border: solid 1px white;
-    border-radius: 10px;
-    color: black;
-}
-
-.bg2-color{
-   background-color: var(--bg1-color);
-}
-
-input::placeholder{
-    color: red;
-}
-
-
 
 
 .btn.btn-styling.w-100.mt-3{
     width: 50%;
 }
 
-.checkout-form-styling input, .checkout-form-styling select,  .checkout-form-styling textarea{
-    color: gray !important;
-    border: var(--primary-color) 1px solid!important;
-}
+
 
 #success-h1{
     color: var(--primary-color);
@@ -56,6 +36,29 @@ h4{
     color: var(--primary-color);
 }
 
+.font-1{
+    color: var( --feature-color);
+}
+
+.font-2{
+    color: var(--primary-color);
+}
+
+.font-3{
+    color: var(--bg1-color);
+}
+
+
+
+.bg1-color{
+    background-color: var(--bg1-color);
+  
+}
+
+
+.feature{
+   background-color: var(--feature-color);
+}
 
 /* ----------------------------------------------Navbar */
 .navbar-brand img{
@@ -69,16 +72,17 @@ h4{
     margin-bottom: 5px;
 }
 
-.nav-item{
-    background-color: white;
+.nav-item{ 
     border-radius: 12px;
     margin-left: 10px;
     padding: 0 10px 0 10px;
     
 }
 
-.nav-link:hover{
-    color: var(--feature-color);
+.nav-link-border:hover{
+    border: 1px solid var(--feature-color);
+    border-radius: 5px;
+    transition: border-color 4s ease;
 }
 
 .nav-link{
@@ -95,10 +99,24 @@ h4{
 .dropdown-menu{
     border: none;
     text-align: center;
-    background-color: rgba(200, 161, 161, 0.957);
+    background-color: var(--bg1-color);
+    
+    
+}
+.dropdown-menu a{
+    color: var(--primary-color) !important;
     
 }
 
+a.dropdown-menu a:hover{
+   color: var(--primary-color) !important;
+   
+    
+}
+
+#nav-logout{
+    color: white !important;
+}
 
 
 
@@ -152,12 +170,38 @@ a.footer-about-a{
 
 
 
-/* -------------------------------------------------Products template */
+/* -------------------------------------------------Products & Product_details */
 .card-img-top {
-    height: 260px;        /* choose your preferred height */
+    height: 260px;        
     width: 100%;
     object-fit: cover; 
 }
+
+a.adjust-bag{
+    height: 50px; 
+    background-color: var(--btn-color);   
+    color: var(--primary-color);
+    padding-top: 12px;
+    border: 1px solid var(--primary-color);
+  }
+  
+a.adjust-bag:hover{
+    background-color: var(--bg1-color); 
+    color: var(--primary-color); 
+    border: 1px solid var(--primary-color);
+  
+  }
+
+input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5{
+    background-color: var(--primary-color) !important;
+    color: white;
+}
+
+input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5:hover{
+    background-color: var(--bg1-color) !important;
+    color: var(--primary-color);
+}
+
 
 
 /* -------------------------------------------------Allauth */
@@ -196,6 +240,15 @@ label.form-check-label{
     padding-top: 10px;
 }
 
+.auth-card select{
+    border: solid 1px var(--primary-color);
+
+}
+
+.auth-card input{
+    background-color: white !important;
+}
+
 /* -------------------------------------------------Other */
 .btt-link,
 .update-link,
@@ -203,39 +256,31 @@ label.form-check-label{
     cursor: pointer;
 }
 
-.font-2{
+.btn-styling{
+    background-color: var(--bg1-color);
     color: var(--primary-color);
+    border-radius: 5px;
+    height: 50px;
+    padding-top: 10px;
+    border: 1px solid var(--primary-color);
 }
 
+
 .btn-styling:hover, .search-btn-styling:hover{
-   background-color: whitesmoke;
-   color: black;
+   background-color: var(--btn-color);
+   color: var(--primary-color);
    border: solid 1px var(--primary-color);
    
 }
 
-.btn-styling{
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 5px;
-    height: 50px;
-    padding-top: 12px;
+.order-thumb {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    
 }
 
-a.adjust-bag{
-    height: 50px; 
-    background-color: black;   
-    color: white;
-    padding-top: 12px;
-
-}
-
-a.adjust-bag:hover{
-    background-color: whitesmoke; 
-    color: var(--primary-color); 
-    border: 1px solid var(--primary-color);
-
-}
 
 .product-detail-form-control{
     border: var(--primary-color) solid 1px;
@@ -251,6 +296,8 @@ button.increment-qty, .decrement-qty {
 
 
 
+
+
 #profile-update-form label{
     display: flex;
 }
@@ -260,14 +307,7 @@ button.increment-qty, .decrement-qty {
     overflow-y: auto;
 }
 
-.auth-card select{
-    border: solid 1px var(--primary-color);
 
-}
-
-.auth-card input{
-    background-color: white !important;
-}
 
 
 /*------------------------------------Toast Messages*/

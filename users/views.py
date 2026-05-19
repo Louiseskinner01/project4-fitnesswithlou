@@ -14,6 +14,8 @@ def profile(request):
         user=request.user
     )
 
+    orders = request.user.orders.all().order_by('-date')
+
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=profile)
 
@@ -31,6 +33,7 @@ def profile(request):
     context = {
         'form': form,
         'profile': profile,
+        'orders': orders,
     }
 
     return render(request, 'users/profile.html', context)

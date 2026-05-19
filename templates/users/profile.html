@@ -24,6 +24,37 @@
     </button>
 </form>
 
+
+
+<h2 class="mt-5">Order History</h2>
+
+{% if orders %}
+
+    {% for order in orders %}
+
+        <div class="border p-3 mb-3">
+
+            <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+
+            <p><strong>Date:</strong> {{ order.date }}</p>
+
+            <p><strong>Total:</strong> £{{ order.grand_total }}</p>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No previous orders found.</p>
+
+{% endif %}
+
+
+
+
+
+
 </div>
 </div>
 </section>

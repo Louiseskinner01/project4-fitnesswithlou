@@ -66,7 +66,9 @@ def checkout(request):
 
         if order_form.is_valid():
 
-            order = order_form.save()
+            order = order_form.save(commit=False)
+            order.user = request.user
+            order.save()
 
             for item in cart_items:
                 OrderLineItem.objects.create(
@@ -144,7 +146,7 @@ def checkout_success(request, order_number):
         print(order.phone_number)
         print(order.street_address1)
         print(order.country)
-        
+
         profile.save()
 
     # Clear the user's cart

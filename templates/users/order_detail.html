@@ -1,35 +1,37 @@
 
 
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
 <section class="page-bg join-team-bg">
-    <div class="overlay-main"></div>
-        
+    <div class="overlay-main"></div>      
          <div class="content-wrapper">
-            <div class="row g-0">
-                
-            <div class="col-12 col-md-6 card shadow-md border-0 p-4 auth-card rounded" id="profile-update-form">
 
-    <h1 class="font-2">Order Details</h1>
+            <div class="row">
 
-    <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+                <div class="col-12 col-md-6 m-0">
+                    <div class="card shadow-md border-0 p-4 auth-card rounded" id="profile-update-form">
 
-    <p><strong>Date:</strong> {{ order.date }}</p>
+                        <h1 class="font-2">Order Details</h1>
 
-    <p><strong>Total:</strong> £{{ order.grand_total }}</p>
-</div>
+                            <p><strong>Order Number:</strong> {{ order.order_number }}</p>
+                            <p><strong>Date:</strong> {{ order.date }}</p>
+                            <p><strong>Total:</strong> £{{ order.grand_total }}</p>
+                    </div>
+                </div>
 
 
-<div class="col-12 col-md-6 feature rounded">
-    <h3 class="font-2 mt-3">Items Ordered</h3>
+<div class="col-12 col-md-6 feature rounded h-100 m-0">
+    <h2 class="font-2 mt-3 py-3">Items Ordered</h2>
+
+    <div class="order-history-wrapper">
 
     {% for item in order.lineitems.all %}
 
         <div class="mb-3 text-black">
 
-            <p>{{ item.product.name }}</p>
+            <p><strong>{{ item.product.name }}</strong></p>
 
             <p>Quantity: {{ item.quantity }}</p>
 
@@ -40,13 +42,13 @@
             <p>Subtotal: £{{ item.lineitem_total }}</p>
 
             {% if item.product.image %}
-             <img class="img-fluid rounded order-thumb" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+             <img class="img-fluid rounded order-thumb mb-3" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
             {% endif %}
     
- 
+</div>
 
     {% endfor %}
-
+</div>
         </div>
 
 

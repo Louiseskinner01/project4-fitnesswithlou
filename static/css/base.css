@@ -257,8 +257,8 @@ label.form-check-label{
 }
 
 .btn-styling{
-    background-color: var(--bg1-color);
-    color: var(--primary-color);
+    background-color: var(--primary-color);
+    color: white;
     border-radius: 5px;
     height: 50px;
     padding-top: 10px;
@@ -305,6 +305,17 @@ button.increment-qty, .decrement-qty {
 .order-history{
     max-height: 416px;
     overflow-y: auto;
+}
+
+.order-history-wrapper {
+    max-height: 400px !important;
+    overflow-y: auto !important;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#order-number a{
+    text-decoration: none;
+    color: var(--primary-color);
 }
 
 

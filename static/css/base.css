@@ -28,6 +28,11 @@ body {
    background-color: var(--bg1-color);
 }
 
+input::placeholder{
+    color: red;
+}
+
+
 
 
 .btn.btn-styling.w-100.mt-3{
@@ -187,6 +192,10 @@ label.form-check-label{
     display: none;
 }
 
+#id_password1_helptext{
+    padding-top: 10px;
+}
+
 /* -------------------------------------------------Other */
 .btt-link,
 .update-link,
@@ -244,6 +253,11 @@ button.increment-qty, .decrement-qty {
 
 #profile-update-form label{
     display: flex;
+}
+
+.order-history{
+    max-height: 416px;
+    overflow-y: auto;
 }
 
 .auth-card select{

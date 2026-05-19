@@ -9,7 +9,7 @@
             <div class="card shadow-md border-0 p-4 auth-card" id="profile-update-form">
 
 
-<h2 class="h2-font">Your Profile</h2>
+<h1 class="h2-font">Your Profile</h1>
 <p class="text-center profile-subtitle">
     Manage your account and delivery information.
 </p>
@@ -26,7 +26,7 @@
 
 
 
-<h2 class="mt-5 h2-font">Order History</h2>
+<h2 class="my-5 h2-font">Order History</h2>
 
 <div class="card shadow-sm border-0 rounded-4 p-4 bg2-color fs-6">
 
@@ -34,17 +34,38 @@
 
     {% for order in orders %}
 
-        <div class="border rounded p-3 mb-3 bg-white">
+        <div class="border rounded p-3 mb-3 bg-white order-history">
 
-            <p class=""><strong>Order Number:</strong> {{ order.order_number }}</p>
+            <p class=""><strong>Order Number:</strong>
+                <a href="{% url 'users:order_history' order.order_number %}"
+                    title="{{ order.order_number }}">
+                            {{ order.order_number|truncatechars:6 }}
+                </a>
+            </p>
 
-            <p><strong>Date:</strong> {{ order.date }}</p>
+            <p><strong>Date:</strong>{{ order.date|date:"d M Y" }}</p>
 
             <p><strong>Total:</strong> £{{ order.grand_total }}</p>
-
+            {% for item in order.lineitems.all %}
+            <ul>
+                <li class="small">
+                    {% if item.product_size %}
+                        Size: {{ item.product_size|upper }}
+                    {% else %}
+                        Size: N/A
+                    {% endif %}
+                
+                    {{ item.product.name }} × {{ item.quantity }}
+                </li>
+                
+            </ul>
+           
         </div>
 
     {% endfor %}
+
+
+{% endfor %}
 
 {% else %}
 
@@ -53,7 +74,7 @@
 {% endif %}
 
 </div>
-
+</div>
 
 
 

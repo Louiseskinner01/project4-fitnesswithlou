@@ -71,15 +71,18 @@ def checkout(request):
             order.save()
 
             for item in cart_items:
+                print("SIZE DEBUG:", item.size)
+
                 OrderLineItem.objects.create(
                     order=order,
                     product=item.product,
-                    quantity=item.quantity
+                    quantity=item.quantity,
+                    product_size=item.size
              )
 
-        order.update_total()
+            order.update_total()
 
-        return redirect('checkout:checkout_success', order.order_number)
+            return redirect('checkout:checkout_success', order.order_number)
     else:
         messages.error(request, "There was an issue with your order.")
 

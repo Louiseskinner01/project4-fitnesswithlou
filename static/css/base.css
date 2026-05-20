@@ -273,13 +273,6 @@ label.form-check-label{
    
 }
 
-.order-thumb {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 12px;
-    
-}
 
 
 .product-detail-form-control{
@@ -308,7 +301,7 @@ button.increment-qty, .decrement-qty {
 }
 
 .order-history-wrapper {
-    max-height: 400px !important;
+    max-height: 692px !important;
     overflow-y: auto !important;
     border: 1px solid rgba(255,255,255,0.2);
 }
@@ -318,6 +311,13 @@ button.increment-qty, .decrement-qty {
     color: var(--primary-color);
 }
 
+.order-thumb {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 12px;
+    
+}
 
 
 

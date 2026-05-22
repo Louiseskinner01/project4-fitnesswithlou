@@ -8,16 +8,19 @@
 {% block content %}
 
 
-            <section class="page-bg join-team-bg">
-                <div class="overlay-main"></div>
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0">
+        <div class="col-12 p-0 mx-0">
 
-                <div class="content-wrapper ">
+            <section class="hero-img-bg page-bg">
+                <div class="overlay-main"></div>        
+                  <div class="content-wrapper">
 
              
                         <h1 class="logo-font text-center mb-5">{{ product.name }}</h1>
 
-        <div class="row align-items-stretch">
-            <div class="col-6 col-lg-4 offset-lg-2">
+        <div class="row">
+            <div class="col-12 col-md-6 mb-3 mb-md-0">
                 <div class="image-container h-100">
                     {% if product.image %}
                         <a href="{{ product.image.url }}" target="_blank">
@@ -30,7 +33,7 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="col-6 col-lg-4">
+            <div class="col-12 col-md-6 ">
                 <div class="product-details-container feature rounded text-black p-4 h-100">
                     <p class="mb-0 fs-4">{{ product.name }}</p>
                     <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
@@ -65,13 +68,14 @@
                                 </div>                            
                             </div>
                             <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products:products' %}" class="btn adjust-bag mt-5">
+                                <a href="{% url 'products:products' %}" class="btn btn-styling2 mt-5">
                                     <span class="icon">
                                         <i class="fas fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" id="add-cart-btn" class="btn btn-styling text-uppercase mt-5" value="Add to Cart">
+
+                                <input type="submit" id="add-cart-btn" class="btn btn-styling1 px-3 text-uppercase mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
@@ -82,10 +86,14 @@
             </div>
         </div>
     
-                </div>
-    </div>
-
+        
+       </div>
+       
+      </div>
     </section>
+  </div>
+ </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

@@ -2,20 +2,18 @@
 {% load static %}
 
 {% block content %}
-<div class="container-fluid my-5 px-0">
-    <div class="row mx-0">
-      
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0">
+        <div class="col-12 p-0 mx-0">
 
-            <section class="page-bg join-team-bg">
-                <div class="overlay-main"></div>
-
-                <div class="content-wrapper ">
-          
+            <section class="hero-img-bg page-bg">
+                <div class="overlay-main"></div>        
+                 <div class="content-wrapper">
                    
-           
+                    <h1 id="success-h1">Thank You!</h1>
 
     <div class="col-12 text-center mb-4">
-        <h1 id="success-h1">Thank You!</h1>
+       
         <p>Your order has been successfully placed.</p>
         <p><strong>Order Number:</strong> {{ order.order_number }}</p>
     </div>

@@ -52,7 +52,7 @@
   }
   
   /* Specific page image */
-  .join-team-bg {
+  .hero-img-bg {
     background-image: url("/static/images/bg1.jpg");
     max-width: 100%;
   }
@@ -69,7 +69,7 @@
     position: relative;
     z-index: 2;
     width: 100%;
-    max-width: 100%;
+    max-width: 700px;
     color: white;
   }
   

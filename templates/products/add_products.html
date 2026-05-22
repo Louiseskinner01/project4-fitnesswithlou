@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block page_header %}
+{% endblock %}
+
+
+{% block content %}
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0">
+        <div class="col-12 p-0 mx-0">
+
+            <section class="hero-img-bg page-bg">
+                <div class="overlay-main"></div>
+                <div class="content-wrapper">
+
+                    <h1 class="text-center mb-5">Product Admin</h1>
+                    <h2>Manage your products here.</h2>
+
+                    <div class="row align-items-stretch">
+
+                        <div class="col-6 col-lg-4 offset-lg-2">
+                        </div>
+
+                        <div class="col-6 col-lg-4">
+
+                            <form method="POST" action="{% url 'products:add_product' %}" class="form"
+                                enctype="multipart/form-data">
+
+                                {% csrf_token %}
+
+                                {{ form|crispy }}
+
+                                <div class="text-right">
+                                    <a class="btn btn-styling" href="{% url 'products:products' %}">
+                                        Cancel
+                                    </a>
+
+                                    <button class="btn btn-styling" type="submit">
+                                        Add product
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

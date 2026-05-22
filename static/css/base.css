@@ -15,14 +15,9 @@ body {
     margin: 0;
 }
 
-
-
-
-.btn.btn-styling.w-100.mt-3{
-    width: 50%;
+hr{
+    color: var(--btn-color);
 }
-
-
 
 #success-h1{
     color: var(--primary-color);
@@ -47,7 +42,6 @@ h4{
 .font-3{
     color: var(--bg1-color);
 }
-
 
 
 .bg1-color{
@@ -177,20 +171,6 @@ a.footer-about-a{
     object-fit: cover; 
 }
 
-a.adjust-bag{
-    height: 50px; 
-    background-color: var(--btn-color);   
-    color: var(--primary-color);
-    padding-top: 12px;
-    border: 1px solid var(--primary-color);
-  }
-  
-a.adjust-bag:hover{
-    background-color: var(--bg1-color); 
-    color: var(--primary-color); 
-    border: 1px solid var(--primary-color);
-  
-  }
 
 input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5{
     background-color: var(--primary-color) !important;
@@ -256,22 +236,81 @@ label.form-check-label{
     cursor: pointer;
 }
 
-.btn-styling{
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: 5px;
-    height: 50px;
-    padding-top: 10px;
-    border: 1px solid var(--primary-color);
+
+#id_country, .form-control {
+    border-radius: 5px !important;
+    border: 1px solid var(--primary-color) !important;
+    
+}
+
+.content-wrapper{
+    max-width: 900px !important;
 }
 
 
-.btn-styling:hover, .search-btn-styling:hover{
+
+/* -------------------------------------------------Buttons (main) */
+.btn-styling1{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 0px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    height: 50px;
+}
+
+.btn.btn-styling1.w-100.mt-3{
+    width: 50%;
+}
+
+.btn-styling1:hover, .search-btn-styling:hover{
    background-color: var(--btn-color);
    color: var(--primary-color);
    border: solid 1px var(--primary-color);
    
 }
+
+a.btn-styling2{
+     
+    background-color: var(--btn-color);   
+    color: var(--primary-color);
+    padding-top: 12px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    height: 50px;
+  }
+  
+a.btn-styling2:hover{
+    background-color: var(--bg1-color); 
+    color: var(--primary-color); 
+    border: 1px solid var(--primary-color);
+  
+  }
+
+a#cart-btn-keep, a#cart-btn-secure{
+    padding-top: 12px;
+}
+
+/*---------------------------------------------Stripe */
+
+  #card-options-container {
+    width: 100%;
+    min-width: 200px !important;
+    max-width: 300px;
+    background-color: var(--feature-color);
+    margin: 0 auto;
+    
+}
+
+.StripeElement {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+
+
+
 
 
 
@@ -301,7 +340,7 @@ button.increment-qty, .decrement-qty {
 }
 
 .order-history-wrapper {
-    max-height: 692px !important;
+    max-height: 669px !important;
     overflow-y: auto !important;
     border: 1px solid rgba(255,255,255,0.2);
 }

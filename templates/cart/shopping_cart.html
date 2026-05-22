@@ -3,131 +3,182 @@
 {% load cart_tools %}
 
 
-{% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
-{% endblock %}
 
 {% block content %}
-<div class="overlay"></div>
-<div class="container mb-2">
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h2 class="logo-font mb-4">Shopping Bag</h2>
-            <hr>
-        </div>
-    </div>
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0 g-4">
+        <div class="col-12 p-0 mx-0">
 
-    <div class="row">
-        <div class="col">
-            {% if cart_items %}
-            <div class="table-responsive rounded"></div>
-          
-            <table class="table table-sm table-borderless">
-                <thead class="text-black">
-                    <tr>
-                        <th scope="col">Product Info</th>
-                        <th scope="col"></th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Qty</th>
-                        <th scope="col">Size</th>
-                    </tr>
-                </thead>
+            <section class="hero-img-bg page-bg">
+                <div class="overlay-main"></div>        
+                 <div class="content-wrapper">
 
-                {% for item in cart_items %}
-                <tr>
-                    <td class="p-3 w-25">
-                        <img class="img-fluid rounded" src="{{ item.product.image.url }}">
-                        <p class="my-0"><strong>Size: </strong>{% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
-                    </td>
-                    <td class="py-3">
-                        <p class="my-0"><strong>{{ item.product.name }}</strong></p>
-                    </td>
-                    <td class="py-3">
-                        <p class="my-0">£{{ item.product.price }}</p>
-                    </td>
-                    <td class="py-3 w-25">
-                        <form class="form update-form" method="POST" action="{% url 'cart:adjust_cart' item.id %}">
-                            {% csrf_token %}
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <button type="button"  class="decrement-qty btn btn-sm btn-primary rounded-0" 
-                                            data-item_id="{{ item.id }}" id="decrement-qty_{{ item.id }}">
-                                            <span><i class="fas fa-minus fa-sm"></i></span>
-                                        </button>
-                                    </div>
+            <h1 class="logo-font mb-4">Shopping Bag</h1>
+            
 
-                                    <input class="form-control form-control-sm qty_input" type="number"
-                                        name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                        data-item_id="{{ item.id }}" id="id_qty_{{ item.id }}">
+            <div class="row">
 
-                                    <div class="input-group-append">
-                                        <button type="button" class="increment-qty btn btn-sm btn-primary rounded-0"
-                                            data-item_id="{{ item.id }}" id="increment-qty_{{ item.id }}">
-                                            <span><i class="fas fa-plus fa-sm"></i></span>
-                                        </button>
-                                    </div>
-
-                                    {% if item.product.has_sizes %}
-                                    <input type="hidden" name="product_size" value="{{ item.size }}">
-                                    {% endif %}
-                                </div>
-                            </div>
-                        </form>
-
-                        <a class="update-link text-info"><small>Update</small></a>
-                        <a class="remove-item text-danger float-right" id="remove_{{ item.id }}" data-size="{{ item.size }}"><small>Remove</small></a>
-                    </td>
-
-                    <td class="py-3">
-                        <p class="my-0">{% if item.product.has_sizes %}{{ item.size }}{% endif %}</p>
-                    </td>
-                </tr>
-                {% endfor %}
-
-                <tr>
-                    <td colspan="5" class="pt-5 text-right">
-                        <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
-                        <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
-                        <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
-                        {% if free_delivery_delta > 0 %}
-                        <p class="mb-1 text-danger">
-                            You could get free delivery by spending just <strong>£{{ free_delivery_delta }}</strong> more!
-                        </p>
+                <!-- LEFT COLUMN -->
+                <div class="col-12 col-md-6 h-100">
+            
+                    <div class="card bg-white p-4 rounded h-100">
+            
+                        {% if cart_items %}
+            
+                        <div class="table-responsive">
+            
+                            <table class="table table-sm table-borderless mb-0">
+            
+                                <thead class="text-black">
+                                    <tr>
+                                        <th scope="col">Product Info</th>
+                                        <th scope="col"></th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Qty</th>
+                                        <th scope="col">Size</th>
+                                    </tr>
+                                </thead>
+            
+                                {% for item in cart_items %}
+            
+                                <tr>
+            
+                                    <td class="p-3 w-25">
+                                        <img class="img-fluid rounded"
+                                             src="{{ item.product.image.url }}">
+            
+                                        <p class="my-0">
+                                            <strong>Size:</strong>
+            
+                                            {% if item.product.has_sizes %}
+                                                {{ item.size|upper }}
+                                            {% else %}
+                                                N/A
+                                            {% endif %}
+                                        </p>
+                                    </td>
+            
+                                    <td class="py-3">
+                                        <p class="my-0">
+                                            <strong>{{ item.product.name }}</strong>
+                                        </p>
+                                    </td>
+            
+                                    <td class="py-3">
+                                        <p class="my-0">
+                                            £{{ item.product.price }}
+                                        </p>
+                                    </td>
+            
+                                    <td class="py-3">
+                                        <!-- quantity form here -->
+                                    </td>
+            
+                                    <td class="py-3">
+                                        {% if item.product.has_sizes %}
+                                            {{ item.size }}
+                                        {% endif %}
+                                    </td>
+            
+                                </tr>
+            
+                                {% endfor %}
+            
+                            </table>
+            
+                        </div>
+            
                         {% endif %}
-                    </td>
-                </tr>
+            
+                    </div>
+            
+                </div>
+            
+                <!-- RIGHT COLUMN -->
+                <div class="col-12 col-md-6">
+            
+                    <div class="card feature rounded p-4 h-100">
+            
+                        <h4 class="mb-4">Order Summary</h4>
+            
+                        <h6>
+                            <strong>
+                                Bag Total:
+                                £{{ total|floatformat:2 }}
+                            </strong>
+                        </h6>
+            
+                        <h6>
+                            Delivery:
+                            £{{ delivery|floatformat:2 }}
+                        </h6>
+            
+                        <h4 class="mt-4">
+                            <strong>
+                                Grand Total:
+                                £{{ grand_total|floatformat:2 }}
+                            </strong>
+                        </h4>
+            
+                        {% if free_delivery_delta > 0 %}
+                            <p class="text-danger">
+                                Spend
+                                <strong>£{{ free_delivery_delta }}</strong>
+                                more for free delivery!
+                            </p>
+                        {% endif %}
+            
+                        <div class="row g-3 mt-4">
+            
+                            <div class="col-12 col-sm-6">
+                                <a href="{% url 'products:products' %}" 
+                                   class="btn btn-styling2 rounded w-100"
+                                    id="cart-btn-keep">
+            
+                                    <i class="fas fa-chevron-left"></i>
+                                    Keep Shopping
+                                </a>
+                            </div>
+            
+                            <div class="col-12 col-sm-6">
+                                <a href="{% url 'checkout:checkout' %}"
+                                   class="btn btn-styling1 rounded w-100"
+                                   id="cart-btn-secure">
+            
+                                    <i class="fas fa-lock"></i>
+                                    Secure Checkout
+                                </a>
+                            </div>
+            
+                        </div>
+            
+                    </div>
+            
+                </div>
+            
+            </div> 
 
-                <tr>
-                    <td colspan="5" class="text-right">
-                        <a href="{% url 'products:products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                            <span class="icon"><i class="fas fa-chevron-left"></i></span>
-                            <span class="text-uppercase">Keep Shopping</span>
-                        </a>
-                        <a href="{% url 'checkout:checkout' %}" class="btn btn-black rounded-0 btn-lg">
-                            <span class="text-uppercase">Secure Checkout</span>
-                            <span class="icon"><i class="fas fa-lock"></i></span>
-                        </a>
-                    </td>
-                </tr>
-            </table>
 
-            {% else %}
-            <p class="lead mb-5">Your bag is empty.</p>
-            <a href="{% url 'products:products' %}" class="btn btn-outline-black rounded-0 btn-lg">
-                <span class="icon"><i class="fas fa-chevron-left"></i></span>
-                <span class="text-uppercase btn btn-primary">Keep Shopping</span>
-            </a>
-            {% endif %}
+
+
+                 </div>
+                 </section>
+        
         </div>
     </div>
 </div>
+
+
+
+
+
+
 {% endblock %}
+
+
+
+
+
 
 {% block postloadjs %}
 {{ block.super }}

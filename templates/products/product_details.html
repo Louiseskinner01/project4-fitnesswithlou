@@ -45,13 +45,25 @@
                             {% if s %}
                             <div class="col-12 mt-5">
                                 <p><strong>Size:</strong></p>
-                                <select class="form-control w-50 product-detail-form-control" name="product_size" id='id_product_size'>
-                                    <option value="xs">XS</option>
-                                    <option value="s">S</option>
-                                    <option value="m" selected>M</option>
-                                    <option value="l">L</option>
-                                    <option value="xl">XL</option>
+
+                                {% if product.sizes %}
+
+                                <select class="form-control"
+                                        name="product_size"
+                                        id="id_product_size">
+                                
+                                    <option value="" selected disabled>Select Size</option>
+                                
+                                    {% for size in product.sizes.split(',') %}
+                                        <option value="{{ size }}">{{ size|upper }}</option>
+                                    {% endfor %}
+                                
                                 </select>
+                                
+                                {% endif %}
+
+
+
                             </div>
                             {% endif %}
                             <div class="col-12">

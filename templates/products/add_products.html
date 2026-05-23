@@ -16,16 +16,14 @@
                 <div class="content-wrapper">
 
                     <h1 class="text-center mb-5">Product Admin</h1>
-                    <h2>Manage your products here.</h2>
+                   
 
-                    <div class="row align-items-stretch">
-
-                        <div class="col-6 col-lg-4 offset-lg-2">
-                        </div>
-
-                        <div class="col-6 col-lg-4">
-
-                            <form method="POST" action="{% url 'products:add_product' %}" class="form"
+                    <div class="row">
+                        
+   
+                        <div class="col-12 feature rounded pb-3 px-3">
+                            <h3 class="font-2 mt-3">Manage Your Products Here</h3>
+                            <form method="POST" action="{% url 'products:add_product' %}" class="form pt-3"
                                 enctype="multipart/form-data">
 
                                 {% csrf_token %}
@@ -33,11 +31,11 @@
                                 {{ form|crispy }}
 
                                 <div class="text-right">
-                                    <a class="btn btn-styling" href="{% url 'products:products' %}">
+                                    <a class="btn btn-styling2" href="{% url 'products:products' %}">
                                         Cancel
                                     </a>
 
-                                    <button class="btn btn-styling" type="submit">
+                                    <button class="btn btn-styling1 px-3" type="submit">
                                         Add product
                                     </button>
                                 </div>

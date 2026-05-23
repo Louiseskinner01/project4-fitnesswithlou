@@ -197,12 +197,7 @@ input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5:hover{
     
 }
 
-label.form-check-label{
 
-    display: flex !important;
-    margin-left: 20px;
-    
-}
 
 #id_password1_helptext{
     color: var(--primary-color);
@@ -236,17 +231,27 @@ label.form-check-label{
     cursor: pointer;
 }
 
-
-#id_country, .form-control {
+#id_sizes, #id_category, #id_has_sizes, #id_country, .form-control {
     border-radius: 5px !important;
     border: 1px solid var(--primary-color) !important;
     
 }
 
+
 .content-wrapper{
     max-width: 900px !important;
 }
 
+label.form-check-label{
+
+    display: flex !important;
+    margin-left: 20px;
+    
+}
+
+label:not(.form-check-label) {
+    display: none;
+}
 
 
 /* -------------------------------------------------Buttons (main) */

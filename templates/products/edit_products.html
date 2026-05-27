@@ -23,8 +23,9 @@
    
                         <div class="col-12 feature rounded pb-3 px-3">
                             <h2 class="font-2 mt-3">Manage Your Products Here</h2>
-                            <h3 class="product-manangement-h3 mt-3">ADD A PRODUCT</h3>
-                            <form method="POST" action="{% url 'products:add_product' %}" class="form pt-3"
+                            <h3 class="product-manangement-h3 mt-3">EDIT A PRODUCT</h3>
+
+                            <form method="POST" action="{% url 'products:edit_product' product.id %}" class="form pt-3"
                                 enctype="multipart/form-data">
 
                                 {% csrf_token %}
@@ -37,7 +38,7 @@
                                     </a>
 
                                     <button class="btn btn-styling1 px-3" type="submit">
-                                        Add product
+                                        Update product
                                     </button>
                                 </div>
 

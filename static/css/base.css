@@ -171,6 +171,10 @@ a.footer-about-a{
     object-fit: cover; 
 }
 
+.product-manangement-h3 {
+    color: rgb(61, 60, 60);
+    font-size: 16px;
+}
 
 input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5{
     background-color: var(--primary-color) !important;
@@ -296,6 +300,9 @@ a#cart-btn-keep, a#cart-btn-secure{
     padding-top: 12px;
 }
 
+.btn {
+    letter-spacing: 2px;
+}
 /*---------------------------------------------Stripe */
 
   #card-options-container {
@@ -344,10 +351,10 @@ button.increment-qty, .decrement-qty {
     overflow-y: auto;
 }
 
-.order-history-wrapper {
+.bookings-schedule-wrapper, .order-history-wrapper {
     max-height: 669px !important;
     overflow-y: auto !important;
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid transparent;
 }
 
 #order-number a{

@@ -11,12 +11,17 @@
                 <div class="overlay-main"></div>        
                 <div class="content-wrapper">
 
-<h1 class="mb-3">Your Schedule</h1>
+<h1 class="mb-3">Your Class Bookings</h1>
 
+<div class="row mt-5">
+    
+        <div class="col-12">
+ 
+            <div class="bookings-schedule-wrapper px-3">
 {% if bookings %}
 <ul>
     {% for booking in bookings %}
-        <li class="mb-3 feature font-2 rounded py-3">
+        <li class="mb-5  feature font-2 rounded py-3">
             <strong>{{ booking.user.username }}</strong> -
             {{ booking.session.class_type }} |
             {{ booking.session.class_date }} |
@@ -27,7 +32,9 @@
         </li>
     {% endfor %}
 </ul>
-<a href="{% url 'bookings:classes' %}" class="btn btn-styling2 px-3 pt-3" >
+</div>
+
+<a href="{% url 'bookings:classes' %}" class="btn btn-styling2 px-3 pb-3" >
     Book Another Class
 </a>
 
@@ -38,6 +45,8 @@
 </a>
 {% endif %}
 
+</div>
+</div>
 </div>
 
 </section>

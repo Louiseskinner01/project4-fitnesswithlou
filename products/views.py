@@ -40,12 +40,18 @@ def all_products(request):
 
 def product_details(request, product_id):
     """ A view to show individual proect details """
-    
     product = get_object_or_404(Product, pk=product_id)
+    
+    sizes = []
+
+    if product.sizes:
+        sizes = product.sizes.split(',')
+
+    
     # Sends the products to the template      
     context = {
         'product': product,
-        
+        'sizes': sizes,
     }
 
     # Loads the HTML template
@@ -58,6 +64,31 @@ def add_product(request):
     template = 'products/add_products.html' 
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+def edit_product(request, product_id): 
+    """ Edit a product """ 
+    
+    product = get_object_or_404(Product, pk=product_id)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.info(request, f'Product {product.name}: {product_id} successfully updated! ')
+            return redirect('products:product_details', product.id)
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=product)
+        messages.success(request, f'Product {product.name}: {product_id} successfully updated! ')
+
+
+    template = 'products/edit_products.html' 
+    context = {
+        'form': form,
+        'product': product,
     }
 
     return render(request, template, context)

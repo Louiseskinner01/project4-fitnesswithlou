@@ -54,8 +54,10 @@
                                 
                                     <option value="" selected disabled>Select Size</option>
                                 
-                                    {% for size in product.sizes.split(',') %}
-                                        <option value="{{ size }}">{{ size|upper }}</option>
+                                    {% for size in sizes %}
+                                        <option value="{{ size }}">
+                                            {{ size|upper }}
+                                        </option>
                                     {% endfor %}
                                 
                                 </select>

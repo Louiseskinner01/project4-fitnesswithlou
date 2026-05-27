@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
+
 
 
 def all_products(request):
@@ -57,7 +59,7 @@ def product_details(request, product_id):
     # Loads the HTML template
     return render(request, 'products/product_details.html', context)
 
-
+@login_required
 def add_product(request): 
     """ Add a product to the online store """ 
     form = ProductForm()
@@ -68,6 +70,7 @@ def add_product(request):
 
     return render(request, template, context)
 
+@login_required
 def edit_product(request, product_id): 
     """ Edit a product """ 
     
@@ -93,7 +96,7 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
-
+@login_required
 def delete_product(request, product_id): 
     """ Delete a product """ 
 

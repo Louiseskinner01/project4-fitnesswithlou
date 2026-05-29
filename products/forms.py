@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Product, Category
 
 
@@ -13,6 +14,12 @@ SIZE_CHOICES = (
 
 class ProductForm(forms.ModelForm):
 
+    image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput()
+    )
+
     sizes = forms.ChoiceField(
         choices=[('', 'Select Size')] + list(SIZE_CHOICES),
         required=False,
@@ -22,6 +29,7 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
+
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -63,21 +71,4 @@ class ProductForm(forms.ModelForm):
 
         return instance
 
-    sizes = forms.ChoiceField(
-        choices=[('', 'Select Sizes')] + list(SIZE_CHOICES),
-        required=False
-    )
-
-    class Meta:
-        model = Product
-        fields = '__all__'
-
-    def save(self, commit=True):
-        instance = super().save(commit=False)
-
-        instance.sizes = ",".join(self.cleaned_data['sizes'])
-
-        if commit:
-            instance.save()
-
-        return instance
+    

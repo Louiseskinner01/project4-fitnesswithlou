@@ -55,6 +55,10 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
 
             field.label = False
+            
+            if field_name == 'image':
+                continue 
+
             field.widget.attrs['class'] = 'rounded'
 
             if field_name in placeholders and field.widget.input_type in ['text', 'number', 'textarea', 'email']:

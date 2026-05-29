@@ -257,7 +257,13 @@ label:not(.form-check-label) {
     display: none;
 }
 
+#label-img-pm, label.custom-control-label{
+    display: block;
+}
 
+#new-image{
+    display: none;
+}
 /* -------------------------------------------------Buttons (main) */
 .btn-styling1{
     background-color: var(--primary-color);
@@ -295,6 +301,16 @@ a.btn-styling2:hover{
     border: 1px solid var(--primary-color);
   
   }
+
+.btn-styling3{
+    background-color: var(--bg1-color);
+}
+.btn-styling3:hover{
+    background-color: var(--primary-color);
+    color: white;
+}
+
+
 
 a#cart-btn-keep, a#cart-btn-secure{
     padding-top: 12px;

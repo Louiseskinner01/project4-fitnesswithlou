@@ -22,7 +22,9 @@ SECRET_KEY = 'django-insecure--wwc4!o8$lapuxv!@l*(isu_s&=jd#y7zanwc%ag6fr0*8qkjh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['only-parsley-vocalize.ngrok-free.dev',
+                 '127.0.0.1'
+                    ]
 
 
 # Application definition
@@ -34,6 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.forms',
     'users',
     'products',
     'bookings',
@@ -70,7 +73,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth'),
+            os.path.join(BASE_DIR, 'templates', 'allauth', 'products'),
         ],
 
         'APP_DIRS': True,
@@ -199,3 +202,5 @@ SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 """
+
+FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'

@@ -23,9 +23,15 @@ SECRET_KEY = 'django-insecure--wwc4!o8$lapuxv!@l*(isu_s&=jd#y7zanwc%ag6fr0*8qkjh
 DEBUG = True
 
 ALLOWED_HOSTS = ['only-parsley-vocalize.ngrok-free.dev',
-                 '127.0.0.1'
+                 '127.0.0.1',
+                 'localhost',
                     ]
-
+                    
+CSRF_TRUSTED_ORIGINS = [
+    'https://only-parsley-vocalize.ngrok-free.dev',
+    'http://127.0.0.1',
+    'http://localhost',
+]
 
 # Application definition
 
@@ -107,8 +113,17 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = 'fitnesswithlouise@gmail.com'
 
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
 
 # Django Allauth settings
 ACCOUNT_LOGIN_METHODS = {"username", "email"}
@@ -197,6 +212,7 @@ STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
+
 """
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True

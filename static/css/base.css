@@ -261,6 +261,10 @@ label:not(.form-check-label) {
     display: block;
 }
 
+#label-img-pm{
+    cursor: pointer;
+}
+
 #new-image{
     display: none;
 }

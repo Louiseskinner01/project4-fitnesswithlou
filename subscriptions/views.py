@@ -21,7 +21,7 @@ def subscribe(request, plan_id):
     plan = get_object_or_404(SubscriptionPlan, id=plan_id)
 
     # Prevents duplicate subscriptions
-    UserSubscription.objects.obejct.get_or_create(
+    UserSubscription.objects.get_or_create(
         user=request.user,
         plan=plan
     )

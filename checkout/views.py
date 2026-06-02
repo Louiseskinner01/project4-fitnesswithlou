@@ -15,12 +15,12 @@ from products.models import Product
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
-
-
+import json
 
 
 @csrf_exempt
 def stripe_webhook(request):
+    
     payload = request.body
     sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
     event = None
@@ -69,6 +69,13 @@ def checkout(request):
 
             order = order_form.save(commit=False)
             order.user = request.user
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            order.stripe_pid = pid
+            order.original_bag = json.dumps({
+                str(item.product.id): item.quantity
+                for item in cart_items
+            })
+            print(f"🔥 ORDER SAVED - PID: {order.stripe_pid}")
             order.save()
 
             for item in cart_items:
@@ -98,6 +105,14 @@ def checkout(request):
             automatic_payment_methods={
                 'enabled': True,
             },
+         metadata={
+                'bag': json.dumps({
+                    str(item.product.id): item.quantity
+                    for item in cart_items
+                }),
+                'save_info': 'False', 
+                'username': request.user.username,
+            }
         )
 
     try:
@@ -160,34 +175,3 @@ def checkout_success(request, order_number):
 
     return render(request, 'checkout/success.html', context)
 
-
-@csrf_exempt
-def stripe_webhook(request):
-    """Listen for Stripe events"""
-
-    stripe.api_key = settings.STRIPE_SECRET_KEY
-    webhook_secret = settings.STRIPE_WH_SECRET
-
-    payload = request.body
-    sig_header = request.META['HTTP_STRIPE_SIGNATURE']
-    event = None
-
-    try:
-        event = stripe.Webhook.construct_event(
-            payload,
-            sig_header,
-            webhook_secret
-        )
-    except ValueError:
-        # invalid payload
-        return HttpResponse(status=400)
-    except stripe.error.SignatureVerificationError:
-        # invalid signature
-        return HttpResponse(status=400)
-
-    # 👉 handle the event
-    if event['type'] == 'payment_intent.succeeded':
-        intent = event['data']['object']
-        print("Payment succeeded:", intent.id)
-
-    return HttpResponse(status=200)

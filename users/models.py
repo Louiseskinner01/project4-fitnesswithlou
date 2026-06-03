@@ -32,5 +32,9 @@ class UserProfile(models.Model):
     
     default_country = CountryField(blank_label='Country*', null=True, blank=True)
     
+    stripe_customer_id = models.CharField(max_length=254, null=True, blank=True)
+    
+    stripe_subscription_id = models.CharField(max_length=254, null=True, blank=True)
+    
     def __str__(self):
         return self.user.username

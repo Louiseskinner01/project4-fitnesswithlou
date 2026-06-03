@@ -10,7 +10,6 @@ import stripe
 import json
 import time
 
-
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -45,7 +44,17 @@ class StripeWH_Handler:
         """Handle the payment_intent.succeeded webhook from Stripe"""
         intent = event.data.object
         pid = intent.id
-        bag = intent.metadata.bag
+        # bag = intent.metadata.bag
+
+        # Check if this is a subscription payment (no bag metadata)
+        bag = getattr(intent.metadata, 'bag', None)
+        if not bag:
+         # This is a subscription payment, not a product order
+            return HttpResponse(
+             content=f'Webhook received: {event["type"]} | Subscription payment, skipping order handler',
+             status=200)
+
+
         save_info = intent.metadata.save_info
         username = intent.metadata.username
 

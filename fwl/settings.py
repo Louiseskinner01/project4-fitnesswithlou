@@ -213,6 +213,12 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET', '')
 
+# Stripe payment features - Subcription products 
+STRIPE_PRICE_BASIC = 'price_1Tdxlq2dKqODld9JLf49TBdQ'
+STRIPE_PRICE_PREMIUM = 'price_1TdyQm2dKqODld9JXREF6k87'
+STRIPE_PRICE_VIP = 'price_1TdyPZ2dKqODld9JImPfOYsJ'
+
+
 """
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True

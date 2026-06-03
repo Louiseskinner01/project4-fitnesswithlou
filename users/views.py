@@ -4,8 +4,9 @@ from django.contrib import messages
 
 from .models import UserProfile
 from .forms import ProfileForm
-
 from checkout.models import Order
+from subscriptions.models import UserSubscription
+
 
 @login_required
 def profile(request):
@@ -17,6 +18,11 @@ def profile(request):
 
     orders = request.user.orders.all().order_by('-date')
 
+    active_subscription = UserSubscription.objects.filter(
+        user=request.user,
+        status='active'
+    ).first()
+    
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=profile)
 
@@ -35,6 +41,7 @@ def profile(request):
         'form': form,
         'profile': profile,
         'orders': orders,
+        'active_subscription': active_subscription,
     }
 
     return render(request, 'users/profile.html', context)

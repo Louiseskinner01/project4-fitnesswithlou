@@ -4,9 +4,9 @@ from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
 from checkout.webhook_handler import StripeWH_Handler
+from subscriptions.webhook_handler import handle_subscription_webhook
 
 import stripe
-
 
 @require_POST
 @csrf_exempt
@@ -24,23 +24,27 @@ def webhook(request):
             payload, sig_header, settings.STRIPE_WH_SECRET
         )
     except ValueError as e:
-        print(f"❌ INVALID PAYLOAD: {e}")
+        print(f" INVALID PAYLOAD: {e}")
         return HttpResponse(status=400)
     
     except stripe.error.SignatureVerificationError as e:
-        print(f"❌ INVALID SIGNATURE: {e}")
+        print(f" INVALID SIGNATURE: {e}")
         return HttpResponse(status=400)
     
     except Exception as e:
-        print(f"❌ OTHER ERROR: {e}")
+        print(f" OTHER ERROR: {e}")
         return HttpResponse(content=e, status=400)
     
     handler = StripeWH_Handler(request)
 
+    # Single event map with all events
     event_map = {
         'payment_intent.succeeded': handler.handle_payment_intent_succeeded,
         'payment_intent.payment_failed': handler.handle_payment_intent_payment_failed,
+        'checkout.session.completed': handle_subscription_webhook,
+        'customer.subscription.deleted': handle_subscription_webhook,
     }
+
 
     event_type = event['type']
     event_handler = event_map.get(event_type, handler.handle_event)

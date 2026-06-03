@@ -366,12 +366,13 @@ button.increment-qty, .decrement-qty {
     display: flex;
 }
 
-.order-history{
-    max-height: 416px;
+.order-history-wrapper, .order-history{
+    max-height: 282px;
     overflow-y: auto;
+    border: 1px solid transparent;
 }
 
-.bookings-schedule-wrapper, .order-history-wrapper {
+.bookings-schedule-wrapper {
     max-height: 669px !important;
     overflow-y: auto !important;
     border: 1px solid transparent;

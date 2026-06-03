@@ -73,6 +73,30 @@ def subscription_success(request):
     return render(request, 'subscriptions/success.html')
 
 
-@login_required  
-def subscription_cancel(request):
-    return render(request, 'subscriptions/cancel.html')
+@login_required
+def cancel_subscription(request):
+    profile = request.user.userprofile
+    
+    if not profile.stripe_subscription_id:
+        messages.error(request, 'No active subscription found.')
+        return redirect('users:profile')
+    
+    try:
+        # ✅ Cancel at period end, not immediately
+        stripe.Subscription.modify(
+            profile.stripe_subscription_id,
+            cancel_at_period_end=True
+        )
+        
+        # Update local status to reflect pending cancellation
+        UserSubscription.objects.filter(
+            user=request.user,
+            status='active'
+        ).update(status='cancelled')
+        
+        messages.success(request, 'Your subscription has been cancelled. You will have access until the end of your current billing period.')
+        
+    except stripe.error.StripeError as e:
+        messages.error(request, f'Error cancelling subscription: {e}')
+    
+    return redirect('users:profile')

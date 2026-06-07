@@ -1,0 +1,1 @@
+FWL Subscription Confirmation - {{ subscription.plan.get_name_display }}

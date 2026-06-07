@@ -30,11 +30,12 @@ def subscribe(request, plan_id):
         messages.error(request, 'Invalid plan selected.')
         return redirect('subscriptions:subscription_plans')
 
-       # Check for existing active subscription
+    # Check for existing active subscription
     existing_subscription = UserSubscription.objects.filter(
         user=request.user,
         status='active'
     ).first()
+   
 
     if existing_subscription:
         messages.error(request, f'You already have an active {existing_subscription.plan.get_name_display()} subscription. Please cancel it before subscribing to a new plan.')

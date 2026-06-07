@@ -1,0 +1,14 @@
+Hello {{ user.username }}!
+
+Thank you for subscribing to Fitness With Lou!
+
+Your subscription details:
+Plan: {{ subscription.plan.get_name_display }}
+Price: £{{ subscription.plan.price }} / {{ subscription.plan.billing_cycle }}
+Start Date: {{ subscription.start_date|date:"d M Y" }}
+Status: Active
+
+If you have any questions, contact us at {{ contact_email }}.
+
+Thank you,
+FWL - Fitness With Lou

@@ -1,11 +1,23 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
-<div class="container content-wrapper text-center mt-5">
-    <h1 class="font-2">Subscription Cancelled</h1>
-    <p>No worries! You can subscribe anytime.</p>
-    <a href="{% url 'subscriptions:subscription_plans' %}" class="btn btn-styling1 mt-3">
+
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0">
+        <div class="col-12 p-0 mx-0">
+
+            <section class="hero-img-bg page-bg">
+                <div class="overlay-main"></div>
+                <div class="content-wrapper">
+    <h1 class="mb-5">Subscription Cancelled!</h1>
+    <p class="mt-3">No worries! You can subscribe anytime. Check out more plans below or head back to your <strong><a href="{% url 'users:profile' %}">Profile</a></strong>.</p>
+    <a href="{% url 'subscriptions:subscription_plans' %}" class="btn btn-styling2 px-3 pb-3 mt-2">
         View Plans
     </a>
+</div>
+
+</section>
+</div>
+</div>
 </div>
 {% endblock %}

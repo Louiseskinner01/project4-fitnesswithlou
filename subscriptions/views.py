@@ -100,4 +100,9 @@ def cancel_subscription(request):
     except stripe.error.StripeError as e:
         messages.error(request, f'Error cancelling subscription: {e}')
     
-    return redirect('users:profile')
+    return redirect('subscriptions:subscription_cancelled')
+
+
+@login_required
+def subscription_cancelled(request):
+    return render(request, 'subscriptions/cancel.html')

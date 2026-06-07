@@ -32,7 +32,7 @@ h4{
 }
 
 .font-1{
-    color: var( --feature-color);
+    color: var( --bg1-color);
 }
 
 .font-2{
@@ -45,9 +45,13 @@ h4{
 
 
 .bg1-color{
-    background-color: var(--bg1-color);
-  
+    background-color: var(--bg1-color); 
 }
+
+.bg-primary-color{
+    background-color: var(--primary-color);
+}
+    
 
 
 .feature{
@@ -318,6 +322,7 @@ a.btn-styling2:hover{
 .btn-styling3:hover{
     background-color: var(--btn-color);
     color: var(--primary-color);
+    border: 1px solid var(--primary-color);
 }
 
 

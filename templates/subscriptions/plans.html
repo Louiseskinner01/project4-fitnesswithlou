@@ -10,21 +10,21 @@
                 <div class="overlay-main"></div>
                 <div class="content-wrapper">
 
-                    <h1 class="text-center mb-4">Choose Your Membership</h1>
-                    <div class="row">
+                    <h1 class="text-center mb-5">Choose Your Membership</h1>
+                    <div class="row mt-3">
 
                         {% for plan in plans %}
                         <div class="col-md-4 mb-4">
                             <div class="card h-100 shadow-sm">
                                 <div class="card-body text-center">
                                     <!-- Plan Name -->
-                                    <h3 class="card-title">
+                                    <h3 class="card-title font-2 mb-3">
                                         {{ plan.get_name_display }}
                                     </h3>
                                     <!-- Price -->
-                                    <h4 class="text-primary">
+                                    <h4 class="font-1 bg-primary-color rounded">
                                         £{{ plan.price }}
-                                        <small class="text-muted">
+                                        <small class="text-white">
                                             / {{ plan.billing_cycle }}
                                         </small>
                                     </h4>
@@ -35,7 +35,7 @@
                                 </div>
 
                                 <div class="card-footer text-center">
-                                    <a href="{% url 'subscriptions:subscribe' plan.id %}" class="btn btn-success">
+                                    <a href="{% url 'subscriptions:subscribe' plan.id %}" class="btn btn-styling2 px-3 pt-2 pb-2">
                                         Subscribe
                                     </a>
                                 </div>

@@ -94,7 +94,7 @@
 
               </li>
               {% if not user.is_authenticated %}
-                <a href="{% url 'account_login' %}">Login</a>
+                <a class="nav-link nav-link-border btn btn-styling1 pb-2" href="{% url 'account_login' %}">Login</a>
               {% endif %}
 
               {% if user.is_authenticated %}

@@ -16,7 +16,7 @@
                             {% for product in products %}
                             <div class="col-6 col-md-4 mb-4">
 
-                                <div class="card h-100 border-0 shadow-sm">
+                                <div class="card border-0 shadow-sm mb-3 mt-3">
 
                                     {% if product.image %}
                                     <a href="{% url 'products:product_details' product.id %}">
@@ -32,7 +32,7 @@
                                     </a>
                                     {% endif %}
 
-                                    <div class="card-body bg1-color rounded text-center">
+                                    <div class="card-body white text-center">
                                         <p class="mb-2">{{ product.name }}</p>
                                         <p class="font-weight-bold mb-0 font-2">
                                             £{{ product.price }}
@@ -42,10 +42,16 @@
                                 </div>
 
                                 {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'products:edit_product' product.id %}">Edit</a> | 
-                                    <a class="text-danger" href="{% url 'products:delete_product' product.id %}">Delete</a>
-                                </small>
+                               
+                                <div class="row my-3">
+                                    <div class="col-6 px-0">
+                                        <a class="btn edit-product-link rounded w-100" href="{% url 'products:edit_product' product.id %}">Edit</a> 
+                                    </div>
+                                    <div class="col-6">
+                                        <a class="btn delete-product-link w-100 rounded" href="{% url 'products:delete_product' product.id %}">Delete</a>
+                                    </div>
+                                </div>
+                             
                             {% endif %}
 
 

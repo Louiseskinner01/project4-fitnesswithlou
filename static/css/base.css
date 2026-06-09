@@ -180,7 +180,7 @@ a.footer-about-a{
 }
 
 .product-manangement-h3 {
-    color: rgb(61, 60, 60);
+    color: black;
     font-size: 16px;
 }
 
@@ -194,6 +194,16 @@ input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5:hover{
     color: var(--primary-color);
 }
 
+a.edit-product-link{
+   background-color: rgb(205, 238, 238);
+   color: rgb(49, 54, 139);
+   
+}
+
+a.delete-product-link{
+    background-color: red;
+    color: white;
+}
 
 
 /* -------------------------------------------------Allauth */
@@ -276,6 +286,8 @@ label:not(.form-check-label) {
 #new-image{
     display: none;
 }
+
+
 /* -------------------------------------------------Buttons (main) */
 .btn-styling1{
     background-color: var(--primary-color);
@@ -333,22 +345,11 @@ a#cart-btn-keep, a#cart-btn-secure{
 .btn {
     letter-spacing: 2px;
 }
-/*---------------------------------------------Stripe */
 
-  #card-options-container {
-    width: 100%;
-    min-width: 200px !important;
-    max-width: 300px;
-    background-color: var(--feature-color);
-    margin: 0 auto;
-    
-}
 
-.StripeElement {
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
+
+
+
 
 
 

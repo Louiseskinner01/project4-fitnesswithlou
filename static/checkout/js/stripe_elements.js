@@ -5,7 +5,9 @@ const elements = stripe.elements({
 });
 
 // Create Payment Element 
-const paymentElement = elements.create("payment");
+const paymentElement = elements.create("payment", {
+    layout: "tabs"
+});
 
 // Mount the payment
 paymentElement.mount("#card-options-container");

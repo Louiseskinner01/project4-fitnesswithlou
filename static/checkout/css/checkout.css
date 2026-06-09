@@ -1,12 +1,10 @@
 .StripeElement,
 .stripe-style-input {
-  box-sizing: border-box;
+  
   height: 40px;
   padding: 10px 12px;
-  border: 1px solid transparent;
   border-radius: 0px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
+  
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
 }
@@ -37,25 +35,24 @@
 }
 
 #card-options-container {
-  background-color: var(bg1-pop);
-  min-width: 300px;
+  width: 100%;
   max-width: 100%;
-  margin-bottom: 250px;
-  border: 1px solid var(--primary-color);
-  border-radius: 10px;
+  min-height: 490px; 
 }
 
 .payment-window{
-  margin-bottom: 250px;
-  display: flex;
-  flex-wrap: wrap;
+  overflow: visible;
+  display: block;
+  
+}
+
+.payment-wrapper{
+  min-height: 380px; 
+  border-radius: 10px;
+ 
 }
 
 
-.payment-wrapper {
-  margin-bottom: 2rem;
-  min-height: 260px;
-}
 
 .submit-button {
   margin-top: 100px;
@@ -64,7 +61,11 @@
   margin-top: 1.5rem;
 }
 
-
+.StripeElement {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 /* -------------------------------------------------Checkout Form-styling */
 .checkout-form-styling input,
 .checkout-form-styling select,
@@ -92,8 +93,6 @@
     font-weight: 600;
     margin-bottom: .4rem;
 }
-
-
 
 .checkout-form-styling input, .checkout-form-styling select,  .checkout-form-styling textarea{
   color: gray !important;
@@ -159,3 +158,21 @@ input#save-info-checkbox.form-check-input{
 }
 
 
+
+@media (min-width: 768px) {
+  #card-options-container {
+    min-height: 380px;
+  }
+}
+
+@media (min-width: 992px) {
+  #card-options-container {
+    min-height: 430px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #card-options-container {
+    min-height: 480px;
+  }
+}

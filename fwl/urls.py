@@ -34,6 +34,7 @@ urlpatterns = [
     path('', include('main.urls')),
     path("contact/", TemplateView.as_view(template_name="main/contactus.html"), name="contact"),
     path("about/", TemplateView.as_view(template_name="main/aboutus.html"), name="about"),
+    path('nutritional-advice/', include('nutrition.urls')),
     path("news/", TemplateView.as_view(template_name="main/news.html"), name="news"),
     path("join/", TemplateView.as_view(template_name="main/joinus.html"), name="join"),
 

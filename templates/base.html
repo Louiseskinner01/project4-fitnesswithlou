@@ -75,7 +75,7 @@
                 <a class="nav-link nav-link-border" href="{% url 'bookings:bookings' %}">My Bookings</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link nav-link-border" href="">Nutritional Advice</a>
+                <a class="nav-link nav-link-border" href="{% url 'nutrition:nutritional_advice' %}">Nutritional Advice</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link nav-link-border dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -109,7 +109,7 @@
                   <li>
                     <form method="post" action="{% url 'account_logout' %}">
                     {% csrf_token %}
-                    <button type="submit" id="nav-logout" class="dropdown-item">Logout</button>
+                    <button type="submit" id="nav-logout" class="dropdown-item bg-white">Logout</button>
                     </form>
                   </li>
                 </ul>

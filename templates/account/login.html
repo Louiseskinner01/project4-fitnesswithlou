@@ -1,16 +1,17 @@
-{% extends "allauth/account/base.html" %}
+{% extends "account/base.html" %}
 
 {% load i18n %}
 {% load account %}
+{% load crispy_forms_tags %}
 
 {% block inner_content %}
 
-
-
-
-
-        
+<div class="container-fluid p-0">
+    <div class="row p-0 mx-0 g-4">
+        <div class="col-12 p-0 mx-0">
+     
  <section class="page-bg join-team-bg">
+
     <div class="overlay-main"></div>
         
          <div class="content-wrapper">
@@ -24,25 +25,30 @@
                     {{ form|crispy }}
 
                     
-                    <button class="btn btn-styling w-50 mt-3" type="submit">
+                    <button class="btn btn-styling1 w-50 mt-3" type="submit">
                         Sign In
                     </button>
 
                 </form>
 
                 <div class="text-center mt-3">
-                    <small>
+                    <small class="d-block">
                         Don't have an account?
-                        <a class="btn-account w-50" href="{% url 'account_signup' %}">
+                        <a class="btn font-1 fs-6 d-block p-0" href="{% url 'account_signup' %}">
                             Sign Up
                         </a>
                     </small>
                 </div>
 
             </div>
-
         </div>
+
+
+        </section>
     </div>
+  </div>
 </div>
+
+
 
 {% endblock %}

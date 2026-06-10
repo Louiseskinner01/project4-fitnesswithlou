@@ -34,6 +34,10 @@ h4{
 .font-1{
     color: var( --bg1-color);
 }
+.font-1:hover{
+    color: var( --primary-color);
+}
+
 
 .font-2{
     color: var(--primary-color);
@@ -50,6 +54,8 @@ h4{
 
 .bg-primary-color{
     background-color: var(--primary-color);
+    border-radius: 10px;
+    border: 1px solid var(--btn-color);
 }
     
 

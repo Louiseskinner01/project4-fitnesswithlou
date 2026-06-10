@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'cart',
     'subscriptions',
     'checkout',
+    'nutrition',
     'main',
     'accounts',
     'django.contrib.sites',
@@ -79,7 +80,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             os.path.join(BASE_DIR, 'templates'),
-            os.path.join(BASE_DIR, 'templates', 'allauth', 'products'),
         ],
 
         'APP_DIRS': True,

@@ -81,13 +81,15 @@
                 <a class="nav-link nav-link-border dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Shop
                 </a>
-                <ul class="dropdown-menu" id="dropdown-menu-shop">
-                 <li><a href="{% url 'products:products' %}?category=accessories" class="dropdown-item">Accessories</a></li>
-                 <li><a href="{% url 'products:products' %}?category=hoodies" class="dropdown-item">Hoodies</a></li>
-                 <li><a href="{% url 'products:products' %}?category=t-shirts" class="dropdown-item">T-shirts</a></li>
-                 <li><a href="{% url 'products:products' %}?category=leggings" class="dropdown-item">Leggings</a></li>
-                 <li><a href="{% url 'products:products' %}?category=bags" class="dropdown-item">Gym Bags</a></li>
+                <ul class="dropdown-menu" id="dropdown-menu-shop">              
                  <li><a href="{% url 'products:products' %}?category=activewear,bags,leggings,accessories, t_shirts,hoodies" class="dropdown-item">All Products</a></li>
+                 <li><a href="{% url 'products:products' %}?category=accessories" class="dropdown-item">Accessories</a></li>
+                 <li><a href="{% url 'products:products' %}?category=bags" class="dropdown-item">Gym Bags</a></li>
+                 <li><a href="{% url 'products:products' %}?category=hoodies" class="dropdown-item">Hoodies</a></li>
+                 <li><a href="{% url 'products:products' %}?category=leggings" class="dropdown-item">Leggings</a></li>
+                 <li><a href="{% url 'products:products' %}?category=t-shirts" class="dropdown-item">T-shirts</a></li>
+
+
                     </form>
                   </li>
                 </ul>

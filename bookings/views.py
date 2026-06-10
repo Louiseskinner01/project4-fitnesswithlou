@@ -59,12 +59,6 @@ def cancel_booking(request, booking_id):
 
 
 
-
-
-
-
-
-
 @login_required
 def book_session(request, session_id):
     session = get_object_or_404(ClassSession, id=session_id)
@@ -75,9 +69,11 @@ def book_session(request, session_id):
     ).exists()
 
     if already_booked:
+        messages.warning(request, 'You have already booked this class!')
         return redirect("bookings:bookings")
 
     if session.booked_count >= session.capacity:
+        messages.error(request, 'Sorry, this class is fully booked!')
         return redirect("bookings:timetable")
 
     Booking.objects.create(
@@ -88,29 +84,11 @@ def book_session(request, session_id):
     session.booked_count += 1
     session.save()
 
+    # Success meesage 
+    messages.success(request, f'You have successfully booked {session.class_type}!')
     return redirect("bookings:bookings")
-    session = get_object_or_404(ClassSession, id=session_id)
 
-    # Prevent double booking (important)
-    already_booked = Booking.objects.filter(
-        user=request.user,
-        session=session
-    ).exists()
 
-    if already_booked:
-        return redirect("bookings:bookings")
 
-    # Optional: enforce capacity
-    if session.booking_set.count() >= session.capacity:
-        return redirect("bookings:classes")
 
-    Booking.objects.create(
-        user=request.user,
-        session=session
-    )
 
-    # Update counter (since you're using it)
-    session.booked_count += 1
-    session.save()
-
-    return redirect("bookings:bookings")

@@ -1,3 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
 
+{% block content %}
+<section class="page-bg">
+    <div class="overlay-main"></div>
+    <div class="content-wrapper">
 
-<h2>I am the news</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm border-0 rounded feature p-4">
+                    
+                    <h1 class="h2-font text-center mb-3">Sign Up to Our Newsletter</h1>
+                    <p class="text-center mb-4">Stay up to date with the latest news, fitness tips and exclusive offers from FWL!</p>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-styling1 px-4">
+                                Sign Me Up!
+                            </button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endblock %}

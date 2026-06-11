@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from main import views as main_views
+
 
 
 urlpatterns = [
@@ -35,6 +37,6 @@ urlpatterns = [
     path("contact/", TemplateView.as_view(template_name="main/contactus.html"), name="contact"),
     path("about/", TemplateView.as_view(template_name="main/aboutus.html"), name="about"),
     path('nutritional-advice/', include('nutrition.urls')),
-    path("join/", TemplateView.as_view(template_name="main/joinus.html"), name="join"),
-
+    path("join/", main_views.join_us, name="join"),
+    path("join/success/", TemplateView.as_view(template_name="main/job_success.html"), name="job_success"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

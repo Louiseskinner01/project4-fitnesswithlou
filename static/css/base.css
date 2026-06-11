@@ -212,6 +212,16 @@ a.delete-product-link{
 }
 
 
+/* -------------------------------------------------Join Us */
+
+
+#id_first_name, #id_last_name, #id_email, #id_position {
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 8px;
+    width: 100%;
+}
+
 /* -------------------------------------------------Allauth */
 .auth-card input {
     
@@ -281,7 +291,9 @@ label:not(.form-check-label) {
     display: none;
 }
 
-#label-img-pm, label.custom-control-label{
+#label-img-pm, 
+label.custom-control-label, 
+label.display-labels {
     display: block;
 }
 

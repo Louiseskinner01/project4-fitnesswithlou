@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="container-fluid p-0">
@@ -9,37 +10,77 @@
       <section class="hero-img-bg page-bg">
         <div class="overlay-main"></div>
         <div class="content-wrapper">
-          {% include 'includes/contact_form.html' %}
 
+          <h1 class="mb-5">Careers at FWL</h1>
 
-          <div class="row mt-5">
+          <form method="POST" action="{% url 'join' %}" enctype="multipart/form-data" >
+            {% csrf_token %}
 
-            <div class="col-6">
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Position of interest</label>
-                <select class="form-control px-0" id="exampleFormControlSelect1">
-                  <option>Marketing</option>
-                  <option>Fitness Coach</option>
-                  <option>Sales</option>
-                </select>
+            <!-- Your existing contact form fields -->
+            <div class="row bg-white rounded text-black p-3">
+                <div class="col-12 col-md-6" style="margin-bottom: 3rem;">
+                    <div class="form-group fs-5">
+                        <label class="display-labels" for="id_first_name">First name</label>
+                        {{ form.first_name }}
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 mb-3">
+                    <div class="form-group fs-5">
+                        <label class="display-labels" for="id_last_name">Last name</label>
+                        {{ form.last_name }}
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group fs-5">
+                        <label class="display-labels" for="id_email">Email address</label>
+                        {{ form.email }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Your existing position and CV fields -->
+            <div class="row mt-5 p-3 bg-white rounded" style="min-height: 130px;">
+
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="display-labels" for="id_position">Position of interest</label>
+                        {{ form.position }}
+                    </div>
+                </div>
+
+                <div class="col-6">
+                  <label for="id_cv" class="form-label m-0 display-labels btn btn-styling3 mt-3 pb-2 pt-3">Upload your CV</label>
+                  <input type="file" name="cv" id="id_cv" style="display:none;">
+                  <p class="text-danger small mt-1" id="cv-filename"></p>
               </div>
+
+                <div class="col-12 mt-4 text-center">
+                    <button type="submit" class="btn btn-styling1 px-4">
+                        Submit Application
+                    </button>
+                </div>
+
             </div>
 
-            <div class="col-6">
-              <label for="formFile" class="form-label m-0">Upload your CV</label>
-              <input class="form-control" type="file" id="formFile">
-            </div>
+          </form>
 
-      </div>
-
-
-
+        </div>
+      </section>
 
     </div>
-    </section>
-
   </div>
- </div>
 </div>
+
+{% block postloadjs %}
+{{ block.super }}
+<script>
+    $('#id_cv').change(function() {
+        var file = $('#id_cv')[0].files[0];
+        $('#cv-filename').text(file.name);
+    });
+</script>
+{% endblock %}
 
 {% endblock %}

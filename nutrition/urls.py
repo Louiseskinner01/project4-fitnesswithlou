@@ -6,9 +6,5 @@ app_name = 'nutrition'
 
 
 urlpatterns = [
-    path(
-        '',
-        views.nutritional_advice,
-        name='nutritional_advice'
-    ),
+    path('', views.nutritional_advice, name='nutritional_advice'),
 ]

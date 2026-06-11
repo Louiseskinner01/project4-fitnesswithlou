@@ -44,7 +44,7 @@ h4{
 }
 
 .font-3{
-    color: var(--bg1-color);
+    color: var(--btn-color);
 }
 
 
@@ -57,7 +57,10 @@ h4{
     border-radius: 10px;
     border: 1px solid var(--btn-color);
 }
-    
+
+.btn-color{
+    background-color: var(--btn-color);
+}
 
 
 .feature{
@@ -332,7 +335,7 @@ a.btn-styling2{
     color: var(--primary-color);
     padding-top: 15px;
     border: 1px solid var(--primary-color);
-    border-radius: 5px;
+    border-radius: 10px;
     height: 50px;
   }
   

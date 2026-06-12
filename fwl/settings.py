@@ -20,11 +20,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY', 'jango-insecure--wwc4!o8$lapuxv!@l*(isu_s&=jd#y7zanwc%ag6fr0*8qkjh')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['only-parsley-vocalize.ngrok-free.dev',
                  '127.0.0.1',
                  'localhost',
+                 'project4-fwl-ce947c9798e9.herokuapp.com',
                     ]
                     
 CSRF_TRUSTED_ORIGINS = [

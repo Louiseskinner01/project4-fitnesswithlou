@@ -2,171 +2,196 @@
 {% load static %}
 {% load cart_tools %}
 
-
-
 {% block content %}
 <div class="container-fluid p-0">
-    <div class="row p-0 mx-0 g-4">
+    <div class="row p-0 mx-0">
         <div class="col-12 p-0 mx-0">
 
             <section class="hero-img-bg page-bg">
-                <div class="overlay-main"></div>        
-                 <div class="content-wrapper">
+                <div class="overlay-main"></div>
+                <div class="content-wrapper">
 
-            <h1 class="logo-font mb-4">Shopping Bag</h1>
-            
+                    <h1 class="logo-font mb-5">
+                        <!-- Bag icon -->
+                        <i class="fas fa-lock"></i>
+                        Shopping Bag
+                    </h1>
 
-            <div class="row">
+                    <div class="row align-items-stretch">
+                        <!-- Left column -->
+                        <div class="col-12 col-md-6 h-100 mb-3 mb-md-0">
 
-                <!-- LEFT COLUMN -->
-                <div class="col-12 col-md-6 h-100">
-            
-                    <div class="card bg-white p-4 rounded h-100">
-            
-                        {% if cart_items %}
-            
-                        <div class="table-responsive">
-            
-                            <table class="table table-sm table-borderless mb-0">
-            
-                                <thead class="text-black">
-                                    <tr>
-                                        <th scope="col">Product Info</th>
-                                        <th scope="col"></th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Qty</th>
-                                        <th scope="col">Size</th>
-                                    </tr>
-                                </thead>
-            
-                                {% for item in cart_items %}
-            
-                                <tr>
-            
-                                    <td class="p-3 w-25">
-                                        <img class="img-fluid rounded"
-                                             src="{{ item.product.image.url }}">
-            
-                                        <p class="my-0">
-                                            <strong>Size:</strong>
-            
-                                            {% if item.product.has_sizes %}
-                                                {{ item.size|upper }}
-                                            {% else %}
-                                                N/A
-                                            {% endif %}
-                                        </p>
-                                    </td>
-            
-                                    <td class="py-3">
-                                        <p class="my-0">
-                                            <strong>{{ item.product.name }}</strong>
-                                        </p>
-                                    </td>
-            
-                                    <td class="py-3">
-                                        <p class="my-0">
-                                            £{{ item.product.price }}
-                                        </p>
-                                    </td>
-            
-                                    <td class="py-3">
-                                        <!-- quantity form here -->
-                                    </td>
-            
-                                    <td class="py-3">
-                                        {% if item.product.has_sizes %}
-                                            {{ item.size }}
-                                        {% endif %}
-                                    </td>
-            
-                                </tr>
-            
-                                {% endfor %}
-            
-                            </table>
-            
-                        </div>
-            
-                        {% endif %}
-            
-                    </div>
-            
-                </div>
-            
-                <!-- RIGHT COLUMN -->
-                <div class="col-12 col-md-6">
-            
-                    <div class="card feature rounded p-4 h-100">
-            
-                        <h4 class="mb-4">Order Summary</h4>
-            
-                        <h6>
-                            <strong>
-                                Bag Total:
-                                £{{ total|floatformat:2 }}
-                            </strong>
-                        </h6>
-            
-                        <h6>
-                            Delivery:
-                            £{{ delivery|floatformat:2 }}
-                        </h6>
-            
-                        <h4 class="mt-4">
-                            <strong>
-                                Grand Total:
-                                £{{ grand_total|floatformat:2 }}
-                            </strong>
-                        </h4>
-            
-                        {% if free_delivery_delta > 0 %}
-                            <p class="text-danger">
-                                Spend
-                                <strong>£{{ free_delivery_delta }}</strong>
-                                more for free delivery!
-                            </p>
-                        {% endif %}
-            
-                        <div class="row g-3 mt-4">
-            
-                            <div class="col-12 col-sm-6">
-                                <a href="{% url 'products:products' %}" 
-                                   class="btn btn-styling2 rounded w-100"
-                                    id="cart-btn-keep">
-            
-                                    <i class="fas fa-chevron-left"></i>
-                                    Keep Shopping
-                                </a>
+                            <div class="card bg-white p-4 rounded h-100">
+
+                                {% if cart_items %}
+                                <div class="cart-items-wrapper">
+                                    <div class="table-responsive">
+
+                                        <table class="table table-sm table-borderless mb-0">
+                                            <thead class="text-black">
+                                                <tr>
+                                                    <th scope="col" class="cart-table-head" style="width: 40%;">Item
+                                                    </th>
+                                                    <th scope="col" class="cart-table-head" style="width: 23%;">Price
+                                                    </th>
+                                                    <th scope="col" class="cart-table-head" style="width: 34%;">Qty</th>
+                                                    <th scope="col" class="cart-table-head" style="width: 13%;">Size
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <hr>
+
+                                            {% for item in cart_items %}
+
+                                            <tr class="cart--table-row">
+                                                <td class="p-3">
+                                                    <img class="img-fluid rounded" src="{{ item.product.image.url }}">
+
+                                                    <p class="my-0 mt-2" id="cart-product-name">
+                                                        {{ item.product.name }}
+                                                    </p>
+                                                </td>
+
+                                                <td class="py-2">
+                                                    <p class="my-0">
+                                                        £{{ item.product.price }}
+                                                    </p>
+                                                </td>
+
+                                                <!-- Quantity form -->
+                                                <td class="py-2">
+                                                    <form class="update-form" method="POST"
+                                                        action="{% url 'cart:adjust_cart' item.id %}">
+                                                        {% csrf_token %}
+                                                        <div class="input-group">
+                                                            <button class="decrement-qty btn text-black"
+                                                                id="decrement-qty_{{ item.item_id }}"
+                                                                data-item_id="{{ item.item_id }}">
+                                                                <i class="fas fa-minus fa-sm"></i>
+                                                            </button>
+
+                                                            <input
+                                                                class="qty_input text-center cart-form-control-input rounded p-0"
+                                                                type="text" name="quantity" value="{{ item.quantity }}"
+                                                                data-item_id="{{ item.item_id }}"
+                                                                id="id_qty_{{ item.item_id }}">
+
+                                                            <button class="increment-qty btn "
+                                                                id="increment-qty_{{ item.item_id }}"
+                                                                data-item_id="{{ item.item_id }}">
+                                                                <i class="fas fa-plus fa-sm"></i>
+                                                            </button>
+                                                        </div>
+
+                                                        <button type="submit"
+                                                            class="btn btn-link font-2 mt-1 cart-update-remove p-0">Update</button>
+                                                    </form>
+
+                                                    <form method="POST"
+                                                        action="{% url 'cart:remove_from_cart' item.id %}">
+                                                        {% csrf_token %}
+                                                        <button type="submit"
+                                                            class="btn btn-link text-danger cart-update-remove p-0">Remove</button>
+                                                    </form>
+                                                    </form>
+
+                                                </td>
+
+                                                <td class="py-2">
+                                                    <p class="my-0">
+                                                        <strong></strong>
+
+                                                        {% if item.size %}
+                                                        {{ item.size|upper }}
+                                                        {% else %}
+                                                        N/A
+                                                        {% endif %}
+                                                    </p>
+                                                </td>
+
+                                            </tr>
+
+                                            {% endfor %}
+
+                                        </table>
+
+                                    </div>
+                                </div>
+                                {% endif %}
+
                             </div>
-            
-                            <div class="col-12 col-sm-6">
-                                <a href="{% url 'checkout:checkout' %}"
-                                   class="btn btn-styling1 rounded w-100"
-                                   id="cart-btn-secure">
-            
-                                    <i class="fas fa-lock"></i>
-                                    Secure Checkout
-                                </a>
-                            </div>
-            
+
                         </div>
-            
+
+                        <!-- Right column -->
+                        <div class="col-12 col-md-6">
+
+                            <div class="card feature rounded p-4 h-100">
+
+                                <h4 class="mb-4">Order Summary</h4>
+
+                                <h6>
+                                    <strong>
+                                        Bag Total:
+                                        £{{ total|floatformat:2 }}
+                                    </strong>
+                                </h6>
+
+                                <h6>
+                                    Delivery:
+                                    £{{ delivery|floatformat:2 }}
+                                </h6>
+
+                                <h4 class="mt-4">
+                                    <strong>
+                                        Grand Total:
+                                        £{{ grand_total|floatformat:2 }}
+                                    </strong>
+                                </h4>
+
+                                {% if free_delivery_delta > 0 %}
+                                <p class="text-danger">
+                                    Spend
+                                    <strong>£{{ free_delivery_delta }}</strong>
+                                    more for free delivery!
+                                </p>
+                                {% endif %}
+
+                                <div class="row g-3 mt-4">
+
+                                    <div class="col-12 col-sm-6">
+                                        <a href="{% url 'products:products' %}" class="btn btn-styling3 rounded w-100"
+                                            id="cart-btn-keep">
+
+                                            <i class="fas fa-chevron-left"></i>
+                                            Keep Shopping
+                                        </a>
+                                    </div>
+
+                                    <div class="col-12 col-sm-6">
+                                        <a href="{% url 'checkout:checkout' %}"
+                                            class="btn btn-styling1 rounded w-100 px-1 pt-3" id="cart-btn-secure">
+                                           
+                                            <!-- Bag icon -->
+                                            <i class="fas fa-lock"></i>
+                                            Secure Checkout
+                                        </a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
-            
+
                 </div>
-            
-            </div> 
-
-
-
-
-                 </div>
-                 </section>
-        
+            </section>
         </div>
     </div>
 </div>
+
 
 
 
@@ -183,5 +208,5 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'includes/products/quantity_update.html' %}
-  
+
 {% endblock %}

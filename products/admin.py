@@ -7,6 +7,7 @@ class ProductAdmin(admin.ModelAdmin):
         'category',
         'price',
         'image',
+        'sizes',
     )
 
     ordering = ('price',)

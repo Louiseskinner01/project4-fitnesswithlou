@@ -28,4 +28,4 @@ class CartItem(models.Model):
     
     # This is an example from chatGPT to help calculate the total price
     def get_total_price(self):
-        return self.product * self.quantity
+        return self.product.price * self.quantity

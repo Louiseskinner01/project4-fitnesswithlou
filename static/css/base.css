@@ -214,6 +214,12 @@ a.delete-product-link{
     color: white;
 }
 
+#products-add-cart{
+    width: 80px;
+    height: 30px;
+    font-size: 6px;
+
+}
 
 /* -------------------------------------------------Join Us */
 
@@ -359,12 +365,10 @@ a.btn-styling2:hover{
 }
 
 
-a#cart-btn-keep, a#cart-btn-secure{
-    padding-top: 12px;
-}
+
 
 .btn {
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 
@@ -383,11 +387,7 @@ a#cart-btn-keep, a#cart-btn-secure{
     border-radius: 5px;
 }
 
-button.increment-qty, .decrement-qty {
-    background-color: var(--primary-color) !important;
-    color: white !important;
-    font-size: 16px !important;
-}
+
 
 
 
@@ -396,8 +396,7 @@ button.increment-qty, .decrement-qty {
     display: flex;
 }
 
-.order-history-wrapper{
-   
+.order-history-wrapper{ 
     height: 490px;
     overflow-y: auto;
     border: 1px solid transparent;

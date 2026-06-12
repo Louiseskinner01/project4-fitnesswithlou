@@ -25,7 +25,7 @@ def cart_contents(request):
                 'id': item.id,
                 'product': item.product,
                 'quantity': item.quantity,
-                'price': item.price,
+                'price': product.price,
                 'size': item.size,
             })
 

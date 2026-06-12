@@ -1,10 +1,23 @@
 import os
+import dj_database_url
 from pathlib import Path
 if os.path.isfile('env.py'):
     import env
     
 from dotenv import load_dotenv
 load_dotenv()
+
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
@@ -233,4 +246,10 @@ CSRF_COOKIE_SECURE = True
 
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# CRF Tokens
+CSRF_TRUSTED_ORIGINS = [
+    'https://project4-fwl-ce947c9798e9.herokuapp.com',
+    'https://only-parsley-vocalize.ngrok-free.dev',
+    'http://127.0.0.1',
+    'http://localhost',
+]

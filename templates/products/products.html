@@ -7,80 +7,81 @@
         <div class="col-12 p-0 mx-0">
 
             <section class="hero-img-bg page-bg">
-                <div class="overlay-main"></div>        
-                  <div class="content-wrapper">
+                <div class="overlay-main"></div>
+                <div class="content-wrapper">
 
-                        <h1 class="logo-font text-center mb-5">FWL Products</h1>
+                    <h1 class="logo-font text-center mb-5">FWL Products</h1>
 
-                           <div class="row">
+                    <div class="row">
 
-                            {% for product in products %}
-                            <div class="col-6 col-md-4 mb-4">
+                        {% for product in products %}
+                        <div class="col-6 col-md-4 mb-4">
 
-                                <div class="card border-0 shadow-sm mb-3 mt-3">
+                            <div class="card border-0 shadow-sm mb-3 mt-3">
 
-                                    {% if product.image %}
-                                    <a href="{% url 'products:product_details' product.id %}">
-                                        <img class="card-img-top img-fluid"
-                                             src="{{ product.image.url }}"
-                                             alt="{{ product.name }}">
-                                    </a>
-                                    {% else %}
-                                    <a href="{% url 'products:product_details' product.id %}">
-                                        <img class="card-img-top img-fluid"
-                                             src="{{ MEDIA_URL }}noimage.png"
-                                             alt="{{ product.name }}">
-                                    </a>
-                                    {% endif %}
+                                {% if product.image %}
+                                <a href="{% url 'products:product_details' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}"
+                                        alt="{{ product.name }}">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'products:product_details' product.id %}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                        alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
 
-                                    <div class="card-body white text-center">
-                                        <p class="mb-2">{{ product.name }}</p>
-                                        <p class="font-weight-bold mb-0 font-2">
-                                            £{{ product.price }}
-                                        </p>
-                                    </div>
-                                    <form action="{% url 'cart:add_to_cart' product.id %}" method="POST">
-                                        {% csrf_token %}
-                                        <input type="hidden" name="quantity" value="1">
-                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                        <input type="submit" id="products-add-cart" class="btn btn-styling1 px-1 text-uppercase my-3" value="Add to Cart">
-                                    </form>
+                                <div class="card-body white text-center">
+                                    <p class="mb-2">{{ product.name }}</p>
+                                    <p class="font-weight-bold mb-0 font-2">
+                                        £{{ product.price }}
+                                    </p>
                                 </div>
+                                <a href="{% url 'products:product_details' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <input type="hidden" name="quantity" value="1">
+                                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                    <input type="submit" id="products-add-cart"
+                                        class="btn btn-styling1 px-1 text-uppercase my-3" value="View product">
+                                </form>
+                            </div>
 
-                                {% if request.user.is_superuser %}
-                               
-                                <div class="row my-3">
-                                    <div class="col-6 px-0">
-                                        <a class="btn edit-product-link rounded w-100" href="{% url 'products:edit_product' product.id %}">Edit</a> 
-                                    </div>
-                                    <div class="col-6">
-                                        <a class="btn delete-product-link w-100 rounded" href="{% url 'products:delete_product' product.id %}">Delete</a>
-                                    </div>
+                            {% if request.user.is_superuser %}
+
+                            <div class="row my-3">
+                                <div class="col-6 px-0">
+                                    <a class="btn edit-product-link rounded w-100"
+                                        href="{% url 'products:edit_product' product.id %}">Edit</a>
                                 </div>
-                             
+                                <div class="col-6">
+                                    <a class="btn delete-product-link w-100 rounded"
+                                        href="{% url 'products:delete_product' product.id %}">Delete</a>
+                                </div>
+                            </div>
+
                             {% endif %}
 
 
 
-                            </div>
-                            {% endfor %}
-
                         </div>
-
-
-
-
-
-
-
+                        {% endfor %}
 
                     </div>
 
+
+
+
+
+
+
+
                 </div>
-            </section>
 
         </div>
+        </section>
+
     </div>
+</div>
 </div>
 {% endblock %}
 
@@ -98,35 +99,35 @@
 
     // Ensure proper enabling/disabling of all inputs on page load
     var allQtyInputs = $('.qty_input');
-    for(var i = 0; i < allQtyInputs.length; i++){
+    for (var i = 0; i < allQtyInputs.length; i++) {
         var itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }
 
     // Check enable/disable every time the input is changed
-    $('.qty_input').change(function() {
+    $('.qty_input').change(function () {
         var itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
     });
 
     // Increment quantity
-    $('.increment-qty').click(function(e) {
-       e.preventDefault();
-       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-       var currentValue = parseInt($(closestInput).val());
-       $(closestInput).val(currentValue + 1);
-       var itemId = $(this).data('item_id');
-       handleEnableDisable(itemId);
+    $('.increment-qty').click(function (e) {
+        e.preventDefault();
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var currentValue = parseInt($(closestInput).val());
+        $(closestInput).val(currentValue + 1);
+        var itemId = $(this).data('item_id');
+        handleEnableDisable(itemId);
     });
-    
+
     // Decrement quantity
-    $('.decrement-qty').click(function(e) {
-       e.preventDefault();
-       var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
-       var currentValue = parseInt($(closestInput).val());
-       $(closestInput).val(currentValue - 1);
-       var itemId = $(this).data('item_id');
-       handleEnableDisable(itemId);
+    $('.decrement-qty').click(function (e) {
+        e.preventDefault();
+        var closestInput = $(this).closest('.input-group').find('.qty_input')[0];
+        var currentValue = parseInt($(closestInput).val());
+        $(closestInput).val(currentValue - 1);
+        var itemId = $(this).data('item_id');
+        handleEnableDisable(itemId);
     });
 </script>
 {% endblock %}

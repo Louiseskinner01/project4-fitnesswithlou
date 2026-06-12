@@ -215,10 +215,9 @@ a.delete-product-link{
 }
 
 #products-add-cart{
-    width: 80px;
-    height: 30px;
-    font-size: 6px;
-
+    width: 90px;
+    height: 40px;
+    font-size: 8px;
 }
 
 /* -------------------------------------------------Join Us */

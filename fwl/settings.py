@@ -226,3 +226,5 @@ CSRF_COOKIE_SECURE = True
 """
 
 FORM_RENDERER = 'django.forms.renderers.TemplatesSetting'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

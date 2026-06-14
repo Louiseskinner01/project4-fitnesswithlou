@@ -31,11 +31,6 @@ ALLOWED_HOSTS = ['only-parsley-vocalize.ngrok-free.dev',
                  'project4-fwl-ce947c9798e9.herokuapp.com',
                     ]
                     
-CSRF_TRUSTED_ORIGINS = [
-    'https://only-parsley-vocalize.ngrok-free.dev',
-    'http://127.0.0.1',
-    'http://localhost',
-]
 
 # Application definition
 
@@ -250,4 +245,4 @@ CSRF_TRUSTED_ORIGINS = [
 ]
 
 # Cloudinary image storage
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+#DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

@@ -23,7 +23,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'jango-insecure--wwc4!o8$lapuxv!@l*(is
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-DEBUG = 'DEVELOPMENT' in os.environ
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['only-parsley-vocalize.ngrok-free.dev',
                  '127.0.0.1',
@@ -40,8 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'cloudinary', 
     'django.forms',
     'users',

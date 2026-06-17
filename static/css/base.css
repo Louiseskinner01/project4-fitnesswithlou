@@ -47,6 +47,10 @@ h4{
     color: var(--btn-color);
 }
 
+.font-dark-purple{
+    color: rgb(85, 42, 107);
+}
+
 
 .bg1-color{
     background-color: var(--bg1-color); 
@@ -332,6 +336,9 @@ label.display-labels {
     display: none;
 }
 
+ul{
+    padding-left: 0px;
+}
 
 /* -------------------------------------------------Buttons (main) */
 .btn-styling1{

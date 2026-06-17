@@ -21,12 +21,14 @@
 {% if bookings %}
 <ul>
     {% for booking in bookings %}
-        <li class="mb-5  feature font-2 rounded py-3">
-            <strong>{{ booking.user.username }}</strong> -
-            {{ booking.session.class_type }} |
+        <li class="mb-5 feature font-2 rounded py-3">
+           
+            {{ booking.session.class_type }} 
+            <br>           
             {{ booking.session.class_date }} |
-            {{ booking.session.class_time }} |
-            <a href="{% url 'bookings:cancel_booking' booking.id %}" class="btn btn-styling1 btn-sm mx-2 px-3 pt-3 ">
+            {{ booking.session.class_time }} 
+            <a href="{% url 'bookings:cancel_booking' booking.id %}" 
+               class="btn btn-styling1 btn-sm mx-2 px-3 pt-3 mt-3">
                 Cancel
             </a>
         </li>

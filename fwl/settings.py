@@ -26,7 +26,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'jango-insecure--wwc4!o8$lapuxv!@l*(is
 
 # DEBUG mode shows detailed error pages - must be False in production
 # Reads from environment variable, defaults to False if not set
-DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+#DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+DEBUG = 'True'
 
 # List of hostnames that Django will serve requests for
 # Prevents HTTP Host header attacks

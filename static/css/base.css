@@ -204,14 +204,16 @@ input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5:hover{
 }
 
 a.edit-product-link{
-   background-color: rgb(205, 238, 238);
-   color: rgb(49, 54, 139);
+   background-color: var(--feature-color);
+   color: var(--primary-color);
+   font-style: italic;
    
 }
 
 a.delete-product-link{
     background-color: red;
     color: white;
+    font-style: italic;
 }
 
 #products-add-cart{

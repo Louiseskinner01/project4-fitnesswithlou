@@ -204,16 +204,33 @@ input#add-cart-btn.btn.btn-styling.text-uppercase.mt-5:hover{
 }
 
 a.edit-product-link{
-   background-color: var(--feature-color);
-   color: var(--primary-color);
+   background-color: orange;
+   color: rgb(85, 42, 107);
    font-style: italic;
+   font-size: 10px;
    
 }
+
+a.edit-product-link:hover{
+    background-color: var(--bg1-color);
+    color: rgb(85, 42, 107);
+    
+    
+ }
+ 
 
 a.delete-product-link{
     background-color: red;
     color: white;
     font-style: italic;
+    font-size: 10px;
+   
+}
+
+a.delete-product-link:hover{
+    background-color: var(--btn-color);
+    color: red;
+    
 }
 
 #products-add-cart{

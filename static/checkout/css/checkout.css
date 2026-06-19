@@ -207,6 +207,35 @@ input#save-info-checkbox.form-check-input{
 
 
 
+/*------------------------------Media Queries */
+
+@media (max-width: 767px) {
+  .cart-items-wrapper table,
+  .cart-items-wrapper thead,
+  .cart-items-wrapper tbody,
+  .cart-items-wrapper th,
+  .cart-items-wrapper td,
+  .cart-items-wrapper tr {
+      display: block;
+      width: 100%;
+  }
+
+  .cart-items-wrapper thead {
+      display: none;  /* Hide table headers on mobile */
+  }
+
+  .cart-items-wrapper tr {
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--primary-color);
+      padding-bottom: 5px;
+  }
+
+  .cart-items-wrapper td {
+      text-align: left;
+      padding: 0.5rem 0;
+  }
+}
+
 @media (min-width: 768px) {
   #card-options-container {
     min-height: 380px;
@@ -224,3 +253,5 @@ input#save-info-checkbox.form-check-input{
     min-height: 480px;
   }
 }
+
+

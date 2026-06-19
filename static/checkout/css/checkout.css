@@ -206,8 +206,26 @@ input#save-info-checkbox.form-check-input{
 }
 
 
-
 /*------------------------------Media Queries */
+
+/* Stretches payment popup msg to fit on mobile screens so it's not hidden by the parent container */
+@media (max-width: 576px) {
+  #card-options-container {
+      width: 100% !important;
+      min-width: 100% !important;
+      padding: 0 !important;
+  }
+  
+  .payment-window {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+  }
+  
+  fieldset.px-3 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+  }
+}
 
 @media (max-width: 767px) {
   .cart-items-wrapper table,

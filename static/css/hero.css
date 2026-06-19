@@ -40,6 +40,7 @@
   color: white;
   text-align: center;
   font-size: 34px;
+  width: 90%;
 }
 
 .page-bg {
@@ -83,4 +84,14 @@
   padding: 2rem;
   border-radius: 12px;
   color: #111;
+}
+
+
+
+/*-----------------------------------Media Queries */
+@media (max-width: 576px) {
+  .hero-content {
+      top: 60%;
+      font-size: 24px; 
+  }
 }

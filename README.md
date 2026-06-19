@@ -1,4 +1,49 @@
-# project4-fitnesswithlou
+# project4-fitnesswithlou(https://github.com/Louiseskinner01/project4-fitnesswithlou
+
+Developer: Louise Skinner ([Louiseskinner01](https://www.github.com/Louiseskinner01))
+
+
+[![GitHub commit activity](https://img.shields.io/github/commit-activity/t/Louiseskinner01/project4-fitnesswithlou)](https://github.com/Louiseskinner01/project4-fitnesswithlou
+/commits/main)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Louiseskinner01/project4-fitnesswithlou)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/Louiseskinner01/project4-fitnesswithlou)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou)
+[![badge](https://img.shields.io/badge/deployment-GitHub Pages-purple)](https://project4-fwl-ce947c9798e9.herokuapp.com/)
+
+## FWL - Fitness With Louise
+![FWL Logo](static/images/fwlLogo.png)
+
+## FWL - Fitness With Lou
+
+![FWL Logo](static/images/fwlLogo.png)
+
+### Overview
+
+FWL (Fitness With Lou) is a full-stack e-commerce and booking platform built for a personal fitness and training business. The site allows users to browse and purchase fitness apparel, book fitness classes led by qualified instructors, and subscribe to recurring membership plans for ongoing access to exclusive content and benefits.
+
+The platform was designed to bring together everything a fitness business needs into one seamless experience — combining a fully functional online store, a class booking system, and a subscription-based membership model, all backed by secure Stripe payment processing.
+
+### Purpose
+
+Many small fitness businesses rely on a patchwork of separate tools — one platform for bookings, another for selling merchandise, and a third for managing memberships. FWL solves this by bringing all three together under a single, easy-to-use platform that benefits both the business owner and the end user:
+
+- **For customers** — a simple way to browse and buy fitness apparel, book classes that suit their schedule, and subscribe to a membership plan that gives them ongoing access and benefits, all from one account.
+- **For the business** — a centralised system to manage products, class schedules, and subscriber data, with automated payment processing, email confirmations, and order tracking handled behind the scenes.
+
+### Key Features
+
+- 🛍️ **E-commerce store** — browse and purchase fitness apparel with secure Stripe checkout
+- 📅 **Class bookings** — view a live class timetable and book sessions with instructors
+- ⭐ **Subscriptions** — choose from Basic, Premium or VIP membership plans with recurring monthly billing
+- 👤 **User accounts** — manage your profile, view order history, and track your active subscription
+- 📧 **Automated emails** — order and subscription confirmation emails sent automatically
+- 📱 **Responsive design** — fully optimised for mobile, tablet and desktop devices
+
+
+
+
+
+
+
 
 
 

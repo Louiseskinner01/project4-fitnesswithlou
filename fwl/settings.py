@@ -246,4 +246,3 @@ CSRF_TRUSTED_ORIGINS = [
     'http://localhost',                                  # Local development
 ]
 
-X_FRAME_OPTIONS = 'ALLOWALL'

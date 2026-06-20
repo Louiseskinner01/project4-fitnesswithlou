@@ -294,7 +294,36 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 - **Multi-language support** — translate the site for a broader, more inclusive audience.
 - **Gift cards / vouchers** — allow customers to purchase and redeem gift cards for products or memberships.
 
+## Tools & Technologies
 
+| Tool / Tech | Use |
+| --- | --- |
+| [![badge](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
+| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage. |
+| [![badge](https://img.shields.io/badge/VSCode-grey?logo=htmx&logoColor=007ACC)](https://code.visualstudio.com) | Local IDE for development. |
+| [![badge](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) | Main site content and layout. |
+| [![badge](https://img.shields.io/badge/CSS-grey?logo=css&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) | Design and layout. |
+| [![badge](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) | Hosting the deployed front-end site. |
+| [![badge](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) | Front-end CSS framework for modern responsiveness and pre-built components. |
+| [![badge](https://img.shields.io/badge/dbdiagram.io-0C4B33?style=for-the-badge&logo=databricks&logoColor=white)](https://dbdiagram.io/d/6947e17f4bbde0fd74ec3916) | Automated ERD tool. |
+| [![badge](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) | Creating wireframes. |
+| [![badge](https://img.shields.io/badge/Google%20Fonts-4285F4?style=for-the-badge&logo=googlefonts&logoColor=white)](https://fonts.google.com/) | Customisation of fonts. |
+| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
+| [![badge](https://img.shields.io/badge/W3Schools-grey?logo=w3schools&logoColor=04AA6D)](https://www.w3schools.com) | Tutorials/Reference Guide |
+| [![badge](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/) | Guidance for implementing Django framework |
+| [![badge](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://claude.ai/) | Used for guidance, debugging support and code explanations throughout development |
+| [![badge](https://img.shields.io/badge/Coolors-000000?style=for-the-badge&logo=coolors&logoColor=white)](https://coolors.co/) | Used to generate and refine the site's colour palette |
+
+## Agile Development Process
+### GitHub Projects
+
+[GitHub Projects](https://www.github.com/Louiseskinner01/project2-the-countdown/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
+
+| Stage   | Screenshot |
+| ----- | --- |
+| To Do | ![screenshot](documentation/agile/to-do.png) |
+| In-progress | ![screenshot](documentation/agile/in-progress.png) |
+| Done | ![screenshot](documentation/agile/done.png) |
 
 
 

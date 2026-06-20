@@ -204,6 +204,77 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 
 
 
+## User Stories
+
+### User requirements
+
+| Target | Expectation | Outcome |
+| --- | --- | --- |
+| As a user | I would like to create an account | so I can use the FWL platform. |
+| As a user | I would like to log in and out of my account | so my profile and order history are kept safe from non-authenticated users. |
+| As a user | I would like to view a list of fitness apparel products | so that I can browse what's available to purchase. |
+| As a user | I would like to view individual product details | so that I can see the price, description and available sizes before buying. |
+| As a user | I would like to add products to my shopping cart | so that I can purchase multiple items in one order. |
+| As a user | I would like to adjust the quantity of items in my cart | so that I have full control over what I'm purchasing. |
+| As a user | I would like to remove items from my cart | so that I can change my mind before checking out. |
+| As a user | I would like to securely pay for my order using Stripe | so that I can trust my payment details are safe. |
+| As a user | I would like to receive a confirmation email after purchase | so that I have a record of my order. |
+| As a user | I would like to view my order history on my profile | so that I can keep track of what I've previously purchased. |
+| As a user | I would like to view a class timetable | so that I can see what fitness classes are available. |
+| As a user | I would like to book a class | so that I can attend a fitness session led by an instructor. |
+| As a user | I would like to cancel a class booking | so that I have flexibility if my plans change. |
+| As a user | I would like to receive a confirmation toast when I book a class | so that I know my booking was successful. |
+| As a user | I would like to subscribe to a membership plan | so that I can access ongoing benefits as a member. |
+| As a user | I would like to cancel my subscription | so that I have control over my recurring payments. |
+| As a user | I would like my subscription to remain active until the end of the billing period after cancelling | so that I'm not cut off immediately after paying. |
+| As a user | I would like to view my active subscription on my profile | so that I can see my current membership status. |
+| As a superuser | I would like to upload, edit and delete products | so that I can manage the store's inventory. |
+| As a user | I would like to upload my CV when applying for a job | so that I can be considered for a role at FWL. |
+| As a user | I would like to sign up to the newsletter | so that I can stay up to date with the latest news. |
+| As a user | I want access to a simple and clean navbar | so I can easily navigate through the website's pages. |
+
+### Accessibility & Usability
+
+| Target | Expectation | Outcome |
+| --- | --- | --- |
+| As a visually impaired user | I want clear colour contrasts | so that I can see buttons, prices and important information more clearly. |
+| As a user with little computer skills | I want a simple, intuitive website | so I can fully utilise the site's features without confusion. |
+| As a mobile user | I want large, tap-friendly buttons | so that I can browse and purchase easily on my phone. |
+| As a user | I want toast notifications for key actions (booking, purchasing, cancelling) | so that I have clear, immediate feedback on what's happened. |
+
+### Content & Motivation
+
+| Target | Expectation | Outcome |
+| --- | --- | --- |
+| As a new customer | I want to browse fitness apparel without pressure | so that I can decide in my own time what to purchase. |
+| As a fitness enthusiast | I want to book classes that suit my schedule | so that I can stay consistent with my training. |
+| As a returning customer | I want a subscription plan that gives me ongoing value | so that I feel committed to my fitness journey with FWL. |
+
+## Features
+
+### Existing Features
+
+| Feature | Notes | Screenshot |
+| --- | --- | --- |
+| User Registration | Users can create an account with username, email and password, with mandatory email verification. | ![screenshot](documentation/existing-features/sign-up.png) |
+| Login / Logout | Secure authentication via django-allauth with conditional navigation links based on login state. | ![screenshot](documentation/existing-features/login.png)<br>![screenshot](documentation/existing-features/logout.png) |
+| User Profile | Dedicated profile page displaying order history and active subscription. Access restricted to authenticated users. | ![screenshot](documentation/existing-features/user-profile.png) |
+| Product Catalogue | Browse all products by category with images, prices and quick add-to-cart functionality. | ![screenshot](documentation/existing-features/products.png) |
+| Product Details | Individual product page showing description, price, available sizes and quantity selector. | ![screenshot](documentation/existing-features/product-details.png) |
+| Add/Edit/Delete Products | Superusers can manage the product catalogue directly from the front end. | ![screenshot](documentation/existing-features/product-crud.png) |
+| Shopping Cart | View, update quantities, and remove items from the cart with live total recalculation. | ![screenshot](documentation/existing-features/cart.png) |
+| Stripe Checkout | Secure payment processing for one-off purchases via Stripe. | ![screenshot](documentation/existing-features/checkout.png) |
+| Order Confirmation Email | Automated email sent on successful purchase confirming order details. | ![screenshot](documentation/existing-features/order-email.png) |
+| Class Timetable | Displays all available fitness classes with instructor, date, time and capacity. | ![screenshot](documentation/existing-features/timetable.png) |
+| Book / Cancel Class | Users can book and cancel classes, with capacity limits enforced. | ![screenshot](documentation/existing-features/book-class.png) |
+| Subscription Plans | Users can choose from Basic, Premium and VIP membership plans with recurring billing via Stripe. | ![screenshot](documentation/existing-features/subscriptions.png) |
+| Cancel Subscription | Subscriptions cancel at the end of the current billing period rather than immediately. | ![screenshot](documentation/existing-features/cancel-subscription.png) |
+| Subscription Confirmation Email | Automated email sent confirming a new subscription. | ![screenshot](documentation/existing-features/subscription-email.png) |
+| Job Application / CV Upload | Users can apply to join the team via the Join Us page, with CV file upload. | ![screenshot](documentation/existing-features/join-us.png) |
+| Newsletter Sign Up | Simple email capture form for newsletter sign ups, stored in the database. | ![screenshot](documentation/existing-features/newsletter.png) |
+| Toast Notifications | Custom styled toast messages for success, error, warning and info feedback throughout the site. | ![screenshot](documentation/existing-features/toast.png) |
+| Responsive Navbar | Navigation adapts based on authentication state and screen size, including a dropdown account menu. | ![screenshot](documentation/existing-features/navbar-response1.png)<br>![screenshot](documentation/existing-features/navbar-response2.png) |
+| Responsive Design | Bootstrap grid and fluid images ensure mobile-first compatibility across the entire site. | ![screenshot](documentation/existing-features/responsive-design1.png)<br>![screenshot](documentation/existing-features/responsive-design2.png) |
 
 
 

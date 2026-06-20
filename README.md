@@ -103,6 +103,7 @@ The following content needed to be created, sourced, and managed for the platfor
 #### 5. Surface
 
 **Visual Design Elements**
+- **[Design](#colour-scheme)** (see below)
 - **[Colours](#colour-scheme)** (see below)
 - **[Typography](#typography)** (see below)
 
@@ -112,12 +113,65 @@ FWL's visual identity blends raw, gym-floor energy with understated elegance. Th
 
 The result is a design that feels equally at home in a serious training environment and a considered lifestyle brand: tough enough to motivate, polished enough to trust.
 
+## Design
+
+Before physically building the web pages it was important to design (model) the database to understand how data will flow when the user is interacting with the web application. Below is an ERD (entity relationship diagram) screenshot modelling the database.
+
+![screenshot](documentation/images/erd.png)
+
+Several models have been customised with predefined choice fields to enhance the user experience, ensure data consistency, and simplify form inputs. Examples include:
+
+### Database Design
+
+**SubscriptionPlan Model**<br>
+```python
+PLAN_CHOICES = [
+    ('basic', 'Basic Membership'),
+    ('premium', 'Premium Membership'),
+    ('vip', 'VIP Membership'),
+]
+
+name = models.CharField(max_length=50, choices=PLAN_CHOICES)
+billing_cycle = models.CharField(
+    max_length=20,
+    choices=[
+        ('monthly', 'Monthly'),
+        ('yearly', 'Yearly'),
+    ],
+    default='monthly'
+)
+```
+
+**JobApplication Model**<br>
+```python
+POSITION_CHOICES = [
+    ('', 'Select a job role...'),
+    ('marketing', 'Marketing'),
+    ('fitness_coach', 'Fitness Coach'),
+    ('sales', 'Sales'),
+]
+
+position = models.CharField(max_length=50, choices=POSITION_CHOICES, blank=True, default='')
+```
+
+**UserSubscription Model**<br>
+```python
+STATUS_CHOICES = [
+    ('active', 'Active'),
+    ('cancelled', 'Cancelled'),
+    ('expired', 'Expired'),
+]
+
+status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='active')
+```
+
+Using `choices` on these fields restricts user input to valid, predefined options — reducing data entry errors and ensuring consistent values are stored and displayed throughout the platform (e.g. in the admin panel, profile pages, and Stripe price mapping).
 ### Colour Scheme
 Colour pallet:
-    --primary-color: rgb(121, 110, 40); 
-    --feature-color: rgb(249, 247, 254);
-    --bg1-color: rgb(214, 203, 222);
-    --btn-color: rgb(220, 239, 223);
+- **--primary-color: rgb(121, 110, 40);**
+- **--feature-color: rgb(249, 247, 254);**
+- **--bg1-color: rgb(214, 203, 222);**
+- **--btn-color: rgb(220, 239, 223);**
 
 ![screenshot](documentation/images/coolers.png)
 
@@ -129,7 +183,24 @@ Font weight and letter spacing are used strategically instead of multiple typefa
 
 [Lato](https://fonts.google.com/specimen/Lato) is sourced from Google Fonts.
 
+## Wireframes
 
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
+
+| Page | Mobile | Tablet | Desktop |
+| --- | --- | --- | --- |
+| Home| ![screenshot](documentation/wireframes/) |
+| 404 Error | ![screenshot](documentation/wireframes/) |
+| Bookings | ![screenshot](documentation/wireframes/) | 
+| Classes | ![screenshot](documentation/wireframes/) | 
+| Products | ![screenshot](documentation/wireframes/) |
+| Product detail | ![screenshot](documentation/wireframes/) |
+| Shopping cart | ![screenshot](documentation/wireframes/) |
+| Cart | ![screenshot](documentation/wireframes/) |
+| Success | ![screenshot](documentation/wireframes/) |
+| Sign up | ![screenshot](documentation/wireframes/) | 
+| Login | ![screenshot](documentation/wireframes/) |
 
 
 

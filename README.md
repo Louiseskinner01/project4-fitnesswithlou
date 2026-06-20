@@ -62,7 +62,6 @@ Many small fitness businesses rely on a patchwork of separate tools — one plat
 - Emails (confirmation emails for classess booked)
 - Toast messages for an interactive UX
 
-
 **Content Requirements**
 
 The following content needed to be created, sourced, and managed for the platform to function as intended:
@@ -107,22 +106,37 @@ The following content needed to be created, sourced, and managed for the platfor
 - **[Colours](#colour-scheme)** (see below)
 - **[Typography](#typography)** (see below)
 
+
+## Design
+FWL's visual identity blends raw, gym-floor energy with understated elegance. The striking black and white hero photography sets a bold, editorial tone — strong, unfiltered and confident — while the warm, muted colour palette (Deep Olive, Ghost White, Thistle and Honeydew) softens that intensity with a touch of femininity and approachability.
+
+The result is a design that feels equally at home in a serious training environment and a considered lifestyle brand: tough enough to motivate, polished enough to trust.
+
 ### Colour Scheme
+Colour pallet:
+    --primary-color: rgb(121, 110, 40); 
+    --feature-color: rgb(249, 247, 254);
+    --bg1-color: rgb(214, 203, 222);
+    --btn-color: rgb(220, 239, 223);
 
-The visual design of Social Fitness follows a minimal and content-focused approach. The design philosophy aligns with modern social platforms where simplicity and clarity enhance user engagement whilst adopting a cleaner and more neutral style to support usability and readability.
+![screenshot](documentation/images/coolers.png)
 
-Bootstrap’s default styling and component library were intentionally used to ensure visual consistency, accessibility, and responsive behaviour across devices. The design prioritises user-generated content—such as workout images and captions—rather than decorative elements, allowing posts to remain the primary focal point of the interface.
+### Typography
 
-A restrained colour palette and standardised button styles were selected to reduce visual clutter, improve contrast, and maintain a professional appearance suitable for a social platform. This approach supports scalability, ensuring that additional features or user-customisation options can be integrated in future iterations without conflicting with an overly complex theme.
+FWL uses a single typeface throughout the site — **Lato** — chosen for its clean, modern and highly legible appearance across both headings and body text. Using one consistent font family reinforces a cohesive, professional brand identity rather than introducing unnecessary visual noise.
 
-**Colour pallet**<br>
-- Delete button (btn-danger)
-- Like/unlike button ()
-- Post button
-- Login
-- Logout
+Font weight and letter spacing are used strategically instead of multiple typefaces to create visual hierarchy — bold weights and wider letter spacing for headings and buttons, regular weight for body copy.
 
-![screenshot](documentation/images/bs-colour-pallet.png)
+[Lato](https://fonts.google.com/specimen/Lato) is sourced from Google Fonts.
+
+
+
+
+
+
+
+
+
 
 
 

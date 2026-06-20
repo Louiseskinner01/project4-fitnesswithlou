@@ -117,6 +117,7 @@ The result is a design that feels equally at home in a serious training environm
 
 Before physically building the web pages it was important to design (model) the database to understand how data will flow when the user is interacting with the web application. Below is an ERD (entity relationship diagram) screenshot modelling the database.
 
+**ERD**
 ![screenshot](documentation/images/erd.png)
 
 Several models have been customised with predefined choice fields to enhance the user experience, ensure data consistency, and simplify form inputs. Examples include:
@@ -190,17 +191,17 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 
 | Page | Mobile | Tablet | Desktop |
 | --- | --- | --- | --- |
-| Home| ![screenshot](documentation/wireframes/) |
-| 404 Error | ![screenshot](documentation/wireframes/) |
-| Bookings | ![screenshot](documentation/wireframes/) | 
-| Classes | ![screenshot](documentation/wireframes/) | 
-| Products | ![screenshot](documentation/wireframes/) |
-| Product detail | ![screenshot](documentation/wireframes/) |
-| Shopping cart | ![screenshot](documentation/wireframes/) |
+| Home| ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
+| 404 Error | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
+| Bookings | ![screenshot](documentation/wireframes/) | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
+| Classes | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) | 
+| Products | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
+| Product detailS | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
+| Shopping cart | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
 | Cart | ![screenshot](documentation/wireframes/) |
-| Success | ![screenshot](documentation/wireframes/) |
-| Sign up | ![screenshot](documentation/wireframes/) | 
-| Login | ![screenshot](documentation/wireframes/) |
+| Success | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
+| Sign up | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
+| Login | ![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |![screenshot](documentation/wireframes/) |
 
 
 
@@ -277,8 +278,21 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 | Responsive Design | Bootstrap grid and fluid images ensure mobile-first compatibility across the entire site. | ![screenshot](documentation/existing-features/responsive-design1.png)<br>![screenshot](documentation/existing-features/responsive-design2.png) |
 
 
+### Future Features
 
-
+- **Dark mode toggle** — allow users to switch between light and dark themes for a more personalised browsing experience.
+- **Personal calendar/diary** — a dedicated space for each user to log workouts, track progress and view upcoming booked classes in one place.
+- **Recurring Stripe subscription dashboard** — allow users to view full billing history, upcoming payment dates, and download invoices directly from their profile.
+- **Product reviews & ratings** — allow customers to leave star ratings and written reviews on products they've purchased.
+- **Wishlist functionality** — let users save products they're interested in for later, without adding them to the cart.
+- **Class waitlist** — when a class reaches capacity, allow users to join a waitlist and be automatically notified if a space becomes available.
+- **Instructor profiles** — dedicated pages for each instructor with their bio, specialities and class schedule.
+- **Loyalty/rewards points** — reward customers with points for purchases and class attendance, redeemable against future orders or subscriptions.
+- **Live chat support** — integrate a simple live chat widget for real-time customer queries.
+- **Progress tracking dashboard** — allow users to log measurements, weights or personal bests and visualise their progress over time with charts.
+- **Push notifications** — remind users of upcoming class bookings or subscription renewal dates.
+- **Multi-language support** — translate the site for a broader, more inclusive audience.
+- **Gift cards / vouchers** — allow customers to purchase and redeem gift cards for products or memberships.
 
 
 

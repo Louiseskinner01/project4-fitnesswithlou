@@ -326,7 +326,67 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 | Done | ![screenshot](documentation/agile/done.png) |
 
 
+### GitHub Issues
 
+[GitHub Issues](https://www.github.com/Louiseskinner01/project3-social-fitness/issues) served as an another Agile tool. There, I managed my User Stories and Milestone tasks, and tracked any issues/bugs.
+
+| Link | Screenshot |
+| --- | --- |
+| [![GitHub issues](https://img.shields.io/github/issues/Louiseskinner01/project3-social-fitness)](https://www.github.com/Louiseskinner01/project3-social-fitness/issues) | ![screenshot](documentation/project-board/issues/project-board-open-task.png) |
+| [![GitHub closed issues](https://img.shields.io/github/issues-closed/Louiseskinner01/project3-social-fitness)](https://www.github.com/Louiseskinner01/project3-social-fitness/issues?q=is%3Aissue+is%3Aclosed) | ![screenshot](documentation/project-board/issues/project-board-closed-task.png) |
+
+
+### MoSCoW Prioritisation
+
+I've decomposed my Epics into User Stories for prioritising and implementing them. Using this approach, I was able to apply "MoSCoW" prioritisation and labels to my User Stories within the Issues tab.
+
+- **Must Have**: guaranteed to be delivered - required to pass the project (*max ~60% of stories*)
+
+  - Must Have (Core to the project – without these the FWL e-commerce and booking platform won't be successful).
+  - User Registration & Authentication: Users must be able to create an account, verify their email, log in, and log out securely.
+  - Product Catalogue: Users must be able to browse all products with images, prices and descriptions.
+  - Product Detail Page: Users must be able to view individual product details, including size selection where applicable.
+  - Shopping Cart: Users must be able to add, update and remove items from their cart with accurate totals.
+  - Stripe Checkout: Users must be able to securely pay for their order using Stripe.
+  - Order Confirmation Email: Users must receive an automated confirmation email after a successful purchase.
+  - Class Timetable: Users must be able to view a list of available fitness classes.
+  - Book / Cancel a Class: Users must be able to book and cancel a class, with capacity limits enforced.
+  - Subscription Plans: Users must be able to subscribe to a recurring membership plan via Stripe.
+  - Cancel Subscription: Users must be able to cancel their subscription, with access retained until the end of the billing period.
+  - User Profile Page: Users must be able to access a personal profile displaying their order history and active subscription.
+  - Add/Edit/Delete Products: Superusers must be able to manage the product catalogue.
+  - Database Integrity & Webhooks: Stripe webhooks must reliably update orders and subscriptions in the database.
+  - Responsive Navigation: Navbar must adapt to authentication state and screen size.
+  - Form Validation & Security: Prevent invalid submissions and unauthorised actions throughout the site.
+  - Custom Data Models: Products, subscriptions and bookings must use appropriately structured models to demonstrate sound database design.
+
+- **Should Have**: adds significant value, but not vital (*~20% of stories*)
+
+  - Toast Notifications: Clear success, error and warning messages for key user actions (bookings, purchases, cancellations).
+  - Job Application Form: Allow users to apply to join the FWL team with a CV upload.
+  - Newsletter Sign Up: Simple email capture form stored in the database.
+  - Improved UI Styling: Enhanced visual polish beyond default Bootstrap components, including a custom colour palette and typography.
+  - Password Reset Functionality: Self-service recovery for forgotten passwords via django-allauth.
+  - Enhanced Error Pages: Custom 403 and 404 templates for a more consistent user experience.
+
+- **Could Have**: has small impact if left out (*the rest ~20% of stories*)
+
+  - Dark Mode Toggle: Optional theme switch for accessibility and user preference.
+  - Personal Calendar/Diary: A dedicated space for users to log workouts and view upcoming booked classes.
+  - Product Reviews & Ratings: Allow customers to leave star ratings and written reviews on purchased products.
+  - Wishlist Functionality: Let users save products of interest for later without adding them to the cart.
+  - Class Waitlist: Automatically notify users if a space becomes available in a fully booked class.
+  - Instructor Profiles: Dedicated pages for each instructor with bio and class schedule.
+
+- **Won't Have**: not a priority for this iteration - future features
+
+  - Live Chat Support: Requires real-time backend architecture beyond the scope of this iteration.
+  - Loyalty / Rewards Points System: Would significantly increase development complexity.
+  - Progress Tracking Dashboard: Requires additional data visualisation tools not aligned with current scope.
+  - Mobile Native Application: The project is focused on a responsive web platform only.
+  - Multi-Language Support: Out of scope due to the additional translation infrastructure required.
+
+  
 
 
 

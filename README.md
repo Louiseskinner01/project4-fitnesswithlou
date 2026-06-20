@@ -386,7 +386,156 @@ I've decomposed my Epics into User Stories for prioritising and implementing the
   - Mobile Native Application: The project is focused on a responsive web platform only.
   - Multi-Language Support: Out of scope due to the additional translation infrastructure required.
 
-  
+  ## Testing
+
+> [!NOTE]  
+> For all testing, please refer to the [TESTING.md](TESTING.md) file.
+
+## Deployment
+
+### Heroku App
+
+This project is deployed using Heroku, a cloud platform that supports full-stack Django applications with a PostgreSQL database.
+
+The live application can be accessed here: https://project4-fwl-ce947c9798e9.herokuapp.com/ 
+
+I have chosen this app because it supports server-side technologies and allows deployment of dynamic web applications with database integration.
+
+#### Deployment Process
+
+1. Created a Heroku app from the Heroku dashboard
+
+2. Attached a **Heroku Postgres** database to the app
+
+3. Set the following environment variables in **Heroku Config Vars**:
+   - `DATABASE_URL`
+   - `SECRET_KEY`
+   - `CLOUDINARY_URL`
+   - `DISABLE_COLLECTSTATIC=1` *(removed for the final deployment if applicable)*
+
+4. Installed the required production packages:
+   - `gunicorn`
+   - `dj-database-url`
+   - `psycopg2`
+
+5. Created a `Procfile` in the root directory:
+web: gunicorn project_name.wsgi
+
+
+6. Updated `ALLOWED_HOSTS` in `settings.py` to include the Heroku domain
+
+7. Deployed the application by pushing the code to Heroku via Git:
+git push heroku main
+
+8. Ran database migrations on the live Heroku database:
+heroku run python manage.py migrate
+### Local Development
+
+To run this project locally:
+
+1. Clone the repository: https://www.github.com/Louiseskinner01/project3-social-fitness)
+
+2. Navigate into the project folder: cd social-fitness
+
+3. Create and activate a virtual environment:
+python -m venv venv
+  - `source venv/bin/activate # Mac/Linux`
+  - `venv\Scripts\activate # Windows`
+
+4. Install the project dependencies:
+pip install -r requirements.txt
+
+5. Create a `.env` file in the root directory and add the required environment variables:
+  - `DATABASE_URL=your_database_url`
+  - `SECRET_KEY=your_secret_key`
+  - `CLOUDINARY_URL=your_cloudinary_url`
+
+6. Apply database migrations:
+python manage.py migrate
+
+7. Create a superuser (optional for admin access):
+python manage.py createsuperuser
+
+8. Run the development server:
+python manage.py runserver
+
+The application will now be available at:  
+http://127.0.0.1:8000/
+
+
+#### Cloning
+
+You can clone the repository by following these steps:
+
+1. Go to the [GitHub repository](https://www.github.com/Louiseskinner01/project3-social-fitness).
+2. Locate and click on the green "Code" button at the very top, above the commits and files.
+3. Select whether you prefer to clone using "HTTPS", "SSH", or "GitHub CLI", and click the "copy" button to copy the URL to your clipboard.
+4. Open "Git Bash" or "Terminal".
+5. Change the current working directory to the location where you want the cloned directory.
+6. In your IDE Terminal, type the following command to clone the repository:
+  - `git clone https://www.github.com/Louiseskinner01/project3-social-fitness.git`
+7. Press "Enter" to create your local clone.
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://www.github.com/Louiseskinner01/project3-social-fitness)
+
+**Please Note**: in order to directly open the project in Gitpod, you should have the browser extension installed. A tutorial on how to do that can be found [here](https://www.gitpod.io/docs/configure/user-settings/browser-extension).
+
+#### Forking
+
+By forking the GitHub Repository, you make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original owner's repository. You can fork this repository by using the following steps:
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/Louiseskinner01/project4-fitnesswithlou).
+2. At the top of the Repository, just below the "Settings" button on the menu, locate and click the "Fork" Button.
+3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
+
+### Local VS Deployment
+
+There are are some differences when it came to local vs deployment using Heroku, such as displaying images. In order for images to be displayed whe deploying to Heroku, Cloudinary had to be installed to handle the display of images and manage the storage.
+
+Another issue I came across was trying to render a site mockup: Django's `X-Frame-Options` security setting blocks the site from being embedded in an iframe (which the mockup tool requires) so I had to temporarily add X_FRAME_OPTIONS = 'ALLOWALL' to settings.py so I render and screenshot the mockups, and then remove X_FRAME_OPTIONS = 'ALLOWALL' it once I captured the mockups.
+
+Other differences are listed below:
+- Debug is set to TRUE on local and FALSE when using Heroku.
+- Local uses a SQLite database whereas Herkoku uses PostgresSQL.
+- Static files are served from Django where as when using Heroku they are served by WhiteNoise
+- Media and Images are stored on media folder where as when using Heroku images must be stored using Cloudinary.
+
+## Credits
+### Content
+
+| Source | Notes |
+| --- | --- |
+| [Interactive Frontend Development](https://codeinstitute.net) | Code Institute walkthrough project inspiration |
+| [Bootstrap](https://getbootstrap.com) | Various components / responsive front-end framework |
+| [Django](https://django.com) | Various components such as forms, loops and reusable templates |
+| [ChatGPT](https://chatgpt.com) | Help with code logic to enhance user experience:<br>**Example 1**`` <br>**Example 2**`` <br>**Example 3**`` |
+
+### Media
+- Image Compression
+  - [TinyPNG](https://tinypng.com) (for images <5MB)
+  - [CompressPNG](https://compresspng.com) (for images >5MB)
+- Logo Maker
+  - [Looka](https://looka.com/explore)
+
+| Source | Notes |
+| --- | --- |
+| [favicon.io](https://favicon.io) | Generating the favicon |
+| [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
+| [CompressPNG](https://compresspng.com) | Compressing images > 5MB |
+| [GoogleFonts](https://fonts.google.com/) | Font styles throughout the site |
+
+### Acknowledgements
+
+- I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team for their assistance with troubleshooting and debugging some project issues.
+- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
+- I would like to thank my little boy for giving me the drive and motivation to develop the right skills so I can be a successful web developer.
+
+
+
+
+
 
 
 

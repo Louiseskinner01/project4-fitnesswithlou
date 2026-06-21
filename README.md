@@ -516,8 +516,7 @@ Other differences are listed below:
 - Image Compression
   - [TinyPNG](https://tinypng.com) (for images <5MB)
   - [CompressPNG](https://compresspng.com) (for images >5MB)
-- Logo Maker
-  - [Looka](https://looka.com/explore)
+
 
 | Source | Notes |
 | --- | --- |

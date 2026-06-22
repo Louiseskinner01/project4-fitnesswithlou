@@ -118,7 +118,7 @@ The result is a design that feels equally at home in a serious training environm
 Before physically building the web pages it was important to design (model) the database to understand how data will flow when the user is interacting with the web application. Below is an ERD (entity relationship diagram) screenshot modelling the database.
 
 **ERD**
-![screenshot](documentation/images/erd.png)
+![screenshot](documentation/images/p4-erd.png)
 
 Several models have been customised with predefined choice fields to enhance the user experience, ensure data consistency, and simplify form inputs. Examples include:
 
@@ -257,8 +257,8 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
 | User Registration | Users can create an account with username, email and password, with mandatory email verification. | ![screenshot](documentation/images/existing_features/features_sign_up.png) |
-| Login / Logout | Secure authentication via django-allauth with conditional navigation links based on login state. | ![screenshot](documentation/images/existing_features/features-login.png)<br>![screenshot]() |
-| User Profile | Dedicated profile page displaying order history and active subscription. Access restricted to authenticated users. | ![screenshot](documentation/existing-features/user-profile.png) |
+| Login / Logout | Secure authentication via django-allauth with conditional navigation links based on login state. | ![screenshot](documentation/images/existing_features/features-login.png) |
+| User Profile | Dedicated profile page displaying order history and active subscription. Access restricted to authenticated users. | ![screenshot](documentation/images/existing_features/features_user_profile.png) |
 | Product List | Browse all products by category with images, prices and quick add-to-cart functionality. | ![screenshot](documentation/images/existing_features/features_product_list.png) |
 | Product Details | Individual product page showing description, price, available sizes and quantity selector. | ![screenshot](documentation/images/existing_features/features_products_details.png) |
 | Add/Edit/Delete Products | Superusers can manage the product catalogue directly from the front end. | ![screenshot](documentation/images/existing_features/features_product_management.png) |
@@ -273,7 +273,7 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 |  Subscription Payment | Stripe payment method for subscription packages | ![screenshot](documentation/images/existing_features/features_subscription_payment_window.png) |
 | Job Application / CV Upload | Users can apply to join the team via the Join Us page, with CV file upload. | ![screenshot](documentation/images/existing_features/features_job_application.png) |
 | Newsletter Sign Up | Simple email capture form for newsletter sign ups, stored in the database. | ![screenshot](documentation/images/existing_features/features_news_letter.png) |
-| Toast Notifications | Custom styled toast messages for success, error, warning and info feedback throughout the site. | ![screenshot](documentation/existing-features/toast.png) |
+| Toast Notifications | Custom styled toast messages for success, error, warning and info feedback throughout the site. | ![screenshot](documentation/images/existing_features/features_toast_msg.png) |
 | Responsive Navbar | Navigation adapts based on authentication state and screen size, including a dropdown account menu. | ![screenshot](documentation/images/existing_features/features_responsive_logged_out.png)<br>![screenshot](documentation/images/existing_features/features_responsive_logged_in.png) |
 | Responsive Design | Bootstrap grid and fluid images ensure mobile-first compatibility across the entire site. | ![screenshot](documentation/images/existing_features/features_responsive_layout1.png)<br>![screenshot](documentation/images/existing_features/features_responsive_layout2.png) |
 

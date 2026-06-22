@@ -256,25 +256,26 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
-| User Registration | Users can create an account with username, email and password, with mandatory email verification. | ![screenshot](documentation/existing-features/sign-up.png) |
-| Login / Logout | Secure authentication via django-allauth with conditional navigation links based on login state. | ![screenshot](documentation/existing-features/login.png)<br>![screenshot](documentation/existing-features/logout.png) |
+| User Registration | Users can create an account with username, email and password, with mandatory email verification. | ![screenshot](documentation/images/existing_features/features_sign_up.png) |
+| Login / Logout | Secure authentication via django-allauth with conditional navigation links based on login state. | ![screenshot](documentation/images/existing_features/features-login.png)<br>![screenshot]() |
 | User Profile | Dedicated profile page displaying order history and active subscription. Access restricted to authenticated users. | ![screenshot](documentation/existing-features/user-profile.png) |
-| Product List | Browse all products by category with images, prices and quick add-to-cart functionality. | ![screenshot](documentation/existing-features/products.png) |
-| Product Details | Individual product page showing description, price, available sizes and quantity selector. | ![screenshot](documentation/existing-features/product-details.png) |
-| Add/Edit/Delete Products | Superusers can manage the product catalogue directly from the front end. | ![screenshot](documentation/existing-features/product-crud.png) |
-| Shopping Cart | View, update quantities, and remove items from the cart with live total recalculation. | ![screenshot](documentation/existing-features/cart.png) |
-| Stripe Checkout | Secure payment processing for one-off purchases via Stripe. | ![screenshot](documentation/existing-features/checkout.png) |
-| Order Confirmation Email | Automated email sent on successful purchase confirming order details. | ![screenshot](documentation/existing-features/order-email.png) |
-| Class Timetable | Displays all available fitness classes with instructor, date, time and capacity. | ![screenshot](documentation/existing-features/timetable.png) |
-| Book / Cancel Class | Users can book and cancel classes, with capacity limits enforced. | ![screenshot](documentation/existing-features/book-class.png) |
-| Subscription Plans | Users can choose from Basic, Premium and VIP membership plans with recurring billing via Stripe. | ![screenshot](documentation/existing-features/subscriptions.png) |
-| Cancel Subscription | Subscriptions cancel at the end of the current billing period rather than immediately. | ![screenshot](documentation/existing-features/cancel-subscription.png) |
-| Subscription Confirmation Email | Automated email sent confirming a new subscription. | ![screenshot](documentation/existing-features/subscription-email.png) |
-| Job Application / CV Upload | Users can apply to join the team via the Join Us page, with CV file upload. | ![screenshot](documentation/existing-features/join-us.png) |
-| Newsletter Sign Up | Simple email capture form for newsletter sign ups, stored in the database. | ![screenshot](documentation/existing-features/newsletter.png) |
+| Product List | Browse all products by category with images, prices and quick add-to-cart functionality. | ![screenshot](documentation/images/existing_features/features_product_list.png) |
+| Product Details | Individual product page showing description, price, available sizes and quantity selector. | ![screenshot](documentation/images/existing_features/features_products_details.png) |
+| Add/Edit/Delete Products | Superusers can manage the product catalogue directly from the front end. | ![screenshot](documentation/images/existing_features/features_product_management.png) |
+| Shopping Cart | View, update quantities, and remove items from the cart with live total recalculation. | ![screenshot](documentation/images/existing_features/features_shopping_cart.png) |
+| Stripe Checkout | Secure payment processing for one-off purchases via Stripe. | ![screenshot](documentation/images/existing_features/features_stripe_payment.png) |
+| Order Confirmation Email | Automated email sent on successful purchase confirming order details. | ![screenshot](documentation/images/existing_features/features_success_email.png) | ![screenshot](documentation/images/existing_features/features_success.png) |
+| Class Timetable | Displays all available fitness classes with instructor, date, time and capacity. | ![screenshot](documentation/images/existing_features/features_classes.png) |
+| Book / Cancel Class | Users can book and cancel classes, with capacity limits enforced. | ![screenshot](documentation/images/existing_features/features_bookings.png) | ![screenshot](documentation/images/existing_features/features_class_cancelled.png)
+| Subscription Plans | Users can choose from Basic, Premium and VIP membership plans with recurring billing via Stripe. | ![screenshot](documentation/images/existing_features/features_subscriptions.png) |
+| Cancel Subscription | Subscriptions cancel at the end of the current billing period rather than immediately. | ![screenshot](documentation/images/existing_features/features_subscription_canel_btn.png) |![screenshot](documentation/images/existing_features/features_subscription_cancel_alert.png) |![screenshot](documentation/images/existing_features/features_subscription_canel_btn.png) |
+| Subscription Confirmation Email | Automated email sent confirming a new subscription. | ![screenshot](documentation/images/existing_features/features_subscription_email.png) |![screenshot](documentation/images/existing_features/features_subscription_confirmed.png) |
+|  Subscription Payment | Stripe payment method for subscription packages | ![screenshot](documentation/images/existing_features/features_subscription_payment_window.png) |
+| Job Application / CV Upload | Users can apply to join the team via the Join Us page, with CV file upload. | ![screenshot](documentation/images/existing_features/features_job_application.png) |
+| Newsletter Sign Up | Simple email capture form for newsletter sign ups, stored in the database. | ![screenshot](documentation/images/existing_features/features_news_letter.png) |
 | Toast Notifications | Custom styled toast messages for success, error, warning and info feedback throughout the site. | ![screenshot](documentation/existing-features/toast.png) |
-| Responsive Navbar | Navigation adapts based on authentication state and screen size, including a dropdown account menu. | ![screenshot](documentation/existing-features/navbar-response1.png)<br>![screenshot](documentation/existing-features/navbar-response2.png) |
-| Responsive Design | Bootstrap grid and fluid images ensure mobile-first compatibility across the entire site. | ![screenshot](documentation/existing-features/responsive-design1.png)<br>![screenshot](documentation/existing-features/responsive-design2.png) |
+| Responsive Navbar | Navigation adapts based on authentication state and screen size, including a dropdown account menu. | ![screenshot](documentation/images/existing_features/features_responsive_logged_out.png)<br>![screenshot](documentation/images/existing_features/features_responsive_logged_in.png) |
+| Responsive Design | Bootstrap grid and fluid images ensure mobile-first compatibility across the entire site. | ![screenshot](documentation/images/existing_features/features_responsive_layout1.png)<br>![screenshot](documentation/images/existing_features/features_responsive_layout2.png) |
 
 
 ### Future Features

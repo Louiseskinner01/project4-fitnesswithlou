@@ -317,7 +317,7 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 ## Agile Development Process
 ### GitHub Projects
 
-[GitHub Projects](https://www.github.com/Louiseskinner01/project2-the-countdown/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
+[GitHub Projects](https://www.github.com/Louiseskinner01/project2-the-countdown/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board. 
 
 **Kanban Board**: ![screenshot](documentation/images/project_board/kanban_board.png)
 
@@ -328,14 +328,12 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 | Done | ![screenshot](documentation/images/project_board/kanban_done.png) |
 
 
-### GitHub Issues
 
-[GitHub Issues](https://www.github.com/Louiseskinner01/project3-social-fitness/issues) served as an another Agile tool. There, I managed my User Stories and Milestone tasks, and tracked any issues/bugs.
 
 | Link | Screenshot |
 | --- | --- |
-| [![GitHub issues](https://img.shields.io/github/issues/Louiseskinner01/project3-social-fitness)](https://www.github.com/Louiseskinner01/project3-social-fitness/issues) | ![screenshot](documentation/project-board/issues/project-board-open-task.png) |
-| [![GitHub closed issues](https://img.shields.io/github/issues-closed/Louiseskinner01/project3-social-fitness)](https://www.github.com/Louiseskinner01/project3-social-fitness/issues?q=is%3Aissue+is%3Aclosed) | ![screenshot](documentation/project-board/issues/project-board-closed-task.png) |
+| [![GitHub issues](https://img.shields.io/github/issues/Louiseskinner01/project4-fitnesswithlou/issues)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou/issues) | ![screenshot](documentation/project-board/issues/project-board-open-task.png) |
+| [![GitHub closed issues](https://img.shields.io/github/issues-closed/Louiseskinner01/project4-fitnesswithlou/issues)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou/issues?q=is%3Aissue+is%3Aclosed) | ![screenshot](documentation/project-board/issues/project-board-closed-task.png) |
 
 
 ### MoSCoW Prioritisation

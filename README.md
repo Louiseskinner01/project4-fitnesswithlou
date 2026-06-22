@@ -332,8 +332,8 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 
 | Link | Screenshot |
 | --- | --- |
-| [![GitHub issues](https://img.shields.io/github/issues/Louiseskinner01/project4-fitnesswithlou/issues)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou/issues) | ![screenshot](documentation/project-board/issues/project-board-open-task.png) |
-| [![GitHub closed issues](https://img.shields.io/github/issues-closed/Louiseskinner01/project4-fitnesswithlou/issues)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou/issues?q=is%3Aissue+is%3Aclosed) | ![screenshot](documentation/project-board/issues/project-board-closed-task.png) |
+| [![GitHub issues](https://img.shields.io/github/issues/Louiseskinner01/project4-fitnesswithlou/issues)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou/issues) | ![screenshot](documentation/images/project_board/issues_open.png) |
+| [![GitHub closed issues](https://img.shields.io/github/issues-closed/Louiseskinner01/project4-fitnesswithlou/issues)](https://www.github.com/Louiseskinner01/project4-fitnesswithlou/issues?q=is%3Aissue+is%3Aclosed) | ![screenshot](documentation/images/project_board/issues_closed.png) |
 
 
 ### MoSCoW Prioritisation

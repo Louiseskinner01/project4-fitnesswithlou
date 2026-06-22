@@ -319,11 +319,13 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 
 [GitHub Projects](https://www.github.com/Louiseskinner01/project2-the-countdown/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
+**Kanban Board**: ![screenshot](documentation/images/project_board/kanban_board.png)
+
 | Stage   | Screenshot |
 | ----- | --- |
-| To Do | ![screenshot](documentation/agile/to-do.png) |
-| In-progress | ![screenshot](documentation/agile/in-progress.png) |
-| Done | ![screenshot](documentation/agile/done.png) |
+| Ready | ![screenshot](documentation/images/project_board/kanban_ready.png) |
+| In-progress | ![screenshot](documentation/images/project_board/kanban_in_progress.png) |
+| Done | ![screenshot](documentation/images/project_board/kanban_done.png) |
 
 
 ### GitHub Issues

@@ -113,7 +113,7 @@ FWL's visual identity blends raw, gym-floor energy with understated elegance. Th
 
 The result is a design that feels equally at home in a serious training environment and a considered lifestyle brand: tough enough to motivate, polished enough to trust.
 
-## Design
+### Database Design
 
 Before physically building the web pages it was important to design (model) the database to understand how data will flow when the user is interacting with the web application. Below is an ERD (entity relationship diagram) screenshot modelling the database.
 
@@ -122,7 +122,6 @@ Before physically building the web pages it was important to design (model) the 
 
 Several models have been customised with predefined choice fields to enhance the user experience, ensure data consistency, and simplify form inputs. Examples include:
 
-### Database Design
 
 **SubscriptionPlan Model**<br>
 ```python
@@ -260,7 +259,7 @@ I've used [Lucidchart](https://lucid.co/) to design my site wireframes.
 | User Registration | Users can create an account with username, email and password, with mandatory email verification. | ![screenshot](documentation/existing-features/sign-up.png) |
 | Login / Logout | Secure authentication via django-allauth with conditional navigation links based on login state. | ![screenshot](documentation/existing-features/login.png)<br>![screenshot](documentation/existing-features/logout.png) |
 | User Profile | Dedicated profile page displaying order history and active subscription. Access restricted to authenticated users. | ![screenshot](documentation/existing-features/user-profile.png) |
-| Product Catalogue | Browse all products by category with images, prices and quick add-to-cart functionality. | ![screenshot](documentation/existing-features/products.png) |
+| Product List | Browse all products by category with images, prices and quick add-to-cart functionality. | ![screenshot](documentation/existing-features/products.png) |
 | Product Details | Individual product page showing description, price, available sizes and quantity selector. | ![screenshot](documentation/existing-features/product-details.png) |
 | Add/Edit/Delete Products | Superusers can manage the product catalogue directly from the front end. | ![screenshot](documentation/existing-features/product-crud.png) |
 | Shopping Cart | View, update quantities, and remove items from the cart with live total recalculation. | ![screenshot](documentation/existing-features/cart.png) |

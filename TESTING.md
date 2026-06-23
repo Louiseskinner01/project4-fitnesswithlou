@@ -30,7 +30,7 @@ All tests were conducted manually using a combination of Google Chrome DevTools,
 - Users cannot brute-force a URL to navigate to a restricted page
 - Non-superusers cannot access product management pages
 - Users cannot subscribe to more than one plan at a time
-- Users cannot book a class they have already booked
+- Users cannot double book a class if they are already booked onto it
 
 | Feature Tested | Test Description | Expected Outcome | Pass/Fail | Screenshot |
 | --- | --- | --- | --- | --- |

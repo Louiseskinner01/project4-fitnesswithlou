@@ -338,6 +338,37 @@ ul{
     padding-left: 0px;
 }
 
+a{
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+.row{
+    margin-left: 0% !important;
+    margin-right: 0% !important;
+}
+
+.loging-signup{
+    font-size: 18px;
+    
+}
+.loging-signup:hover{
+    font-size: 16px;
+    color: var(--primary-color);
+}
 /* -------------------------------------------------Buttons (main) */
 .btn-styling1{
     background-color: var(--primary-color);
@@ -393,22 +424,10 @@ a.btn-styling2:hover{
 
 
 
-
-
-
-
-
-
-
-
-
 .product-detail-form-control{
     border: var(--primary-color) solid 1px;
     border-radius: 5px;
 }
-
-
-
 
 
 
@@ -442,7 +461,6 @@ a.btn-styling2:hover{
 }
 
 
-
 /*------------------------------------Toast Messages*/
 div .toast-header{
     background-color: whitesmoke;
@@ -457,28 +475,6 @@ div .toast-header{
 }
 
 
-a{
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-.overlay {
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	position: fixed;
-	background: white;
-	z-index: -1;
-}
-
-.row{
-    margin-left: 0% !important;
-    margin-right: 0% !important;
-}
 
 /*------------------------------------------Search Form*/
 .search-form{

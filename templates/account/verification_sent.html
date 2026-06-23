@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+<section class="hero-img-bg page-bg">
+    <div class="overlay-main"></div>
+    <div class="content-wrapper text-center">
+        <h1 class="mb-4">Verify Your Email Address</h1>
+        <div class="rounded feature font-dark-purple p-3 mb-3">
+        <p class=" font-2 fs-4">Thank you for signing up to FWL!</p>
+        <p class="fs-5">We have sent a confirmation email to your inbox. Please click the link in the email to complete your registration.</p>
+        </div>
+        <p class="mt-2 font-3">Can't find it? Check your spam folder!</p>
+        <a href="{% url 'main:landing' %}" class="btn btn-styling1 px-3 pb-2 pt-2 mt-4">
+            Back to Home
+        </a>
+    </div>
+</section>
+{% endblock %}

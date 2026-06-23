@@ -34,7 +34,7 @@ All tests were conducted manually using a combination of Google Chrome DevTools,
 
 | Feature Tested | Test Description | Expected Outcome | Pass/Fail | Screenshot |
 | --- | --- | --- | --- | --- |
-| Signup (valid) | Create a new account with valid username, email and password | Account created, verification email sent, user redirected to verify email page | ✅ Works | ![screenshot](documentation/manual-testing/signup-valid.png) |
+| Signup (valid) | Create a new account with valid username, email and password | Account created, verification email sent, user redirected to verify email page | ✅ Works | ![screenshot](documentation/manual-testing/signup-valid.png) <br> ![screenshot](documentation/testing/features/test-f-verification-sent-page.png) <br> ![screenshot](documentation/testing/features/test-f-email-confirmation.png) |
 | Signup (duplicate username) | Attempt to sign up using an existing username | Form displays error and prevents account creation | ✅ Works | ![screenshot](documentation/manual-testing/signup-duplicate.png) |
 | Signup (password mismatch) | Enter two different passwords in password fields | Validation error shown and account not created | ✅ Works | ![screenshot](documentation/manual-testing/signup-password-mismatch.png) |
 | Signup (weak password) | Enter a weak password e.g. 123 | Error message displayed stating password requirements | ✅ Works | ![screenshot](documentation/manual-testing/signup-weak-password.png) |

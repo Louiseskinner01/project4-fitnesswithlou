@@ -510,7 +510,7 @@ Other differences are listed below:
 | [Interactive Frontend Development](https://codeinstitute.net) | Code Institute walkthrough project inspiration |
 | [Bootstrap](https://getbootstrap.com) | Various components / responsive front-end framework |
 | [Django](https://django.com) | Various components such as forms, loops and reusable templates |
-| [ChatGPT](https://chatgpt.com) | Help with code logic to enhance user experience:<br>**Example 1**`` <br>**Example 2**`` <br>**Example 3**`` |
+| [Claude.ai](https://claude.ai/) | Help with code logic to enhance user experience:<br>**Example 1** Stripe Webhook Handler — adapted `handle_payment_intent_succeeded` to work with the newer Stripe API version using `stripe.Charge.retrieve(intent.latest_charge)` instead of the deprecated `intent.charges.data[0]` *(checkout/webhook_handler.py)*<br>**Example 2** Subscription Webhook Handler — `handle_checkout_completed` function including Stripe customer lookup, price ID to plan mapping and automated confirmation email logic *(subscriptions/webhook_handler.py)*<br>**Example 3** Cart Context Processor — dynamic total calculation using `product.price * quantity` to ensure cart totals update correctly after item adjustments and removals *(cart/contexts.py)* |
 
 ### Media
 - Image Compression

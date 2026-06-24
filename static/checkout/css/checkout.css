@@ -273,3 +273,8 @@ input#save-info-checkbox.form-check-input{
 }
 
 
+@media (max-width: 991px) {
+  #cart-icon {
+      padding-bottom: 10px !important;
+}
+}

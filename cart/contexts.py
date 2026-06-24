@@ -1,7 +1,6 @@
 from decimal import Decimal
 from django.conf import settings
-from django.shortcuts import get_object_or_404
-from .models import Product, Cart
+from .models import Cart
 
 def cart_contents(request):
 
@@ -13,37 +12,36 @@ def cart_contents(request):
     try:
         if request.user.is_authenticated:
             cart = Cart.objects.filter(user=request.user).first()
-    
-    if request.user.is_authenticated:
-        cart = Cart.objects.filter(user=request.user).first()
 
-    if cart:
-     for item in cart.items.all():
-        product = item.product
-        quantity = item.quantity
+        if cart:
+            for item in cart.items.all():
+                product = item.product
+                quantity = item.quantity
 
-        total += product.price * quantity
-        product_count += quantity
+                total += product.price * quantity
+                product_count += quantity
 
-        cart_items.append({
-                'id': item.id,
-                'product': item.product,
-                'quantity': item.quantity,
-                'price': product.price,
-                'size': item.size,
-            })
+                cart_items.append({
+                    'id': item.id,
+                    'product': item.product,
+                    'quantity': item.quantity,
+                    'price': product.price,
+                    'size': item.size,
+                })
 
+        if total < settings.FREE_DELIVERY_ABOVE:
+            delivery = total * Decimal(settings.DELIVERY_PERCENTAGE / 100)
+            free_delivery_delta = settings.FREE_DELIVERY_ABOVE - total
+        else:
+            delivery = 0
+            free_delivery_delta = 0
 
-
-    if total < settings.FREE_DELIVERY_ABOVE:
-        delivery = total * Decimal(settings.DELIVERY_PERCENTAGE / 100)
-        free_delivery_delta = settings.FREE_DELIVERY_ABOVE - total
-    else:
+    except Exception:
         delivery = 0
         free_delivery_delta = 0
-    
+
     grand_total = delivery + total
-    
+
     context = {
         'cart_items': cart_items,
         'total': total,

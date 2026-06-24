@@ -66,14 +66,24 @@ def add_product(request):
     if not request.user.is_superuser:
         raise PermissionDenied
 
-    form = ProductForm()
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        if form.is_valid():
+            product = form.save()
+            messages.success(request, 'Product added successfully!')
+            return redirect('products:product_details', product.id)
+        else:
+            messages.error(request, 'Failed to add product. Please check the form.')
+    else:
+        form = ProductForm()
+
     template = 'products/add_products.html' 
     context = {
         'form': form,
     }
 
     return render(request, template, context)
-
+    
 @login_required
 def edit_product(request, product_id): 
     """ Edit a product """ 

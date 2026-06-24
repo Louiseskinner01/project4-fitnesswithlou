@@ -40,3 +40,7 @@ urlpatterns = [
     path("join/", main_views.join_us, name="join"),
     path("join/success/", TemplateView.as_view(template_name="main/job_success.html"), name="job_success"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = 'fwl.views.handler404'
+handler500 = 'fwl.views.handler500'

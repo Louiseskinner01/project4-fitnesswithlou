@@ -9,6 +9,10 @@ def cart_contents(request):
     total = 0
     product_count = 0
     cart = None
+
+    try:
+        if request.user.is_authenticated:
+            cart = Cart.objects.filter(user=request.user).first()
     
     if request.user.is_authenticated:
         cart = Cart.objects.filter(user=request.user).first()

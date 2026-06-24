@@ -73,7 +73,7 @@ All tests were conducted manually using a combination of Google Chrome DevTools,
 | Navigation (burger icon) | Resize screen and click burger icon on mobile | Navbar collapses on small screens and expands correctly | ✅ Works | ![screenshot](ddocumentation/testing/features/test-f-navbar-burger.png)<br>![screenshot](documentation/testing/features/test-f-navbar-expand.png) |
 | Navbar conditional links | Compare navbar logged out vs logged in | Correct links shown/hidden based on auth state | ✅ Works | **Unauthenticated User**![screenshot](documentation/testing/features/test-f-unauthenticated-user.png) <br> **Authenticated User**![screenshot](documentation/testing/features/test-f-authenticated-user.png) |
 | Custom 404 page | Visit non-existent URL e.g. `/test` | Custom 404 page displays with navigation link | ✅ Works | ![screenshot](documentation/manual-testing/404.png) |
-| Custom 403 page | Attempt to access forbidden URL | Custom 403 page displays with navigation link | ✅ Works | ![screenshot](documentation/manual-testing/403.png) |
+| Custom 403 page | Attempt to access forbidden URL | Custom 403 page displays with navigation link | ✅ Works | ![screenshot](documentation/testing/features/test-f-403.png) |
 
 ### User Story Testing
 

@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import PermissionDenied
 from django.db.models import Q
 from .models import Product, Category
 from .forms import ProductForm
@@ -62,6 +63,9 @@ def product_details(request, product_id):
 @login_required
 def add_product(request): 
     """ Add a product to the online store """ 
+    if not request.user.is_superuser:
+        raise PermissionDenied
+
     form = ProductForm()
     template = 'products/add_products.html' 
     context = {
@@ -73,7 +77,9 @@ def add_product(request):
 @login_required
 def edit_product(request, product_id): 
     """ Edit a product """ 
-    
+    if not request.user.is_superuser:
+        raise PermissionDenied
+
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
@@ -99,7 +105,9 @@ def edit_product(request, product_id):
 @login_required
 def delete_product(request, product_id): 
     """ Delete a product """ 
-
+    if not request.user.is_superuser:
+        raise PermissionDenied
+        
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product successfully deleted!')

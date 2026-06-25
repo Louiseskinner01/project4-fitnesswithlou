@@ -73,7 +73,7 @@ def book_session(request, session_id):
         return redirect("bookings:bookings")
 
     if session.booked_count >= session.capacity:
-        messages.error(request, f'Sorry, {session.class_type} is fully booked!')        
+        messages.warning(request, f'Sorry, {session.class_type} is fully booked!')        
         return redirect("bookings:classes")
 
     Booking.objects.create(

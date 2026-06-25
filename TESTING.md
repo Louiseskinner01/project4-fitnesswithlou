@@ -202,7 +202,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | Profile | ![screenshot](documentation/validation/html/profile.png) | ✅ Pass |
 | Login | ![screenshot](documentation/validation/html-login.png) | ✅ Pass |
 | Sign Up | ![screenshot](documentation/validation/html-signup.png) | ✅ Pass |
-| 404 | ![screenshot](documentation/validation/html/404.png) | ✅ Pass |
+| 404 | ![screenshot](documentation/validation/html-404.png) | ✅ Pass |
 
 #### CSS
 

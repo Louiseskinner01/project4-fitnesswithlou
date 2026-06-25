@@ -190,16 +190,18 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 
 | Page | Screenshot | Passed |
 | --- | --- | --- |
-| Home | ![screenshot](documentation/validation/html/home.png) | ✅ Pass |
-| Products | ![screenshot](documentation/validation/html/products.png) | ✅ Pass |
+| Home | ![screenshot](documentation/validation/html-home.png) | ✅ Pass |
+| Products | ![screenshot](documentation/validation/html-products.png) | ✅ Pass |
 | Product Detail | ![screenshot](documentation/validation/html/product-detail.png) | ✅ Pass |
-| Cart | ![screenshot](documentation/validation/html/cart.png) | ✅ Pass |
-| Checkout | ![screenshot](documentation/validation/html/checkout.png) | ✅ Pass |
-| Class Timetable | ![screenshot](documentation/validation/html/timetable.png) | ✅ Pass |
-| Subscription Plans | ![screenshot](documentation/validation/html/subscriptions.png) | ✅ Pass |
+| Cart | ![screenshot](documentation/validation/html-cart.png) | ✅ Pass |
+| Checkout | ![screenshot](documentation/validation/html-checkout.png) | ✅ Pass |
+| Bookings | ![screenshot](documentation/validation/html-bookings.png) | ✅ Pass |
+| Class Timetable | ![screenshot](documentation/validation/html-classes.png) | ✅ Pass |
+ Nutrition | ![screenshot](documentation/validation/html-nutrition.png) | ✅ Pass |
+| Subscription Plans | ![screenshot](documentation/validation/html-subscriptions.png) | ✅ Pass |
 | Profile | ![screenshot](documentation/validation/html/profile.png) | ✅ Pass |
-| Login | ![screenshot](documentation/validation/html/login.png) | ✅ Pass |
-| Sign Up | ![screenshot](documentation/validation/html/signup.png) | ✅ Pass |
+| Login | ![screenshot](documentation/validation/html-login.png) | ✅ Pass |
+| Sign Up | ![screenshot](documentation/validation/html-signup.png) | ✅ Pass |
 | 404 | ![screenshot](documentation/validation/html/404.png) | ✅ Pass |
 
 #### CSS

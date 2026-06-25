@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-   
+
 {% endblock %}
 
 {% block content %}
@@ -13,101 +13,100 @@
         <div class="col-12 p-0 mx-0">
 
             <section class="hero-img-bg page-bg">
-                <div class="overlay-main"></div>        
-                  <div class="content-wrapper">
+                <div class="overlay-main"></div>
+                <div class="content-wrapper">
 
-             
-                        <h1 class="logo-font text-center mb-5">{{ product.name }}</h1>
 
-        <div class="row">
-            <div class="col-12 col-md-6 mb-3 mb-md-0">
-                <div class="image-container h-100">
-                    {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img class="h-100 img-fluid rounded" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="col-12 col-md-6 ">
-                <div class="product-details-container feature rounded text-black p-4 h-100">
-                    <p class="mb-0 fs-4">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">{{ product.description }}</p>
-                    <form class="form" action="{% url 'cart:add_to_cart' product.id %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-row">
+                    <h1 class="logo-font text-center mb-5">{{ product.name }}</h1>
 
-                            {% with product.sizes as s %}
-                            {% if s %}
-                            <div class="col-12 mt-5">
-                                <p><strong>Size:</strong></p>
-
-                                <select class="form-control"
-                                        name="product_size"
-                                        id="id_product_size">
-                                
-                                    <option value="" selected disabled>Select Size</option>
-                                
-                                    {% for size in sizes %}
-                                        <option value="{{ size }}">
-                                            {{ size|upper }}
-                                        </option>
-                                    {% endfor %}
-                                
-                                </select>
-
-                            </div>
-                            {% endif %}
-                            <div class="col-12">
-                                <p class="mt-5"><strong>Quantity:</strong></p>
-                                <div class="form-group w-50">
-                                    <div class="input-group">
-
-                                        <input class="form-control qty_input product-detail-form-control" type="number" name="quantity" value="1"
-                                            min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
-                                           
-                               
-
-                                    </div>
-                                </div>                            
-                            </div>
-                            <div class="col{% if s %}-12 mt-2{% endif %}">
-                                <a href="{% url 'products:products' %}" class="btn btn-styling2 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <span class="text-uppercase">Keep Shopping</span>
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-3 mb-md-0">
+                            <div class="image-container h-100">
+                                {% if product.image %}
+                                <a href="{{ product.image.url }}" target="_blank">
+                                    <img class="h-100 img-fluid rounded" src="{{ product.image.url }}"
+                                        alt="{{ product.name }}">
                                 </a>
-
-                                <input type="submit" id="add-cart-btn" class="btn btn-styling1 px-3 text-uppercase mt-5" value="Add to Cart">
+                                {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                        alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
                             </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
                         </div>
-                    </form>
-                         
+                        <div class="col-12 col-md-6 ">
+                            <div class="product-details-container feature rounded text-black p-4 h-100">
+                                <p class="mb-0 fs-4">{{ product.name }}</p>
+                                <p class="lead mb-0 text-left font-weight-bold">£{{ product.price }}</p>
+                                <p class="lead mb-0 text-left font-weight-bold">{{ product.description }}</p>
+                                <form class="form" action="{% url 'cart:add_to_cart' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <div class="form-row">
+
+                                        {% with product.sizes as s %}
+                                        {% if s %}
+                                        <div class="col-12 mt-5">
+                                            <p><strong>Size:</strong></p>
+
+                                            <select class="form-control" name="product_size" id="id_product_size">
+
+                                                <option value="" selected disabled>Select Size</option>
+
+                                                {% for size in sizes %}
+                                                <option value="{{ size }}">
+                                                    {{ size|upper }}
+                                                </option>
+                                                {% endfor %}
+
+                                            </select>
+
+                                        </div>
+                                        {% endif %}
+                                        <div class="col-12">
+                                            <p class="mt-5"><strong>Quantity:</strong></p>
+                                            <div class="form-group w-50">
+                                                <div class="input-group">
+
+                                                    <input class="form-control qty_input product-detail-form-control"
+                                                        type="number" name="quantity" value="1" min="1" max="99"
+                                                        data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col{% if s %}-12 mt-2{% endif %}">
+                                            <a href="{% url 'products:products' %}" class="btn btn-styling2 mt-5">
+                                                <span class="icon">
+                                                    <i class="fas fa-chevron-left"></i>
+                                                </span>
+                                                <span class="text-uppercase">Keep Shopping</span>
+                                            </a>
+
+                                            <input type="submit" id="add-cart-btn"
+                                                class="btn btn-styling1 px-3 text-uppercase mt-5" value="Add to Cart">
+                                        </div>
+                                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                        {% endwith %}
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    
         
-       </div>
-       
-      </div>
-    </section>
-  </div>
- </div>
+        </section>
+    </div>
+</div>
 </div>
 {% endblock %}
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script type="">
     // Disable +/- buttons outside 1-99 range
     function handleEnableDisable(itemId) {
         var currentValue = parseInt($(`#id_qty_${itemId}`).val());

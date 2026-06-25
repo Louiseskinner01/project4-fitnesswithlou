@@ -74,7 +74,7 @@ def book_session(request, session_id):
 
     if session.booked_count >= session.capacity:
         messages.error(request, 'Sorry, this class is fully booked!')
-        return redirect("bookings:timetable")
+        return redirect("bookings:classes")
 
     Booking.objects.create(
         user=request.user,

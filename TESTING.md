@@ -160,29 +160,29 @@ To ensure a consistent and accessible user experience across all devices and bro
 
 I have used [PEP8 CI](https://pep8ci.herokuapp.com/) to validate my Python files.
 
-| App | File | Errors/Warnings | Passed ✅ |
-| --- | --- | --- | --- |
-| checkout | views.py | ![screenshot](documentation/validation/pep8-checkout-views1.png) | ![screenshot](documentation/validation/pep8-checkout-views2.png) |
-| checkout | webhook_handler.py | ![screenshot](documentation/validation/pep8-checkout-webhook-handler1.png) | ![screenshot](documentation/validation/pep8-checkout-webhook-handler2.png) |
-| checkout | webhooks.py | ![screenshot](documentation/validation/pep8-checkout-webhooks1.png) | ![screenshot](documentation/validation/pep8-checkout-webhooks2.png) |
-| checkout | models.py | ![screenshot](documentation/validation/pep8-checkout-models1.png) | ![screenshot](documentation/validation/pep8-checkout-models2.png) |
-| checkout | forms.py | ![screenshot](documentation/validation/pep8-checkout-forms1.png) | ![screenshot](documentation/validation/pep8-checkout-forms2.png) |
-| cart | contexts.py | ![screenshot](documentation/validation/pep8-cart-contexts1.png) | ![screenshot](documentation/validation/pep8-cart-contexts2.png) |
-| cart | views.py | ![screenshot](documentation/validation/pep8-cart-views1.png) | ![screenshot](documentation/validation/pep8-cart-views2.png) |
-| cart | models.py | ![screenshot](documentation/validation/pep8-cart-models1.png) | ![screenshot](documentation/validation/pep8-cart-models2.png) |
-| products | views.py | ![screenshot](documentation/validation/pep8-products-views1.png) | ![screenshot](documentation/validation/pep8-products-views2.png) |
-| products | models.py | ![screenshot](documentation/validation/pep8-products-models1.png) | ![screenshot](documentation/validation/pep8-products-models2.png) |
-| products | forms.py | ![screenshot](documentation/validation/pep8-products-forms1.png) | ![screenshot](documentation/validation/pep8-products-forms2.png) |
-| bookings | views.py | ![screenshot](documentation/validation/pep8-bookings-views1.png) | ![screenshot](documentation/validation/pep8-bookings-views2.png) |
-| bookings | models.py | ![screenshot](documentation/validation/pep8-bookings-models1.png) | ![screenshot](documentation/validation/pep8-bookings-models2.png) |
-| subscriptions | views.py | ![screenshot](documentation/validation/pep8-subscriptions-views1.png) | ![screenshot](documentation/validation/pep8-subscriptions-views2.png) |
-| subscriptions | models.py | ![screenshot](documentation/validation/pep8-subscriptions-models1.png) | ![screenshot](documentation/validation/pep8-subscriptions-models2.png) |
-| subscriptions | webhook_handler.py | ![screenshot](documentation/validation/pep8-subscriptions-webhook1.png) | ![screenshot](documentation/validation/pep8-subscriptions-webhook2.png) |
-| users | views.py | ![screenshot](documentation/validation/pep8-users-views1.png) | ![screenshot](documentation/validation/pep8-users-views2.png) |
-| users | models.py | ![screenshot](documentation/validation/pep8-users-models1.png) | ![screenshot](documentation/validation/pep8-users-models2.png) |
-| main | views.py | ![screenshot](documentation/validation/pep8-main-views1.png) | ![screenshot](documentation/validation/pep8-main-views2.png) |
-| main | models.py | ![screenshot](documentation/validation/pep8-main-models1.png) | ![screenshot](documentation/validation/pep8-main-models2.png) |
-| fwl | settings.py | ![screenshot](documentation/validation/pep8-settings1.png) | ![screenshot](documentation/validation/pep8-settings2.png) |
+| App | File | Passed ✅ |
+| --- | --- | --- | 
+| checkout | views.py | ![screenshot](documentation/validation/pep8-checkout-views.png) |
+| checkout | webhook_handler.py | ![screenshot](documentation/validation/pep8-checkout-webhook-handler.png) |
+| checkout | webhooks.py | ![screenshot](documentation/validation/pep8-checkout-webhooks.png) |
+| checkout | models.py |  ![screenshot](documentation/validation/pep8-checkout-models.png) |
+| checkout | forms.py | ![screenshot](documentation/validation/pep8-checkout-forms.png) |
+| cart | contexts.py | ![screenshot](documentation/validation/pep8-cart-context.png) |
+| cart | views.py |  ![screenshot](documentation/validation/pep8-cart-views.png) |
+| cart | models.py |  ![screenshot](documentation/validation/pep8-cart-models.png) |
+| products | views.py | ![screenshot](documentation/validation/pep8-products-views.png) |
+| products | models.py | ![screenshot](documentation/validation/pep8-products-models.png) |
+| products | forms.py  | ![screenshot](documentation/validation/pep8-products-forms.png) |
+| bookings | views.py  | ![screenshot](documentation/validation/pep8-bookings-views.png) |
+| bookings | models.py | ![screenshot](documentation/validation/pep8-bookings-models.png) |
+| subscriptions | views.py |  ![screenshot](documentation/validation/pep8-subscriptions-views.png) |
+| subscriptions | models.py | ![screenshot](documentation/validation/pep8-subscriptions-models.png) |
+| subscriptions | webhook_handler.py  | ![screenshot](documentation/validation/pep8-subscriptions-webhook-handler.png) |
+| users | views.py | ![screenshot](documentation/validation/pep8-users-views.png) |
+| users | models.py  | ![screenshot](documentation/validation/pep8-users-models.png) |
+| main | views.py  | ![screenshot](documentation/validation/pep8-main-views.png) |
+| main | models.py | ![screenshot](documentation/validation/pep8-main-models.png) |
+| fwl | settings.py  | ![screenshot](documentation/validation/pep8-settings.png) |
 
 #### HTML
 

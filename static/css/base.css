@@ -447,7 +447,7 @@ a.btn-styling2:hover{
     border: 1px solid transparent;
 }
 
-#order-number a{
+.order-number a{
     text-decoration: none;
     color: var(--primary-color);
 }

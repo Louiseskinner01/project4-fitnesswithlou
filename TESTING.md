@@ -182,7 +182,7 @@ I have used [PEP8 CI](https://pep8ci.herokuapp.com/) to validate my Python files
 | users | models.py  | ![screenshot](documentation/validation/pep8-users-models.png) |
 | main | views.py  | ![screenshot](documentation/validation/pep8-main-views.png) |
 | main | models.py | ![screenshot](documentation/validation/pep8-main-models.png) |
-| fwl | settings.py  | ![screenshot](documentation/validation/pep8-settings.png) |
+| fwl | settings.py  | ![screenshot](documentation/validation/pep8-fwl-settings.png) |
 
 #### HTML
 

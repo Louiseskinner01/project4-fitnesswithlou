@@ -60,11 +60,12 @@ class ProductForm(forms.ModelForm):
 
             field.widget.attrs['class'] = 'rounded'
 
-
-if (field_name in placeholders and
-        field.widget.input_type in
-        ['text', 'number', 'textarea', 'email']):
-    field.widget.attrs['placeholder'] = placeholders[field_name]
+            input_types = ['text', 'number', 'textarea', 'email']
+            if (field_name in placeholders and
+                    field.widget.input_type in input_types):
+                field.widget.attrs['placeholder'] = (
+                    placeholders[field_name]
+                )
 
     def save(self, commit=True):
         instance = super().save(commit=False)

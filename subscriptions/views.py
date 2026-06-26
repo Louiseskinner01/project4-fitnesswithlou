@@ -13,6 +13,7 @@ PRICE_MAP = {
     'vip': settings.STRIPE_PRICE_VIP,
 }
 
+
 def subscription_plans(request):
     plans = SubscriptionPlan.objects.all()
     context = {
@@ -35,10 +36,17 @@ def subscribe(request, plan_id):
         user=request.user,
         status='active'
     ).first()
-   
 
     if existing_subscription:
-        messages.error(request, f'You already have an active {existing_subscription.plan.get_name_display()} subscription. Please cancel it before subscribing to a new plan.')
+        messages.error(
+         request,
+         (
+          f'You already have an active '
+          f'{existing_subscription.plan.get_name_display()}'
+          f' subscription. Please cancel it '
+          f'before subscribing to a new plan.'
+         )
+        )
         return redirect('subscriptions:subscription_plans')
 
     profile = request.user.userprofile
@@ -77,32 +85,37 @@ def subscription_success(request):
 @login_required
 def cancel_subscription(request):
     profile = request.user.userprofile
-    
+
     if not profile.stripe_subscription_id:
         messages.error(request, 'No active subscription found.')
         return redirect('users:profile')
-    
+
     try:
         # ✅ Cancel at period end, not immediately
         stripe.Subscription.modify(
             profile.stripe_subscription_id,
             cancel_at_period_end=True
         )
-        
+
         # Update local status to reflect pending cancellation
         UserSubscription.objects.filter(
             user=request.user,
             status='active'
         ).update(status='cancelled')
-        
-        messages.success(request, 'Your subscription has been cancelled. You will have access until the end of your current billing period.')
-        
+
+        messages.success(
+            request,
+            'Your subscription has been cancelled.'
+            'You will have access until the'
+            'end of your current billing period.')
+
     except stripe.error.StripeError as e:
         messages.error(request, f'Error cancelling subscription: {e}')
-    
+
     return redirect('subscriptions:subscription_cancelled')
 
 
 @login_required
 def subscription_cancelled(request):
-    return render(request, 'subscriptions/cancel.html')
+    return render(
+        request, 'subscriptions/cancel.html')

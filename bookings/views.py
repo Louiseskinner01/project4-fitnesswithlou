@@ -7,7 +7,6 @@ from datetime import date
 from django.contrib import messages
 
 
-
 @login_required
 def bookings_list(request):
     bookings = Booking.objects.filter(user=request.user).order_by(
@@ -57,8 +56,6 @@ def cancel_booking(request, booking_id):
     return redirect("bookings:bookings")
 
 
-
-
 @login_required
 def book_session(request, session_id):
     session = get_object_or_404(ClassSession, id=session_id)
@@ -73,7 +70,9 @@ def book_session(request, session_id):
         return redirect("bookings:bookings")
 
     if session.booked_count >= session.capacity:
-        messages.warning(request, f'Sorry, {session.class_type} is fully booked!')        
+        messages.warning(
+            request,
+            f'Sorry, {session.class_type} is fully booked!')
         return redirect("bookings:classes")
 
     Booking.objects.create(
@@ -84,11 +83,7 @@ def book_session(request, session_id):
     session.booked_count += 1
     session.save()
 
-    # Success meesage 
-    messages.success(request, f'You have successfully booked {session.class_type}!')
+    # Success meesage
+    messages.success(request,
+                     f'You have successfully booked {session.class_type}!')
     return redirect("bookings:bookings")
-
-
-
-
-

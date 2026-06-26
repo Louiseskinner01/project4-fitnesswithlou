@@ -10,6 +10,7 @@ import stripe
 import json
 import time
 
+
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -25,7 +26,10 @@ class StripeWH_Handler:
         )
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL}
+            {
+                'order': order,
+                'contact_email': settings.DEFAULT_FROM_EMAIL
+            }
         )
         send_mail(
             subject,
@@ -38,22 +42,24 @@ class StripeWH_Handler:
         """Handle a generic/unknown/unexpected webhook event"""
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
-            status=200)
+            status=200
+        )
 
     def handle_payment_intent_succeeded(self, event):
         """Handle the payment_intent.succeeded webhook from Stripe"""
         intent = event.data.object
         pid = intent.id
-        # bag = intent.metadata.bag
-
         # Check if this is a subscription payment (no bag metadata)
         bag = getattr(intent.metadata, 'bag', None)
         if not bag:
-         # This is a subscription payment, not a product order
+            # This is a subscription payment, not a product order
             return HttpResponse(
-             content=f'Webhook received: {event["type"]} | Subscription payment, skipping order handler',
-             status=200)
-
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    'Subscription payment, skipping order handler'
+                ),
+                status=200
+            )
 
         save_info = intent.metadata.save_info
         username = intent.metadata.username
@@ -67,14 +73,28 @@ class StripeWH_Handler:
         profile = None
         if username != 'AnonymousUser':
             try:
-                profile = UserProfile.objects.get(user__username=username)
+                profile = UserProfile.objects.get(
+                    user__username=username
+                )
                 if save_info:
-                    profile.default_phone_number = billing_details.phone
-                    profile.default_street_address1 = billing_details.address.line1
-                    profile.default_street_address2 = billing_details.address.line2
-                    profile.default_town_or_city = billing_details.address.city
-                    profile.default_postcode = billing_details.address.postal_code
-                    profile.default_country = billing_details.address.country
+                    profile.default_phone_number = (
+                        billing_details.phone
+                    )
+                    profile.default_street_address1 = (
+                        billing_details.address.line1
+                    )
+                    profile.default_street_address2 = (
+                        billing_details.address.line2
+                    )
+                    profile.default_town_or_city = (
+                        billing_details.address.city
+                    )
+                    profile.default_postcode = (
+                        billing_details.address.postal_code
+                    )
+                    profile.default_country = (
+                        billing_details.address.country
+                    )
                     profile.save()
             except UserProfile.DoesNotExist:
                 pass
@@ -85,7 +105,6 @@ class StripeWH_Handler:
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                   
                     stripe_pid=pid,
                 )
                 order_exists = True
@@ -97,15 +116,24 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
-                status=200)
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    'SUCCESS: Verified order already in database'
+                ),
+                status=200
+            )
         else:
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | ERROR: Order not found',
-                status=500)
+                content=(
+                    f'Webhook received: {event["type"]} | '
+                    'ERROR: Order not found'
+                ),
+                status=500
+            )
 
     def handle_payment_intent_payment_failed(self, event):
         """Handle the payment_intent.payment_failed webhook from Stripe"""
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
-            status=200)
+            status=200
+        )

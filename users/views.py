@@ -22,7 +22,7 @@ def profile(request):
         user=request.user,
         status='active'
     ).first()
-    
+
     if request.method == 'POST':
         form = ProfileForm(request.POST, instance=profile)
 

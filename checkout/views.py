@@ -20,7 +20,7 @@ import json
 
 @csrf_exempt
 def stripe_webhook(request):
-    
+
     payload = request.body
     sig_header = request.META.get('HTTP_STRIPE_SIGNATURE')
     event = None
@@ -42,6 +42,7 @@ def stripe_webhook(request):
         print("Webhook received payment success:", intent.id)
 
     return HttpResponse(status=200)
+
 
 @login_required
 def checkout(request):
@@ -86,7 +87,7 @@ def checkout(request):
                     product=item.product,
                     quantity=item.quantity,
                     product_size=item.size
-             )
+                )
 
             order.update_total()
 
@@ -105,12 +106,12 @@ def checkout(request):
             automatic_payment_methods={
                 'enabled': True,
             },
-         metadata={
+            metadata={
                 'bag': json.dumps({
                     str(item.product.id): item.quantity
                     for item in cart_items
                 }),
-                'save_info': 'False', 
+                'save_info': 'False',
                 'username': request.user.username,
             }
         )
@@ -126,7 +127,7 @@ def checkout(request):
             'town_or_city': profile.default_town_or_city,
             'postcode': profile.default_postcode,
             'country': profile.default_country,
-    })
+        })
 
     except UserProfile.DoesNotExist:
         order_form = OrderForm()
@@ -140,16 +141,15 @@ def checkout(request):
     }
 
     return render(request, 'checkout/checkout.html', context)
-   
+
 
 @login_required
 def checkout_success(request, order_number):
 
     order = get_object_or_404(Order, order_number=order_number)
     save_info = request.session.get('save_info')
-   
+
     print(request.session.get('save_info'))
-    
     if save_info:
 
         profile = UserProfile.objects.get(user=request.user)
@@ -174,4 +174,3 @@ def checkout_success(request, order_number):
     }
 
     return render(request, 'checkout/success.html', context)
-

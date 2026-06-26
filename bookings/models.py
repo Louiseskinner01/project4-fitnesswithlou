@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
+
+
 class ClassSession(models.Model):
     class_type = models.CharField(max_length=100)
     trainer = models.CharField(max_length=100)
@@ -15,7 +17,9 @@ class ClassSession(models.Model):
 
 
 class Booking(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE)
     session = models.ForeignKey(ClassSession, on_delete=models.CASCADE)
 
     booking_status = models.CharField(
@@ -32,3 +36,4 @@ class Booking(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.session}"
+        

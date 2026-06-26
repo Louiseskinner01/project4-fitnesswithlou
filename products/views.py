@@ -7,7 +7,6 @@ from .models import Product, Category
 from .forms import ProductForm
 
 
-
 def all_products(request):
     """ A view to show all products """
     # Retrieves all products from the database
@@ -24,13 +23,18 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request,
+                    "You didn't enter any search criteria!")
                 return redirect(reverse('products:products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = (
+                Q(name__icontains=query) |
+                Q(description__icontains=query)
+                )
             products = products.filter(queries)
 
-    # Sends the products to the template      
+    # Sends the products to the template
     context = {
         'products': products,
         'search_term': query,
@@ -40,18 +44,15 @@ def all_products(request):
     return render(request, 'products/products.html', context)
 
 
-
 def product_details(request, product_id):
     """ A view to show individual proect details """
     product = get_object_or_404(Product, pk=product_id)
-    
     sizes = []
 
     if product.sizes:
         sizes = product.sizes.split(',')
 
-    
-    # Sends the products to the template      
+    # Sends the products to the template
     context = {
         'product': product,
         'sizes': sizes,
@@ -60,9 +61,10 @@ def product_details(request, product_id):
     # Loads the HTML template
     return render(request, 'products/product_details.html', context)
 
+
 @login_required
-def add_product(request): 
-    """ Add a product to the online store """ 
+def add_product(request):
+    """ Add a product to the online store """
     if not request.user.is_superuser:
         raise PermissionDenied
 
@@ -73,20 +75,23 @@ def add_product(request):
             messages.success(request, 'Product added successfully!')
             return redirect('products:product_details', product.id)
         else:
-            messages.error(request, 'Failed to add product. Please check the form.')
+            messages.error(
+                request,
+                'Failed to add product. Please check the form.')
     else:
         form = ProductForm()
 
-    template = 'products/add_products.html' 
+    template = 'products/add_products.html'
     context = {
         'form': form,
     }
 
     return render(request, template, context)
-    
+
+
 @login_required
-def edit_product(request, product_id): 
-    """ Edit a product """ 
+def edit_product(request, product_id):
+    """ Edit a product """
     if not request.user.is_superuser:
         raise PermissionDenied
 
@@ -95,16 +100,23 @@ def edit_product(request, product_id):
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
-            messages.info(request, f'Product {product.name}: {product_id} successfully updated! ')
+            messages.info(
+                request,
+                f'Product{product.name}:{product_id} successfully updated! '
+                )
+
             return redirect('products:product_details', product.id)
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                'Failed to update product. Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
-        messages.success(request, f'Product {product.name}: {product_id} successfully updated! ')
+        messages.success(
+            request,
+            f'Product {product.name}:{product_id} successfully updated! ')
 
-
-    template = 'products/edit_products.html' 
+    template = 'products/edit_products.html'
     context = {
         'form': form,
         'product': product,
@@ -112,14 +124,15 @@ def edit_product(request, product_id):
 
     return render(request, template, context)
 
+
 @login_required
-def delete_product(request, product_id): 
-    """ Delete a product """ 
+def delete_product(request, product_id):
+    """ Delete a product """
     if not request.user.is_superuser:
         raise PermissionDenied
-        
+
     product = get_object_or_404(Product, pk=product_id)
     product.delete()
     messages.success(request, 'Product successfully deleted!')
 
-    return(redirect(reverse('products:products')))
+    return (redirect(reverse('products:products')))

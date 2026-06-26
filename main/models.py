@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # News letter sign-up
 class NewsletterSignup(models.Model):
     email = models.EmailField(unique=True)
@@ -7,6 +8,7 @@ class NewsletterSignup(models.Model):
 
     def __str__(self):
         return self.email
+
 
 class JobApplication(models.Model):
     POSITION_CHOICES = [
@@ -19,7 +21,10 @@ class JobApplication(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
-    position = models.CharField(max_length=50, choices=POSITION_CHOICES, default='')
+    position = models.CharField(
+        max_length=50,
+        choices=POSITION_CHOICES,
+        default='')
     cv = models.FileField(upload_to='cvs/', null=True, blank=True)
     date_applied = models.DateTimeField(auto_now_add=True)
 

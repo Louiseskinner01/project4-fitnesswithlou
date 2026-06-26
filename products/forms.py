@@ -30,7 +30,6 @@ class ProductForm(forms.ModelForm):
         model = Product
         fields = '__all__'
 
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
@@ -55,14 +54,17 @@ class ProductForm(forms.ModelForm):
         for field_name, field in self.fields.items():
 
             field.label = False
-            
+
             if field_name == 'image':
-                continue 
+                continue
 
             field.widget.attrs['class'] = 'rounded'
 
-            if field_name in placeholders and field.widget.input_type in ['text', 'number', 'textarea', 'email']:
-                field.widget.attrs['placeholder'] = placeholders[field_name]
+
+if (field_name in placeholders and
+        field.widget.input_type in
+        ['text', 'number', 'textarea', 'email']):
+    field.widget.attrs['placeholder'] = placeholders[field_name]
 
     def save(self, commit=True):
         instance = super().save(commit=False)
@@ -74,5 +76,3 @@ class ProductForm(forms.ModelForm):
             instance.save()
 
         return instance
-
-    

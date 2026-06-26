@@ -84,7 +84,9 @@ def handle_checkout_completed(session):
 
             # ✅ Send confirmation email
             send_subscription_confirmation(profile.user, user_subscription)
-            print(f"Subscription activated and email sent for {profile.user.username}")
+            print(
+                f"Subscription activated and"
+                f"email sent for {profile.user.username}")
 
     except UserProfile.DoesNotExist:
         print(f"No profile found for customer {customer_id}")

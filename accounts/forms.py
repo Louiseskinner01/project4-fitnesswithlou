@@ -17,6 +17,6 @@ class CustomLoginForm(LoginForm):
 
         # Add classes
         self.fields['login'].widget.attrs['class'] = 'form-control auth-input'
-        self.fields['password'].widget.attrs['class'] = 'form-control auth-input'
-
+        password_widget = self.fields['password'].widget.attrs
+        password_widget['class'] = 'form-control auth-input'
         self.helper = FormHelper()

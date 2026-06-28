@@ -216,15 +216,25 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 | variables.css | ![screenshot](documentation/validation/css-variables.png) | ✅ Pass |
 
 ## Performance
-
+> **Note:** Performance scores are affected by Heroku's free tier server 
+> response times and the loading of third party libraries (Bootstrap, 
+> Font Awesome, Stripe JS). The hero background image was converted to 
+> WebP format to improve the Largest Contentful Paint score. 
+> Further improvements would require a CDN and server-side caching 
+> which is beyond the scope of this project.
 ### Performance Testing
 
 I've tested my deployed project using the Page Speed Insights tool and Chrome Lighthouse to check for any major performance issues.
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
-| Home | ![screenshot](documentation/performance-testing/home-mobile.png) | ![screenshot](documentation/performance-testing/home-desktop.png) |
-| Products | ![screenshot](documentation/performance-testing/products-mobile.png) | ![screenshot](documentation/performance-testing/products-desktop.png) |
+| Home | ![screenshot](documentation/testing/performance/home-mobile.png) | ![screenshot](documentation/testing/performance/home-desktop.png) |
+| Products | ![screenshot](documentation/testing/performance/products-mobile.png) | ![screenshot](documentation/testing/performance/products-desktop.png) |
+| Product Details | ![screenshot](documentation/testing/performance/product-details-mobile.png) | ![screenshot](documentation/testing/performance/product-details-desktop.png) |
+| Nutrition | ![screenshot](documentation/testing/performance/nutrition-mobile.png) | ![screenshot](documentation/testing/performance/nutrition-desktop.png) |
+
+
+
 | Login | ![screenshot](documentation/performance-testing/login-mobile.png) | ![screenshot](documentation/performance-testing/login-desktop.png) |
 | Sign Up | ![screenshot](documentation/performance-testing/signup-mobile.png) | ![screenshot](documentation/performance-testing/signup-desktop.png) |
 

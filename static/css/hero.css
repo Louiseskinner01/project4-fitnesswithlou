@@ -58,7 +58,7 @@
 
 /*-----------------------------------Specific page image */
 .hero-img-bg {
-  background-image: url("/static/images/bg1.jpg");
+  background-image: url("/static/images/bg1.webp");
   max-width: 100%;
 }
 

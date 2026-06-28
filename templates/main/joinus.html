@@ -17,8 +17,8 @@
             {% csrf_token %}
 
             <!-- Your existing contact form fields -->
-            <div class="row bg-white rounded text-black p-3">
-                <div class="col-12 col-md-6" style="margin-bottom: 3rem;">
+            <div class="row bg-white rounded fs-6 p-3">
+                <div class="col-12 col-md-6 mb-3">
                     <div class="form-group fs-5">
                         <label class="display-labels font-2" for="id_first_name">First name</label>
                         {{ form.first_name }}
@@ -41,7 +41,7 @@
             </div>
 
             <!-- Your existing position and CV fields -->
-            <div class="row mt-5 p-3 bg-white rounded" style="min-height: 130px;">
+            <div class="row mt-5 p-3 bg-white rounded" style="min-height:130px;">
 
                 <div class="col-12">
                     <div class="form-group">
@@ -56,8 +56,8 @@
                   <p class="text-danger small mt-1" id="cv-filename"></p>
               </div>
 
-                <div class="col-12 mt-4 text-center">
-                    <button type="submit" class="btn btn-styling1 px-4">
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-styling1 px-3">
                         Submit Application
                     </button>
                 </div>

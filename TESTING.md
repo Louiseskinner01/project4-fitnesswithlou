@@ -126,7 +126,7 @@ Particular attention was given to:
 |Bookings|![screenshot](documentation/testing/responsiveness/mobile-bookings.PNG)|![screenshot](documentation/testing/responsiveness/tablet-bookings.png)|![screenshot](documentation/testing/responsiveness/laptop-bookings.png)|![screenshot](documentation/testing/responsiveness/desktop-bookings.png)|
 | About | ![screenshot](documentation/testing/responsiveness/mobile-about.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-about.png)  | ![screenshot](documentation/testing/responsiveness/laptop-about.png) | ![screenshot](documentation/testing/responsiveness/desktop-about.png) ) |
 | Join | ![screenshot](documentation/testing/responsiveness/mobile-join.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-join.png)  | ![screenshot](documentation/testing/responsiveness/laptop-join.png) | ![screenshot](documentation/testing/responsiveness/desktop-join.png) ) |
-| Newsletter | ![screenshot](documentation/testing/responsiveness/mobile-newsletter.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-newsletter.png)  | ![screenshot](documentation/testing/responsiveness/newsletter.png) | ![screenshot](documentation/testing/responsiveness/desktop-newsletter.png) ) |
+| Newsletter | ![screenshot](documentation/testing/responsiveness/mobile-newsletter.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-newsletter.png)  | ![screenshot](documentation/testing/responsiveness/laptop-newsletter.png) | ![screenshot](documentation/testing/responsiveness/desktop-newsletter.png) ) |
 
 
 
@@ -162,6 +162,13 @@ To ensure a consistent and accessible user experience across all devices and bro
 |Nutrition|![screenshot](documentation/browser-compatibility/chrome/nutrition.png) | ![screenshot](documentation/browser-compatibility/firefox/nutrition.png) | ![screenshot](documentation/browser-compatibility/safari/nutrition.png) | ![screenshot](documentation/browser-compatibility/edge/nutrition.png) | ![screenshot](documentation/browser-compatibility/opera/nutrition.png) |
 |Product Details|![screenshot](documentation/browser-compatibility/chrome/product-details.png) | ![screenshot](documentation/browser-compatibility/firefox/product-details.png) | ![screenshot](documentation/browser-compatibility/safari/product_details.png) | ![screenshot](documentation/browser-compatibility/edge/product-details.png) | ![screenshot](documentation/browser-compatibility/opera/product-details.png) |
 |Bookings|![screenshot](documentation/browser-compatibility/chrome/bookings.png) | ![screenshot](documentation/browser-compatibility/firefox/bookings.png) | ![screenshot](documentation/browser-compatibility/safari/bookings.png) | ![screenshot](documentation/browser-compatibility/edge/bookings.png) | ![screenshot](documentation/browser-compatibility/opera/bookings.png) |
+
+|About|![screenshot](documentation/browser-compatibility/chrome/about.png) | ![screenshot](documentation/browser-compatibility/firefox/about.png) | ![screenshot](documentation/browser-compatibility/safari/about.png) | ![screenshot](documentation/browser-compatibility/edge/about.png) | ![screenshot](documentation/browser-compatibility/opera/about.png) |
+
+|Join|![screenshot](documentation/browser-compatibility/chrome/join.png) | ![screenshot](documentation/browser-compatibility/firefox/join.png) | ![screenshot](documentation/browser-compatibility/safari/join.png) | ![screenshot](documentation/browser-compatibility/edge/join.png) | ![screenshot](documentation/browser-compatibility/opera/join.png) |
+
+|Newsletter|![screenshot](documentation/browser-compatibility/chrome/newsletter.png) | ![screenshot](documentation/browser-compatibility/firefox/newsletter.png) | ![screenshot](documentation/browser-compatibility/safari/newsletter.png) | ![screenshot](documentation/browser-compatibility/edge/newsletter.png) | ![screenshot](documentation/browser-compatibility/opera/newsletter.png) |
+
 
 ### Validation Summary
 

@@ -228,7 +228,7 @@ I've tested my deployed project using the Page Speed Insights tool and Chrome Li
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
-| Home | ![screenshot](documentation/testing/performance/home-mobile.png) | ![screenshot](documentation/testing/performance/home-desktop.png) |
+| Home (Landing page) | ![screenshot](documentation/testing/performance/home-mobile.png) | ![screenshot](documentation/testing/performance/home-desktop.png) |
 | Products | ![screenshot](documentation/testing/performance/products-mobile.png) | ![screenshot](documentation/testing/performance/products-desktop.png) |
 | Product Details | ![screenshot](documentation/testing/performance/product-details-mobile.png) | ![screenshot](documentation/testing/performance/product-details-desktop.png) |
 | Nutrition | ![screenshot](documentation/testing/performance/nutrition-mobile.png) | ![screenshot](documentation/testing/performance/nutrition-desktop.png) |

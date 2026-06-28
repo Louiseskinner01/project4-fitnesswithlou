@@ -192,7 +192,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | --- | --- | --- |
 | Home | ![screenshot](documentation/validation/html-home.png) | ✅ Pass |
 | Products | ![screenshot](documentation/validation/html-products.png) | ✅ Pass |
-| Product Details | ![screenshot](documentation/validation/html/product-details.png) | ✅ Pass |
+| Product Details | ![screenshot](documentation/validation/html-product-details.png) | ✅ Pass |
 | Cart | ![screenshot](documentation/validation/html-cart.png) | ✅ Pass |
 | Checkout | ![screenshot](documentation/validation/html-checkout.png) | ✅ Pass |
 | Bookings | ![screenshot](documentation/validation/html-bookings.png) | ✅ Pass |

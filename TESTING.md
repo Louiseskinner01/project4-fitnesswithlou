@@ -282,4 +282,4 @@ I've tested my deployed project using the Page Speed Insights tool and Chrome Li
 
 | Issue | Screenshot |
 | --- | --- |
-| Stripe payment method dropdown slightly clipped on very small mobile screens due to Shadow DOM CSS isolation | ![screenshot](documentation/known-issues/stripe-mobile.png) |
+| Stripe payment method dropdown slightly clipped on very small mobile screens due to Shadow DOM CSS isolation | **How it looks on Apple 12 Pro (portrait)**![screenshot](documentation/testing/bugs/bug1.PNG) <br> **How it looks on Apple 12 Pro (landscape)** ![screenshot](documentation/testing/bugs/bug2.PNG) <br> **How it looks on Chrome Dev Tools**![screenshot](documentation/testing/bugs/bug3.PNG) <br>|

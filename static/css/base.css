@@ -209,7 +209,7 @@ a.edit-product-link{
    background-color: orange;
    color: rgb(85, 42, 107);
    font-style: italic;
-   font-size: 10px;
+   font-size: 8px;
    
 }
 
@@ -225,7 +225,7 @@ a.delete-product-link{
     background-color: red;
     color: white;
     font-style: italic;
-    font-size: 10px;
+    font-size: 8px;
    
 }
 

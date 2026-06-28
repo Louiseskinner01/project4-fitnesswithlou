@@ -232,11 +232,10 @@ I've tested my deployed project using the Page Speed Insights tool and Chrome Li
 | Products | ![screenshot](documentation/testing/performance/products-mobile.png) | ![screenshot](documentation/testing/performance/products-desktop.png) |
 | Product Details | ![screenshot](documentation/testing/performance/product-details-mobile.png) | ![screenshot](documentation/testing/performance/product-details-desktop.png) |
 | Nutrition | ![screenshot](documentation/testing/performance/nutrition-mobile.png) | ![screenshot](documentation/testing/performance/nutrition-desktop.png) |
-
-
-
-| Login | ![screenshot](documentation/performance-testing/login-mobile.png) | ![screenshot](documentation/performance-testing/login-desktop.png) |
-| Sign Up | ![screenshot](documentation/performance-testing/signup-mobile.png) | ![screenshot](documentation/performance-testing/signup-desktop.png) |
+| Subscriptions | ![screenshot](documentation/testing/performance/subscriptions-mobile.png) | ![screenshot](documentation/testing/performance/subscriptions-desktop.png) |
+| Login | ![screenshot](documentation/testing/performance/login-mobile.png) | ![screenshot](documentation/testing/performance/login-desktop.png) |
+| Join | ![screenshot](documentation/testing/performance/join-mobile.png) | ![screenshot](documentation/testing/performance/join-desktop.png) |
+| Newsletter | ![screenshot](documentation/testing/performance/newsletter-mobile.png) | ![screenshot](documentation/testing/performance/newsletter-desktop.png) |
 
 ### Accessibility Summary
 

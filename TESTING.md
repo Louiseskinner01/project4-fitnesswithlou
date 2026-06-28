@@ -125,6 +125,20 @@ Particular attention was given to:
 | 404 | ![screenshot](documentation/testing/responsiveness/mobile-404.png) | ![screenshot](documentation/testing/responsiveness/tablet-404.png) | ![screenshot](documentation/testing/responsiveness/laptop-404.png) | ![screenshot](documentation/testing/responsiveness/desktop-404.png) |
 |Bookings|![screenshot](documentation/testing/responsiveness/mobile-bookings.PNG)|![screenshot](documentation/testing/responsiveness/tablet-bookings.png)|![screenshot](documentation/testing/responsiveness/laptop-bookings.png)|![screenshot](documentation/testing/responsiveness/desktop-bookings.png)|
 
+| About | ![screenshot](documentation/testing/responsiveness/mobile-home.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-home1.png)  | ![screenshot](documentation/testing/responsiveness/laptop-home1.png) | ![screenshot](documentation/testing/responsiveness/desktop-home1.png) ) |
+
+
+| Join | ![screenshot](documentation/testing/responsiveness/mobile-home.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-home1.png)  | ![screenshot](documentation/testing/responsiveness/laptop-home1.png) | ![screenshot](documentation/testing/responsiveness/desktop-home1.png) ) |
+
+
+| Newsletter | ![screenshot](documentation/testing/responsiveness/mobile-home.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-home1.png)  | ![screenshot](documentation/testing/responsiveness/laptop-home1.png) | ![screenshot](documentation/testing/responsiveness/desktop-home1.png) ) |
+
+
+
+
+
+
+
 ## Testing Summaries
 
 ### Cross-Browser Compatibility

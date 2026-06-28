@@ -422,7 +422,12 @@ a.btn-styling2:hover{
     letter-spacing: 1px;
 }
 
-
+select#id_position{
+    padding: 5px !important;
+    color: grey;
+    font-size: 18px;
+    
+}
 
 .product-detail-form-control{
     border: var(--primary-color) solid 1px;

@@ -20,21 +20,21 @@
             <div class="row bg-white rounded text-black p-3">
                 <div class="col-12 col-md-6" style="margin-bottom: 3rem;">
                     <div class="form-group fs-5">
-                        <label class="display-labels" for="id_first_name">First name</label>
+                        <label class="display-labels font-2" for="id_first_name">First name</label>
                         {{ form.first_name }}
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 mb-3">
                     <div class="form-group fs-5">
-                        <label class="display-labels" for="id_last_name">Last name</label>
+                        <label class="display-labels font-2" for="id_last_name">Last name</label>
                         {{ form.last_name }}
                     </div>
                 </div>
 
                 <div class="col-12">
                     <div class="form-group fs-5">
-                        <label class="display-labels" for="id_email">Email address</label>
+                        <label class="display-labels font-2" for="id_email">Email address</label>
                         {{ form.email }}
                     </div>
                 </div>
@@ -43,14 +43,14 @@
             <!-- Your existing position and CV fields -->
             <div class="row mt-5 p-3 bg-white rounded" style="min-height: 130px;">
 
-                <div class="col-6">
+                <div class="col-12">
                     <div class="form-group">
-                        <label class="display-labels" for="id_position">Position of interest</label>
+                        <label class="display-labels font-2" for="id_position">Position of interest</label>
                         {{ form.position }}
                     </div>
                 </div>
 
-                <div class="col-6">
+                <div class="col-12">
                   <label for="id_cv" class="form-label m-0 display-labels btn btn-styling3 mt-3 pb-2 pt-3">Upload your CV</label>
                   <input type="file" name="cv" id="id_cv" style="display:none;">
                   <p class="text-danger small mt-1" id="cv-filename"></p>

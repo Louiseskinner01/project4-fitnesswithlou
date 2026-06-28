@@ -210,10 +210,10 @@ I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-val
 
 | File | Screenshot | Passed |
 | --- | --- | --- |
-| base.css | ![screenshot](documentation/validation/css/base-css.png) | ✅ Pass |
-| checkout.css | ![screenshot](documentation/validation/css/checkout-css.png) | ✅ Pass |
-| hero.css | ![screenshot](documentation/validation/css/hero-css.png) | ✅ Pass |
-| variables.css | ![screenshot](documentation/validation/css/variables-css.png) | ✅ Pass |
+| base.css | ![screenshot](documentation/validation/css-base.png) | ✅ Pass |
+| checkout.css | ![screenshot](documentation/validation/css-checkout.png) | ✅ Pass |
+| hero.css | ![screenshot](documentation/validation/css-hero.png) | ✅ Pass |
+| variables.css | ![screenshot](documentation/validation/css-variables.png) | ✅ Pass |
 
 ## Performance
 

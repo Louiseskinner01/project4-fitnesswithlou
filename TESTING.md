@@ -124,14 +124,9 @@ Particular attention was given to:
 | Sign Up | ![screenshot](documentation/testing/responsiveness/mobile-create-account.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-create1.png) <br> ![screenshot](documentation/testing/responsiveness/tablet-create2.png) | ![screenshot](documentation/testing/responsiveness/laptop-signup.png) | ![screenshot](documentation/testing/responsiveness/desktop-create.png) |
 | 404 | ![screenshot](documentation/testing/responsiveness/mobile-404.png) | ![screenshot](documentation/testing/responsiveness/tablet-404.png) | ![screenshot](documentation/testing/responsiveness/laptop-404.png) | ![screenshot](documentation/testing/responsiveness/desktop-404.png) |
 |Bookings|![screenshot](documentation/testing/responsiveness/mobile-bookings.PNG)|![screenshot](documentation/testing/responsiveness/tablet-bookings.png)|![screenshot](documentation/testing/responsiveness/laptop-bookings.png)|![screenshot](documentation/testing/responsiveness/desktop-bookings.png)|
-
-| About | ![screenshot](documentation/testing/responsiveness/mobile-home.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-home1.png)  | ![screenshot](documentation/testing/responsiveness/laptop-home1.png) | ![screenshot](documentation/testing/responsiveness/desktop-home1.png) ) |
-
-
-| Join | ![screenshot](documentation/testing/responsiveness/mobile-home.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-home1.png)  | ![screenshot](documentation/testing/responsiveness/laptop-home1.png) | ![screenshot](documentation/testing/responsiveness/desktop-home1.png) ) |
-
-
-| Newsletter | ![screenshot](documentation/testing/responsiveness/mobile-home.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-home1.png)  | ![screenshot](documentation/testing/responsiveness/laptop-home1.png) | ![screenshot](documentation/testing/responsiveness/desktop-home1.png) ) |
+| About | ![screenshot](documentation/testing/responsiveness/mobile-about.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-about.png)  | ![screenshot](documentation/testing/responsiveness/laptop-about.png) | ![screenshot](documentation/testing/responsiveness/desktop-about.png) ) |
+| Join | ![screenshot](documentation/testing/responsiveness/mobile-join.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-join.png)  | ![screenshot](documentation/testing/responsiveness/laptop-join.png) | ![screenshot](documentation/testing/responsiveness/desktop-join.png) ) |
+| Newsletter | ![screenshot](documentation/testing/responsiveness/mobile-newsletter.PNG) | ![screenshot](documentation/testing/responsiveness/tablet-newsletter.png)  | ![screenshot](documentation/testing/responsiveness/newsletter.png) | ![screenshot](documentation/testing/responsiveness/desktop-newsletter.png) ) |
 
 
 
@@ -216,6 +211,9 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | Profile | ![screenshot](documentation/validation/html-profile.png) | ✅ Pass |
 | Login | ![screenshot](documentation/validation/html-login.png) | ✅ Pass |
 | Sign Up | ![screenshot](documentation/validation/html-signup.png) | ✅ Pass |
+| About | ![screenshot](documentation/validation/html-about.png) | ✅ Pass |
+| Newsletter | ![screenshot](documentation/validation/html-newsletter.png) | ✅ Pass |
+| Join | ![screenshot](documentation/validation/html-join.png) | ✅ Pass |
 | 404 | ![screenshot](documentation/validation/html-404.png) | ✅ Pass |
 
 #### CSS

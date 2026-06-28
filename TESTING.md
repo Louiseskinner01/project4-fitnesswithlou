@@ -236,6 +236,7 @@ I've tested my deployed project using the Page Speed Insights tool and Chrome Li
 | Login | ![screenshot](documentation/testing/performance/login-mobile.png) | ![screenshot](documentation/testing/performance/login-desktop.png) |
 | Join | ![screenshot](documentation/testing/performance/join-mobile.png) | ![screenshot](documentation/testing/performance/join-desktop.png) |
 | Newsletter | ![screenshot](documentation/testing/performance/newsletter-mobile.png) | ![screenshot](documentation/testing/performance/newsletter-desktop.png) |
+| About| ![screenshot](documentation/testing/performance/about-mobile.png) | ![screenshot](documentation/testing/performance/about-desktop.png) |
 
 ### Accessibility Summary
 

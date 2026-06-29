@@ -145,7 +145,7 @@ To ensure a consistent and accessible user experience across all devices and bro
 - Edge
 - Opera
 
-**Summary**: The FWL web application displays and functions without any issues across all major web browsers.
+**Summary**: The FWL web application displays and functions consistently across all major browsers. One known issue was identified in Opera — see Known Issues section for full details.
 
 | Page | Chrome | Firefox | Safari | Edge | Opera |
 | --- | --- | --- | --- | --- | --- |
@@ -280,6 +280,7 @@ I've tested my deployed project using the Page Speed Insights tool and Chrome Li
 
 ### Known/Existing Issues
 
-| Issue | Screenshot |
-| --- | --- |
-| Stripe payment method dropdown slightly clipped on very small mobile screens due to Shadow DOM CSS isolation | **How it looks on Apple 12 Pro (portrait)**![screenshot](documentation/testing/bugs/bug1.PNG) <br> **How it looks on Apple 12 Pro (landscape)** ![screenshot](documentation/testing/bugs/bug2.PNG) <br> **How it looks on Chrome Dev Tools**![screenshot](documentation/testing/bugs/bug3.png)|
+| Issue | Desciption | Screenshot |
+| --- | --- | --- |
+|Stripe payment window | The method dropdown slightly clipped on very small mobile screens due to Shadow DOM CSS isolation | **How it looks on Apple 12 Pro (portrait)**![screenshot](documentation/testing/bugs/bug1.PNG) <br> **How it looks on Apple 12 Pro (landscape)** ![screenshot](documentation/testing/bugs/bug2.PNG) <br> **How it looks on Chrome Dev Tools**![screenshot](documentation/testing/bugs/bug3.png)|
+| Opera browser navigation dropdown | During cross-browser compatibility testing, it was identified that the Bootstrap navbar dropdown links are unresponsive in the Opera browser. This issue is isolated to Opera and does not affect Chrome, Firefox, Safari or Edge, where all navigation links function correctly. The cause is believed to be a compatibility issue between Opera's rendering engine and Bootstrap 5's JavaScript dropdown implementation. As this affects only one browser and all other functionality on the Opera browser remains intact, it has been documented as a known issue rather than a critical bug. Future resolution would involve investigating Opera-specific JavaScript event handling or implementing a CSS-only dropdown alternative. | ![screenshot](documentation/known-issues/opera-nav.png) |

@@ -99,6 +99,33 @@ The following content needed to be created, sourced, and managed for the platfor
 #### 4. Skeleton
 
 **[Wireframes](#wireframes)** (see below)
+## Wireframes
+
+Wireframes were created using Balsamiq for both **mobile** and **desktop** screen sizes. Tablet and laptop breakpoints were not wireframed separately as the layout transitions between mobile and desktop are sufficient to demonstrate the responsive design approach. 
+
+At tablet and laptop sizes the layout behaviour is predictable — elements transition smoothly between the stacked single-column mobile layout and the multi-column desktop layout using Bootstrap's responsive grid system. Creating separate wireframes for these intermediate breakpoints would therefore not provide any additional design insight beyond what is already demonstrated in the mobile and desktop versions.
+
+The wireframes served as a planning tool to map out the key structural decisions for each page before development began, ensuring a consistent and user-friendly layout across all screen sizes.
+
+
+
+| Page | Wireframe |
+| --- | --- |
+| Home | ![screenshot](documentation/images/wireframes/home.png) |
+| Products | ![screenshot](documentation/images/wireframes/products.png) |
+| Product Detail | ![screenshot](documentation/images/wireframes/product-detail.png) |
+| Shopping Cart | ![screenshot](documentation/images/wireframes/cart.png) |
+| Checkout | ![screenshot](documentation/images/wireframes/checkout.png) |
+| Class Timetable | ![screenshot](documentation/images/wireframes/classes.png) |
+| Subscriptions | ![screenshot](documentation/images/wireframes/subscriptions.png) |
+| Profile | ![screenshot](documentation/images/wireframes/profile.png) |
+| Login | ![screenshot](documentation/images/wireframes/login.png) |
+| Sign Up | ![screenshot](documentation/images/wireframes/signup.png) |
+| About Us | ![screenshot](documentation/images/wireframes/about.png) |
+| Join the Team | ![screenshot](documentation/images/wireframes/join.png) |
+| Newsletter | ![screenshot](documentation/images/wireframes/newsletter.png) |
+| Nutritional Advice | ![screenshot](documentation/images/wireframes/nutrition.png) |
+| 404 | ![screenshot](documentation/images/wireframes/404.png) |
 
 #### 5. Surface
 

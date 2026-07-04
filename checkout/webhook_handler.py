@@ -12,18 +12,31 @@ import time
 
 
 class StripeWH_Handler:
-    """Handle Stripe webhooks"""
+    """
+    Handle Stripe webhooks.
+    This class processes incoming webhook events from Stripe,
+    including payment success, payment failure and subscription events.
+    """
 
     def __init__(self, request):
+        """Initialise the handler with the incoming HTTP request"""
         self.request = request
 
     def _send_confirmation_email(self, order):
-        """Send confirmation email to user"""
+
+        """
+        Send an order confirmation email to the customer.
+        Renders the subject and body from email templates
+        and sends via Django's send_mail function.
+        """
         customer_email = order.email
+        # Render email subject from template
         subject = render_to_string(
             'checkout/confirmation_emails/confirmation_subject.txt',
             {'order': order}
         )
+
+        # Render email body from template
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_body.txt',
             {
@@ -31,6 +44,8 @@ class StripeWH_Handler:
                 'contact_email': settings.DEFAULT_FROM_EMAIL
             }
         )
+
+        # Send the confirmation email
         send_mail(
             subject,
             body,
@@ -39,17 +54,28 @@ class StripeWH_Handler:
         )
 
     def handle_event(self, event):
-        """Handle a generic/unknown/unexpected webhook event"""
+        """
+        Handle a generic, unknown or unexpected webhook event.
+        Returns a 200 response to acknowledge receipt without
+        any specific processing.
+        """
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200
         )
 
     def handle_payment_intent_succeeded(self, event):
-        """Handle the payment_intent.succeeded webhook from Stripe"""
+        """
+        Handle the payment_intent.succeeded webhook from Stripe.
+        This fires when a payment is successfully processed.
+        Differentiates between subscription payments and product
+        order payments using bag metadata, then verifies or creates
+        the order in the database.
+        """
         intent = event.data.object
         pid = intent.id
         # Check if this is a subscription payment (no bag metadata)
+         # Subscription payments don't have bag metadata attached
         bag = getattr(intent.metadata, 'bag', None)
         if not bag:
             # This is a subscription payment, not a product order
@@ -61,9 +87,12 @@ class StripeWH_Handler:
                 status=200
             )
 
+        # Extract metadata attached to the payment intent
         save_info = intent.metadata.save_info
         username = intent.metadata.username
 
+
+        # Retrieve the charge object from Stripe to get billing details
         stripe.api_key = settings.STRIPE_SECRET_KEY
         charge = stripe.Charge.retrieve(intent.latest_charge)
         billing_details = charge.billing_details
@@ -99,7 +128,9 @@ class StripeWH_Handler:
             except UserProfile.DoesNotExist:
                 pass
 
-        # Check if order exists
+        # Attempt to find the order in the database
+        # Retries up to 5 times with 1 second delay to allow for
+        # any delay between payment completion and order creation
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -132,7 +163,11 @@ class StripeWH_Handler:
             )
 
     def handle_payment_intent_payment_failed(self, event):
-        """Handle the payment_intent.payment_failed webhook from Stripe"""
+        """
+        Handle the payment_intent.payment_failed webhook from Stripe.
+        This fires when a payment attempt fails.
+        Returns a 200 response to acknowledge receipt.
+        """
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200

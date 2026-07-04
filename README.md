@@ -197,7 +197,7 @@ The wireframes served as a planning tool to map out the key structural decisions
 | --- | --- |
 | Home | ![screenshot](documentation/images/wireframes/home.png) |
 | Products | ![screenshot](documentation/images/wireframes/products.png) |
-| Product Detail | ![screenshot](documentation/images/wireframes/product-detail.png) |
+| Product Detail | ![screenshot](documentation/images/wireframes/product-details.png) |
 | Shopping Cart | ![screenshot](documentation/images/wireframes/cart.png) |
 | Checkout | ![screenshot](documentation/images/wireframes/checkout.png) |
 | Class Timetable | ![screenshot](documentation/images/wireframes/classes.png) |

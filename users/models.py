@@ -47,7 +47,7 @@ class UserProfile(models.Model):
     )
 
     default_street_address1 = models.CharField(
-        max_width=80,
+        max_length=80,
         null=True,
         blank=True
     )

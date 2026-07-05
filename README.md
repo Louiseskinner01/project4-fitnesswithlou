@@ -301,7 +301,7 @@ The wireframes served as a planning tool to map out the key structural decisions
 - **Push notifications** — remind users of upcoming class bookings or subscription renewal dates.
 - **Multi-language support** — translate the site for a broader, more inclusive audience.
 - **Gift cards / vouchers** — allow customers to purchase and redeem gift cards for products or memberships.
-
+- **Guest cart persistence** — allow unauthenticated users to add items to a session-based cart that automatically merges with their account cart upon login, preventing loss of selected items.
 ## Tools & Technologies
 
 | Tool / Tech | Use |

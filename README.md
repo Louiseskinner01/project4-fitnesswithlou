@@ -54,12 +54,12 @@ Many small fitness businesses rely on a patchwork of separate tools — one plat
 **[Features](#features)** (see below)
 - User registration and authentication.
 - Book and cancel classes.
-- File uplaod (Superusers can upload products and general users can upload their cv).
+- File upload (Superusers can upload products and general users can upload their cv).
 - Add, Edit & Delete 
 - Make online purchases
 - View personal profile.
 - Responsive navigation.
-- Emails (confirmation emails for classess booked)
+- Emails (confirmation emails for classes booked)
 - Toast messages for an interactive UX
 
 **Content Requirements**
@@ -78,21 +78,21 @@ The following content needed to be created, sourced, and managed for the platfor
 
 **Information Architecture**
 - **Navigation Menu**:
-   - Navigation Menu: A dynamic nav bar that displays different nav links depending on whether the user is logged in or not. If the user is not logged in they will have access to the following links: Home (landing page), Subscriptions, Shop, Nutrition, Login and Signup. However the user is logged in they will have access to "User Authenticated" pages such as: Profile, Boookings, and Classes.
+   - Navigation Menu: A dynamic nav bar that displays different nav links depending on whether the user is logged in or not. If the user is not logged in they will have access to the following links: Home (landing page), Subscriptions, Shop, Nutrition, Login and Signup. However the user is logged in they will have access to "User Authenticated" pages such as: Profile, Bookings, and Classes.
 
 **User Flow**
   - Landing page accessible to all users.
   - The "Profile" page allows users to:
       - View purchase order history.
       - Update their personal information.
-      - Subscribe or canel an existing subscription.
+      - Subscribe or cancel an existing subscription.
 
   - The "Products" page allows users to:
       - View products in further detail by clicking on the "view products" button.
       - Superusers can access the "Product Admin" page or delete a product by clicking on the "delete" button.
   - The "Product Admin" page allows Superusers to Add, Edit and Delete products.
-  - The "Product Details" page allows users to view a product image more clearly, select a size (if plicable) and quantity of a product and add it the cart.
-  - The "Shopping Cart" page allows users to increase/decrease the quantity of an item in their cart, head to the "Chedckout" or click the "Continue Shopping" button where they will be redirected to the Products page.
+  - The "Product Details" page allows users to view a product image more clearly, select a size (if applicable) and quantity of a product and add it the cart.
+  - The "Shopping Cart" page allows users to increase/decrease the quantity of an item in their cart, head to the "Checkout" or click the "Continue Shopping" button where they will be redirected to the Products page.
   - The "Success" page is a simple template that provides the user with a thank you message along with a summery of their order.
   - Conditional navigation links based on login state.
 
@@ -539,17 +539,3 @@ Other differences are listed below:
 - I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
 - I would like to thank my little boy for giving me the drive and motivation to develop the right skills so I can be a successful web developer.
 
-
-
-
-
-
-
-
-
-
-
-
-CSS — works locally with DEBUG = True because WhiteNoise serves static files differently in debug mode
-Images — don't show locally because they're now stored in Cloudinary, and your local MEDIA_ROOT folder doesn't have them anymore
-Mobile layout — looks different because you're testing on a different screen/browser locally

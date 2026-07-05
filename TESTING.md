@@ -280,7 +280,7 @@ I've tested my deployed project using the Page Speed Insights tool and Chrome Li
 
 ### Known/Existing Issues
 
-| Issue | Desciption | Screenshot |
+| Issue | Description | Screenshot |
 | --- | --- | --- |
 |Stripe payment window | The method dropdown slightly clipped on very small mobile screens due to Shadow DOM CSS isolation | **How it looks on Apple 12 Pro (portrait)**![screenshot](documentation/testing/bugs/bug1.PNG) <br> **How it looks on Apple 12 Pro (landscape)** ![screenshot](documentation/testing/bugs/bug2.PNG) <br> **How it looks on Chrome Dev Tools**![screenshot](documentation/testing/bugs/bug3.png)|
 | Confirm email page unstyled | The allauth `confirm_email.html` template renders as a standalone page without the site's CSS styling applied. This is because the page cannot extend `base.html` due to the cart context processor failing on allauth's internal URL routing. Attempts were made to load CSS directly via `{% static %}` tags and inline styles however the styling did not apply. The page is fully functional — users can successfully confirm their email address and are redirected to the login page after confirmation. | ![screenshot](documentation/known-issues/confirm-email.png) |

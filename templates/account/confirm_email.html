@@ -1,49 +1,27 @@
-
+{% extends "base.html" %}
 {% load static %}
 {% load i18n %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Verify Your Email | FWL</title>
-
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- FWL Styles -->
-    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
-    <link rel="stylesheet" href="{% static 'css/base.css' %}">
-    <link rel="stylesheet" href="{% static 'css/hero.css' %}">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-
-<body>
-    <section class="hero-img-bg page-bg">
-        <div class="overlay-main"></div>
-        <div class="content-wrapper text-center">
-            <img src="{% static 'images/fwlLogo.png' %}" alt="FWL Logo" style="height: 100px;" class="mb-4">
-            <h1 class="font-2 mb-4" style="background-color: blue;">Confirm Your Email Address</h1>
+{% block content %}
+<section class="hero-img-bg page-bg">
+    <div class="overlay-main"></div>
+    <div class="content-wrapper text-center">
+        <h1 class="mb-4">Verify Your Email Address</h1>
+        <div class="rounded feature font-dark-purple p-3 mb-3">     
+            
             <p class="fs-5">Thank you for signing up to FWL!</p>
             <p>Please confirm your email address by clicking the button below.</p>
-            
             <form method="POST">
                 {% csrf_token %}
-                <button type="submit" class="btn btn-styling1 px-4 mt-3 pt-2">
+                <button type="submit" style="background-color: rgb(121, 110, 40); color: white; border: none; border-radius: 10px; padding: 12px 24px; margin-top: 1rem; cursor: pointer;">
                     Confirm Email
                 </button>
             </form>
-
-            <a href="/" class="btn btn-styling2 px-4 mt-3 pt-2">
+            <a href="/" style="display: inline-block; margin-top: 1rem; background-color: rgb(214, 203, 222); color: rgb(121, 110, 40); border-radius: 10px; padding: 12px 24px; text-decoration: none;">
                 Back to Home
             </a>
         </div>
-    </section>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+ </div>
+ </section>
+ {% endblock %}
+ 

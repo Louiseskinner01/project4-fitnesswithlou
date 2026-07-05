@@ -18,7 +18,7 @@
                     </h1>
 
                     <div class="row align-items-stretch">
-                        <!-- Left column -->
+                        <!-- ========== CART ITEMS TABLE ========== -->
                         <div class="col-12 col-md-6 h-100 mb-3 mb-md-0">
 
                             <div class="card bg-white p-4 rounded h-100">
@@ -118,20 +118,20 @@
                                     </div>
                                 </div>
                                 {% else %}
-<div class="text-center py-5">
-    <i class="fas fa-shopping-bag fa-3x mb-3 font-2"></i>
-    <p class="fs-5">Sorry, you don't have any items in your cart.</p>
-    <a href="{% url 'products:products' %}" class="btn btn-styling1 pt-3 mt-2">
-        Start Shopping
-    </a>
-</div>
+                                <div class="text-center py-5">
+                                    <i class="fas fa-shopping-bag fa-3x mb-3 font-2"></i>
+                                    <p class="fs-5">Sorry, you don't have any items in your cart.</p>
+                                    <a href="{% url 'products:products' %}" class="btn btn-styling1 pt-3 mt-2">
+                                        Start Shopping
+                                    </a>
+                                </div>
                                 {% endif %}
 
                             </div>
 
                         </div>
 
-                        <!-- Right column -->
+                        <!-- ========== ORDER SUMMARY ========== -->
                         <div class="col-12 col-md-6">
 
                             <div class="card feature rounded p-4 h-100">
@@ -179,7 +179,7 @@
                                     <div class="col-12">
                                         <a href="{% url 'checkout:checkout' %}"
                                             class="btn btn-styling1 rounded w-100 px-1 pt-3" id="cart-btn-secure">
-                                           
+
                                             <!-- Bag icon -->
                                             <i class="fas fa-lock"></i>
                                             Secure Checkout
@@ -191,7 +191,6 @@
                             </div>
 
                         </div>
-
                     </div>
 
                 </div>

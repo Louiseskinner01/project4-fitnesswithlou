@@ -20,22 +20,21 @@
                 <div class="content-wrapper">
 
                     <h1 class="text-center mb-3">Secure Checkout</h1>
-
+                    
                     <div class="row g-4 align-items-start">
-
-                        <!-- ORDER SUMMARY -->
+                        <!-- ========== ORDER SUMMARY ========== -->
                         <div class="col-12 col-lg-6">
 
                             <div class="feature rounded p-4 h-100">
 
                                 <h2 class="font-2">
                                     Order Summary</h2>
-                                    <br>
-                                    <span class="fs-5 font-dark-purple">
-                                        {{ product_count }} items in your basket
-                                    </span>
-                                
-<hr>
+                                <br>
+                                <span class="fs-5 font-dark-purple">
+                                    {{ product_count }} items in your basket
+                                </span>
+
+                                <hr>
                                 <div class="row text-center mb-3">
 
                                     <div class="col-4">
@@ -55,15 +54,12 @@
                                 <hr>
 
                                 {% for item in cart_items %}
-
                                 <div class="row text-center align-items-center mb-4">
-
                                     <div class="col-4">
-
+                                        
                                         <a href="{% url 'products:product_details' item.product.id %}">
 
                                             {% if item.product.image %}
-
                                             <img class="cart-img img-fluid rounded" src="{{ item.product.image.url }}"
                                                 alt="{{ product.name }}">
 
@@ -73,9 +69,7 @@
                                                 alt="{{ product.name }}">
 
                                             {% endif %}
-
                                         </a>
-
                                     </div>
 
                                     <div class="col-5">
@@ -96,7 +90,6 @@
                                         <p class="my-0 small text-muted">
                                             Qty: {{ item.quantity }}
                                         </p>
-
                                     </div>
 
                                     <div class="col-3">
@@ -147,7 +140,7 @@
 
                         </div>
 
-                        <!-- CHECKOUT FORM -->
+                        <!-- ========== CHECKOUT FORM ========== -->
                         <div class="col-12 col-lg-6">
 
                             <div class="bg-white rounded p-4 h-100">
@@ -199,8 +192,9 @@
 
                                     </div>
 
+                                    <!-- ========== STRIPE PAYMENT ELEMENT ========== -->
                                     <fieldset class="px-3 payment-window">
-                                        
+
                                         <legend class="fieldset-label small text-black px-2 w-auto">
                                             Payment
                                         </legend>
@@ -211,7 +205,7 @@
                                         <div class="mb-3 text-danger" id="card-errors" role="alert">
                                         </div>
 
-                                        
+
                                     </fieldset>
 
                                     <div class="row g-3">
@@ -251,12 +245,8 @@
                                 </form>
 
                             </div>
-
                         </div>
-
                     </div>
-
-
                 </div>
             </section>
 

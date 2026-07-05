@@ -1,18 +1,48 @@
-{% extends "base.html" %}
 {% load static %}
 {% load i18n %}
 
-{% block content %}
-<section class="page-bg hero-img-bg">
-    <div class="overlay-main"></div>
-    <div class="content-wrapper text-center">
-        <h1 class="font-2 mb-4">Verify Your Email Address</h1>
-        <p class="fs-5">Thank you for signing up to FWL!</p>
-        <p>We have sent a confirmation email to your inbox. Please click the link in the email to complete your registration.</p>
-        <p class="mt-2 small text-muted">Can't find it? Check your spam folder!</p>
-        <a href="{% url 'main:landing' %}" class="btn btn-styling1 px-3 pt-2 mt-4">
-            Back to Home
-        </a>
-    </div>
-</section>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Your Email | FWL</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FWL Styles -->
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/hero.css' %}">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <section class="hero-img-bg page-bg">
+        <div class="overlay-main"></div>
+        <div class="content-wrapper text-center">
+            <img src="{% static 'images/fwlLogo.png' %}" alt="FWL Logo" style="height: 100px;" class="mb-4">
+            <h1 class="font-2 mb-4">Confirm Your Email Address</h1>
+            <p class="fs-5">Thank you for signing up to FWL!</p>
+            <p>Please confirm your email address by clicking the button below.</p>
+            
+            <form method="POST">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-styling1 px-4 mt-3 pt-2">
+                    Confirm Email
+                </button>
+            </form>
+
+            <a href="/" class="btn btn-styling2 px-4 mt-3 pt-2">
+                Back to Home
+            </a>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
